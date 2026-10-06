@@ -10,7 +10,7 @@ useSeoMeta({
   <div class="partnership-page">
     <KerjaSamaHero />
     <KerjaSamaModel />
-    <KerjaSamaEligibility />
+    <KerjaSamaEligib ility />
     <KerjaSamaMechanics />
     <KerjaSamaImpact />
   </div>
