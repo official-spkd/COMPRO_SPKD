@@ -38,7 +38,7 @@ const standards = [
     />
 
     <div class="container-wide relative py-10 md:py-12">
-      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div v-reveal class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p class="text-[11px] font-bold uppercase tracking-wider text-mint">
             Kepatuhan Terakreditasi
@@ -55,9 +55,10 @@ const standards = [
 
       <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <li
-          v-for="p in partners"
+          v-for="(p, i) in partners"
           :key="p.name"
-          class="flex items-center gap-3 rounded-xl bg-white/5 p-4"
+          v-reveal="i"
+          class="flex items-center gap-3 rounded-xl bg-white/5 p-4 transition-colors duration-300 hover:bg-white/10"
         >
           <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
             <img
@@ -76,7 +77,7 @@ const standards = [
         </li>
       </ul>
 
-      <ul class="mt-6 flex flex-wrap justify-center gap-2">
+      <ul v-reveal class="mt-6 flex flex-wrap justify-center gap-2">
         <li
           v-for="s in standards"
           :key="s.label"

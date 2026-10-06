@@ -7,7 +7,7 @@ defineProps<{ data: Solusi['flow'] }>()
 <template>
   <section class="bg-[#eef8f6] py-12 md:py-16 lg:py-20">
     <div class="container-x">
-      <div class="text-center">
+      <div v-reveal class="text-center">
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
           {{ data.eyebrow }}
         </p>
@@ -20,7 +20,8 @@ defineProps<{ data: Solusi['flow'] }>()
         <li
           v-for="(step, i) in data.steps"
           :key="step.title"
-          class="rounded-xl bg-white p-5"
+          v-reveal="i"
+          class="hover-lift rounded-xl border border-transparent bg-white p-5"
         >
           <div class="flex items-center justify-between">
             <span class="font-display text-2xl font-medium text-brand">

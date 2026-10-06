@@ -7,10 +7,10 @@ useSeoMeta({
 
 const solutionLinks = [
   { label: 'SIMRS–ERP', id: 'simrs-erp' },
-  { label: 'TransIRME', id: 'transirme' },
+  { label: 'MedRecord', id: 'medrecord' },
   { label: 'Smart Emergency', id: 'tele-health' },
-  { label: 'TransECA-X', id: 'transeca-x' },
-  { label: 'TransLOG-X', id: 'translog-x' },
+  { label: 'MedClaim', id: 'medclaim' },
+  { label: 'MedLog', id: 'medlog' },
 ]
 
 const solutions = [
@@ -35,8 +35,8 @@ const solutions = [
   },
   {
     number: '02',
-    eyebrow: 'Trans RME & PHR',
-    id: 'transirme',
+    eyebrow: 'MedRecord & PHR',
+    id: 'medrecord',
     slug: 'interoperabilitas-rme',
     title: 'Rekam medis yang bergerak aman bersama pasien.',
     description:
@@ -45,9 +45,9 @@ const solutions = [
       'HL7 FHIR, SNOMED CT, LOINC & DICOM',
       'KFA, ICD-9-CM, dan ICD-10',
       'Personal Health Record terkontrol pasien',
-      'TransCPG-X & TransCPR-X',
+      'MedPath',
     ],
-    mockupTitle: 'TRANSIRME',
+    mockupTitle: 'MEDRECORD',
     metric: '1.284',
     metricLabel: 'Dokumen klinis tersinkron',
     dark: true,
@@ -64,38 +64,38 @@ const telehealthFeatures = [
 const laterSolutions = [
   {
     number: '04',
-    eyebrow: 'TransECA-X',
-    id: 'transeca-x',
+    eyebrow: 'MedClaim',
+    id: 'medclaim',
     slug: 'satusehat-bpjs',
     title: 'Sinkronisasi regulasi dan klaim tanpa kerja berulang.',
     description:
-      'TransECA-X membantu fasilitas kesehatan menjaga kualitas RME sekaligus mempercepat proses administrasi JKN dalam satu alur audit yang transparan.',
+      'MedClaim membantu fasilitas kesehatan menjaga kualitas RME sekaligus mempercepat proses administrasi JKN dalam satu alur audit yang transparan.',
     features: [
       'Sinkronisasi RME dengan SATUSEHAT',
       'Audit coding dan clinical documentation',
       'Validasi dokumen klaim',
       'Integrasi e-Apotek & Mobile JKN',
     ],
-    mockupTitle: 'TRANSECA-X',
+    mockupTitle: 'MEDCLAIM',
     metric: '98,6%',
     metricLabel: 'Kelengkapan dokumen klaim',
     dark: true,
   },
   {
     number: '05',
-    eyebrow: 'TransLOG-X',
-    id: 'translog-x',
+    eyebrow: 'MedLog',
+    id: 'medlog',
     slug: 'cash-supply-chain',
     title: 'Rantai pasok kesehatan yang terlihat, terukur, dan lebih sehat.',
     description:
-      'Dari farmasi hingga alat kesehatan, TransLOG-X memberi visibilitas persediaan real-time serta opsi pembiayaan rantai pasok yang berkelanjutan.',
+      'Dari farmasi hingga alat kesehatan, MedLog memberi visibilitas persediaan real-time serta opsi pembiayaan rantai pasok yang berkelanjutan.',
     features: [
       'Stok real-time lintas lokasi',
       'Lot / batch & expiry tracking',
       'Predictive analytics kebutuhan',
       'KSM Logistik & Supply Chain Financing',
     ],
-    mockupTitle: 'TRANSLOG-X',
+    mockupTitle: 'MEDLOG',
     metric: '14 hari',
     metricLabel: 'Proyeksi kebutuhan stok',
     dark: false,
@@ -112,7 +112,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
     class="container-x grid items-center gap-10 py-12 md:gap-12 md:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-10 lg:py-20"
   >
     <!-- Teks -->
-    <div class="flex flex-col items-start gap-5 md:gap-6">
+    <div class="hero-enter flex flex-col items-start gap-5 md:gap-6">
       <p class="text-xs font-bold uppercase tracking-[0.04em] text-white">
         Ekosistem solusi
       </p>
@@ -130,7 +130,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
     </div>
 
     <!-- Gambar perangkat -->
-    <div class="min-w-0">
+    <div class="hero-media min-w-0">
       <img
         src="~/assets/images/hero-solusi.svg"
         alt="Dashboard SPKD di laptop, tablet, dan smartwatch"
@@ -146,7 +146,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
 
     <section id="arsitektur" class="scroll-mt-20 bg-white py-14 md:py-20 lg:py-[76px]">
       <div class="container-x flex flex-col gap-8">
-        <div class="max-w-[720px]">
+        <div v-reveal class="max-w-[720px]">
           <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand">Arsitektur modular</p>
           <h2 class="mt-4 text-[30px] font-normal leading-[1.12] text-navy md:text-[40px]">
             Pilih titik awal. Tumbuh tanpa memutus alur.
@@ -155,7 +155,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
             Lima domain solusi dapat diterapkan bertahap sesuai tingkat kematangan digital fasilitas kesehatan.
           </p>
         </div>
-        <nav aria-label="Navigasi solusi" class="flex flex-wrap gap-2.5">
+        <nav v-reveal="1" aria-label="Navigasi solusi" class="flex flex-wrap gap-2.5">
           <a
             v-for="solution in solutionLinks"
             :key="solution.id"
@@ -176,7 +176,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
       :class="index % 2 === 1 ? 'bg-[#effaf7]' : 'bg-[#f7faf9]'"
     >
       <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-10 lg:flex-row lg:gap-[74px]" :class="index % 2 === 1 ? 'lg:flex-row-reverse' : ''">
-        <div class="flex w-full shrink-0 flex-col items-start gap-6 lg:w-[min(42%,520px)]">
+        <div v-reveal class="flex w-full shrink-0 flex-col items-start gap-6 lg:w-[min(42%,520px)]">
           <div class="flex items-center gap-3">
             <span class="text-[13px] font-bold text-brand">{{ solution.number }}</span>
             <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#08756f]">{{ solution.eyebrow }}</span>
@@ -200,7 +200,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
           </NuxtLink>
         </div>
 
-        <div class="w-full min-w-0 flex-1">
+        <div v-reveal="2" class="w-full min-w-0 flex-1">
           <div
             class="flex h-[300px] w-full flex-col gap-4 rounded-[22px] p-3 shadow-[0px_24px_56px_0px_rgba(6,29,48,0.14)] sm:h-[360px] sm:rounded-[28px] sm:p-4 lg:h-[420px]"
             :class="solution.dark ? 'bg-[#061d30]' : 'bg-white'"
@@ -241,7 +241,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
                     <span
                       v-for="(height, barIndex) in chartBars"
                       :key="height + '-' + barIndex"
-                      class="min-w-0 flex-1 rounded-t-[4px]"
+                      class="bar-grow min-w-0 flex-1 rounded-t-[4px]"
                       :class="barIndex === 7 ? 'bg-brand' : solution.dark ? 'bg-[#315167]' : 'bg-[#d9e7e6]'"
                       :style="{ height: `${height}%` }"
                     />
@@ -256,7 +256,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
 
     <section id="tele-health" class="scroll-mt-20 bg-[#f7faf9] px-5 py-14 sm:px-8 md:py-20 lg:px-[72px] lg:py-[88px]">
       <div class="mx-auto flex max-w-[1440px] flex-col gap-10 lg:gap-[46px]">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div v-reveal class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div class="flex flex-col gap-[18px] lg:max-w-[630px]">
             <div class="flex items-center gap-3">
               <span class="text-[13px] font-bold text-brand">03</span>
@@ -272,15 +272,15 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
         </div>
 
         <div class="flex flex-col gap-5 md:flex-row">
-          <div class="relative min-h-[280px] flex-1 overflow-hidden rounded-[22px] bg-[#d7e8e7] sm:min-h-[360px] sm:rounded-[28px] lg:min-h-[500px]">
+          <div v-reveal class="group relative min-h-[280px] flex-1 overflow-hidden rounded-[22px] bg-[#d7e8e7] sm:min-h-[360px] sm:rounded-[28px] lg:min-h-[500px]">
             <img
               src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=85"
               alt="Tenaga kesehatan melakukan konsultasi klinis"
-              class="absolute inset-0 size-full object-cover"
+              class="img-zoom absolute inset-0 size-full object-cover"
               loading="lazy"
             />
           </div>
-          <div class="flex flex-col justify-between gap-8 rounded-[22px] bg-navy p-6 text-white sm:rounded-[28px] sm:p-8 md:w-[340px] md:gap-0 lg:min-h-[500px] lg:w-[420px] lg:p-9">
+          <div v-reveal="1" class="flex flex-col justify-between gap-8 rounded-[22px] bg-navy p-6 text-white sm:rounded-[28px] sm:p-8 md:w-[340px] md:gap-0 lg:min-h-[500px] lg:w-[420px] lg:p-9">
             <h3 class="text-2xl font-normal leading-[1.25] md:text-[27px]">
               Connected care, dari ruang ICU hingga jalan raya.
             </h3>
@@ -310,7 +310,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
       :class="index === 0 ? 'bg-[#effaf7]' : 'bg-[#f7faf9]'"
     >
       <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-10 lg:flex-row lg:gap-[74px]" :class="index === 0 ? 'lg:flex-row-reverse' : ''">
-        <div class="flex w-full shrink-0 flex-col items-start gap-6 lg:w-[min(42%,520px)]">
+        <div v-reveal class="flex w-full shrink-0 flex-col items-start gap-6 lg:w-[min(42%,520px)]">
           <div class="flex items-center gap-3">
             <span class="text-[13px] font-bold text-brand">{{ solution.number }}</span>
             <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#08756f]">{{ solution.eyebrow }}</span>
@@ -332,7 +332,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
           </NuxtLink>
         </div>
 
-        <div class="w-full min-w-0 flex-1">
+        <div v-reveal="2" class="w-full min-w-0 flex-1">
           <div class="flex h-[300px] w-full flex-col gap-4 rounded-[22px] p-3 shadow-[0px_24px_56px_0px_rgba(6,29,48,0.14)] sm:h-[360px] sm:rounded-[28px] sm:p-4 lg:h-[420px]" :class="solution.dark ? 'bg-[#061d30]' : 'bg-white'">
             <div class="flex h-[30px] shrink-0 items-center justify-between px-1">
               <div class="flex gap-1.5" aria-hidden="true"><span class="size-2 rounded-full bg-[#738893]" /><span class="size-2 rounded-full bg-[#738893]" /><span class="size-2 rounded-full bg-[#738893]" /></div>
@@ -356,7 +356,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
                 <div class="flex min-h-0 flex-1 flex-col rounded-lg p-3 sm:p-4" :class="solution.dark ? 'bg-[#123b54]' : 'bg-[#f7faf9]'">
                   <div class="flex items-start justify-between gap-2"><p class="text-[10px] sm:text-[11px]" :class="solution.dark ? 'text-white' : 'text-navy'">Ringkasan operasional</p><p class="text-[9px] sm:text-[10px]" :class="solution.dark ? 'text-[#ddf5f1]' : 'text-[#738893]'">Hari ini</p></div>
                   <div class="mt-auto flex h-[100px] items-end gap-1.5 pt-3 sm:h-[160px] sm:gap-2">
-                    <span v-for="(height, barIndex) in chartBars" :key="height + '-' + barIndex" class="min-w-0 flex-1 rounded-t-[4px]" :class="barIndex === 7 ? 'bg-brand' : solution.dark ? 'bg-[#315167]' : 'bg-[#d9e7e6]'" :style="{ height: `${height}%` }" />
+                    <span v-for="(height, barIndex) in chartBars" :key="height + '-' + barIndex" class="bar-grow min-w-0 flex-1 rounded-t-[4px]" :class="barIndex === 7 ? 'bg-brand' : solution.dark ? 'bg-[#315167]' : 'bg-[#d9e7e6]'" :style="{ height: `${height}%` }" />
                   </div>
                 </div>
               </div>
@@ -367,13 +367,13 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
     </section>
 
     <section class="bg-brand px-5 py-14 text-white sm:px-8 md:py-[74px] lg:px-[72px]">
-      <div class="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <div v-reveal class="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <h2 class="max-w-[760px] text-[30px] font-normal leading-[1.18] md:text-[42px]">
           Tentukan fondasi digital yang tepat untuk fase berikutnya.
         </h2>
         <NuxtLink
           to="/kontak"
-          class="inline-flex h-[54px] shrink-0 items-center justify-center gap-3 rounded-full border border-white bg-white px-6 text-sm text-navy transition hover:bg-[#ddf5f1]"
+          class="inline-flex h-[54px] shrink-0 items-center justify-center gap-3 rounded-full border border-white bg-white px-6 text-sm text-navy transition hover:-translate-y-0.5 hover:bg-[#ddf5f1]"
         >
           Diskusikan kebutuhan solusi
           <Icon name="lucide:arrow-up-right" class="size-[17px]" />

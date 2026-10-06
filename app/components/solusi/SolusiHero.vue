@@ -9,7 +9,7 @@ defineProps<{ data: Solusi['hero'] }>()
     <div
       class="container-x grid items-center gap-10 py-12 md:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20"
     >
-      <div>
+      <div class="hero-enter">
         <p class="text-[11px] font-bold uppercase tracking-wider">
           {{ data.eyebrow }}
         </p>
@@ -23,7 +23,7 @@ defineProps<{ data: Solusi['hero'] }>()
         </p>
         <NuxtLink
           to="/kontak"
-          class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
+          class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-brand/90"
         >
           {{ data.button }}
           <Icon name="lucide:arrow-up-right" class="size-4" />
@@ -36,7 +36,7 @@ defineProps<{ data: Solusi['hero'] }>()
         width="640"
         height="480"
         fetchpriority="high"
-        class="aspect-[4/3] w-full rounded-3xl object-cover"
+        class="hero-media aspect-[4/3] w-full rounded-3xl object-cover"
       />
     </div>
   </section>

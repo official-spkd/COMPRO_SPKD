@@ -7,7 +7,7 @@ defineProps<{ data: Solusi ['intro'] }>()
 <template>
   <section class="bg-white py-12 md:py-16 lg:py-20">
     <div class="container-x grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
-      <div>
+      <div v-reveal>
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
           {{ data.eyebrow }}
         </p>
@@ -18,7 +18,7 @@ defineProps<{ data: Solusi ['intro'] }>()
         </h2>
       </div>
 
-      <div>
+      <div v-reveal="1">
         <p class="text-sm leading-relaxed text-ink md:text-[15px]">
           {{ data.body }}
         </p>

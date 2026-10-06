@@ -83,7 +83,7 @@ onBeforeUnmount(() => clearInterval(timer))
   <section class="overflow-hidden bg-gradient-to-br from-[#e9f5f4] via-[#f3f9f9] to-white">
     <div class="grid items-center gap-10 py-12 md:py-16 lg:grid-cols-2 lg:gap-0 lg:py-[72px]">
       <div
-        class="px-5 sm:px-8 lg:pl-[72px] lg:pr-12"
+        class="hero-enter px-5 sm:px-8 lg:pl-[72px] lg:pr-12"
       >
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
           Ekosistem Digital Kesehatan Indonesia
@@ -101,7 +101,7 @@ onBeforeUnmount(() => clearInterval(timer))
         <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
           <NuxtLink
             to="/kontak"
-            class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-brand/90"
+            class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-brand/90"
           >
             Diskusikan Kebutuhan Faskes Anda
             <Icon name="lucide:arrow-up-right" class="size-4" />
@@ -118,7 +118,7 @@ onBeforeUnmount(() => clearInterval(timer))
 
       <!-- Carousel: mepet kanan di desktop, tetap ada padding di mobile -->
       <div
-        class="relative px-5 sm:px-8 lg:px-0"
+        class="hero-media relative px-5 sm:px-8 lg:px-0"
         role="region"
         aria-roledescription="carousel"
         aria-label="Galeri SPKD"

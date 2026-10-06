@@ -17,19 +17,35 @@ const isActive = (to: string) =>
 
 // tutup menu mobile tiap pindah halaman
 watch(() => route.fullPath, () => (open.value = false))
+
+// bayangan tipis setelah halaman di-scroll
+const scrolled = ref(false)
+const onScroll = () => (scrolled.value = window.scrollY > 8)
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+  <header
+    class="sticky top-0 z-50 border-b transition-[background-color,box-shadow,border-color] duration-300"
+    :class="
+      scrolled
+        ? 'border-transparent bg-white/90 shadow-[0_8px_30px_rgba(10,41,66,0.08)] backdrop-blur-md'
+        : 'border-gray-200 bg-white'
+    "
+  >
     <nav
       class="flex h-[64px] items-center justify-between px-5 sm:h-[72px] sm:px-8 lg:h-[91px] lg:px-[72px]"
     >
       <!-- Logo + nama -->
-      <NuxtLink to="/" class="flex items-center gap-3">
+      <NuxtLink to="/" class="group flex items-center gap-3">
         <img
           src="~/assets/images/logo-spkd.svg"
           alt="Logo SPKD"
-          class="h-12 w-auto"
+          class="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
         />
         <div class="hidden leading-none sm:block">
           <p class="text-2xl font-bold text-navy">SPKD</p>
@@ -44,21 +60,22 @@ watch(() => route.fullPath, () => (open.value = false))
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="block whitespace-nowrap border-b-2 pb-2.5 text-sm font-medium transition-colors xl:text-[15px]"
-            :class="
-              isActive(link.to)
-                ? 'border-brand text-brand'
-                : 'border-transparent text-slate-600 hover:text-brand'
-            "
+            class="group relative block whitespace-nowrap pb-2.5 text-sm font-medium transition-colors xl:text-[15px]"
+            :class="isActive(link.to) ? 'text-brand' : 'text-slate-600 hover:text-brand'"
           >
             {{ link.label }}
+            <span
+              class="absolute inset-x-0 bottom-0 h-0.5 origin-center rounded-full bg-brand transition-transform duration-300"
+              :class="isActive(link.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'"
+              aria-hidden="true"
+            />
           </NuxtLink>
         </li>
       </ul>
 
       <!-- Hamburger (mobile & tablet) -->
       <button
-        class="rounded-md p-2 text-navy hover:bg-gray-100 lg:hidden"
+        class="rounded-md p-2 text-navy transition-colors hover:bg-gray-100 lg:hidden"
         aria-label="Toggle menu"
         :aria-expanded="open"
         @click="open = !open"
@@ -73,11 +90,17 @@ watch(() => route.fullPath, () => (open.value = false))
     </nav>
 
     <!-- Menu mobile -->
-    <ul v-if="open" class="border-t border-gray-200 px-4 py-2 lg:hidden">
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="-translate-y-2 opacity-0"
+      leave-active-class="transition duration-150 ease-in"
+      leave-to-class="-translate-y-2 opacity-0"
+    >
+    <ul v-if="open" class="border-t border-gray-200 bg-white px-4 py-2 lg:hidden">
       <li v-for="link in links" :key="link.to">
         <NuxtLink
           :to="link.to"
-          class="block rounded-md px-3 py-2.5 text-sm font-medium"
+          class="block rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
           :class="
             isActive(link.to)
               ? 'bg-brand/10 text-brand'
@@ -88,5 +111,6 @@ watch(() => route.fullPath, () => (open.value = false))
         </NuxtLink>
       </li>
     </ul>
+    </Transition>
   </header>
 </template>

@@ -7,7 +7,7 @@ defineProps<{ data: Solusi['impact'] }>()
 <template>
   <section class="bg-white py-12 md:py-16 lg:py-20">
     <div class="container-x">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+      <div v-reveal class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
         <div>
           <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
             {{ data.eyebrow }}
@@ -25,9 +25,10 @@ defineProps<{ data: Solusi['impact'] }>()
 
       <ul class="mt-8 grid grid-cols-2 gap-4 md:mt-10 lg:grid-cols-4">
         <li
-          v-for="m in data.metrics"
+          v-for="(m, i) in data.metrics"
           :key="m.value"
-          class="rounded-xl border border-gray-200 p-4 md:p-5"
+          v-reveal="i"
+          class="hover-lift rounded-xl border border-gray-200 p-4 md:p-5"
         >
           <p class="font-display text-xl font-medium text-brand md:text-2xl">
             {{ m.value }}

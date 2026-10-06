@@ -7,23 +7,27 @@ defineProps<{ items: Article[] }>()
 <template>
   <section class="bg-[#f1f7f7] py-12 md:py-16 lg:py-20">
     <div class="container-x">
-      <p class="text-[11px] font-bold uppercase tracking-wider text-brand">Baca selanjutnya</p>
-      <h2 class="mt-3 text-3xl font-normal text-navy md:text-4xl">Wawasan terkait</h2>
+      <div v-reveal>
+        <p class="text-[11px] font-bold uppercase tracking-wider text-brand">Baca selanjutnya</p>
+        <h2 class="mt-3 text-3xl font-normal text-navy md:text-4xl">Wawasan terkait</h2>
+      </div>
 
       <ul class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <li v-for="a in items" :key="a.slug">
+        <li v-for="(a, i) in items" :key="a.slug" v-reveal="i">
           <NuxtLink
             :to="`/berita/${a.slug}`"
-            class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
+            class="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
           >
-            <img
-              :src="a.image.src"
-              :alt="a.image.alt"
-              width="600"
-              height="260"
-              loading="lazy"
-              class="h-44 w-full object-cover"
-            />
+            <div class="overflow-hidden">
+              <img
+                :src="a.image.src"
+                :alt="a.image.alt"
+                width="600"
+                height="260"
+                loading="lazy"
+                class="img-zoom h-44 w-full object-cover"
+              />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="flex items-center justify-between text-[10px]">
                 <span class="font-semibold uppercase tracking-wide text-brand">{{ a.category }}</span>

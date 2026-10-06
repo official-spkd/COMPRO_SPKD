@@ -1,7 +1,7 @@
 <template>
   <div class="contact-page contact-thank-you-page">
     <section class="contact-thank-you" aria-labelledby="thank-you-title">
-      <div class="contact-thank-you-content">
+      <div class="contact-thank-you-content hero-enter">
         <div class="contact-thank-you-icon" aria-hidden="true">
           <Icon name="lucide:check" class="size-9" />
         </div>

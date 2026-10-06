@@ -9,7 +9,7 @@ defineProps<{ article: Article }>()
   <article class="grid items-center gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
     <NuxtLink
       :to="`/berita/${article.slug}`"
-      class="block overflow-hidden rounded-3xl"
+      class="group block overflow-hidden rounded-3xl"
       tabindex="-1"
     >
       <img
@@ -18,7 +18,7 @@ defineProps<{ article: Article }>()
         width="720"
         height="480"
         fetchpriority="high"
-        class="aspect-[4/3] w-full object-cover lg:aspect-[3/2]"
+        class="img-zoom aspect-[4/3] w-full object-cover lg:aspect-[3/2]"
       />
     </NuxtLink>
 

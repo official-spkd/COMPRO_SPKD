@@ -7,14 +7,16 @@ defineProps<{ article: Article }>()
 
 <template>
   <NuxtLink :to="`/berita/${article.slug}`" class="group block">
-    <img
-      :src="article.image.src"
-      :alt="article.image.alt"
-      width="640"
-      height="400"
-      loading="lazy"
-      class="aspect-[16/10] w-full rounded-3xl object-cover"
-    />
+    <div class="overflow-hidden rounded-3xl">
+      <img
+        :src="article.image.src"
+        :alt="article.image.alt"
+        width="640"
+        height="400"
+        loading="lazy"
+        class="img-zoom aspect-[16/10] w-full object-cover"
+      />
+    </div>
     <div class="mt-5 flex items-center justify-between text-[11px]">
       <span class="font-bold text-brand">{{ article.category }}</span>
       <time :datetime="article.date" class="text-muted">{{ formatDate(article.date) }}</time>

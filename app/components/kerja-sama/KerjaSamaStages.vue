@@ -2,7 +2,7 @@
 const stages = [
   {
     number: '01',
-    title: 'Assessment Digital TransDCA-X',
+    title: 'Assessment Digital MedCredix',
     description: 'Pemetaan maturity, proses, data, infrastruktur, risiko, dan prioritas transformasi.',
   },
   {

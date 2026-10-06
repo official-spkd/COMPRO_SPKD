@@ -10,8 +10,6 @@ useSeoMeta({
 })
 
 const { articles } = await useNewsList()
-
-// Filter topik diambil dari kategori berita yang ada di CMS
 const topics = computed(() => [
   { label: 'Semua', value: 'semua' },
   ...[...new Set(articles.value.map((a) => a.topic as string).filter(Boolean))].map((t) => ({
@@ -40,7 +38,7 @@ const list = computed(() =>
     <section class="bg-[#f3f8f8]">
       <div class="container-x py-12 md:py-16 lg:py-[72px]">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
-          <div>
+          <div class="hero-enter">
             <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
               Berita &amp; wawasan
             </p>
@@ -50,19 +48,19 @@ const list = computed(() =>
               Pusat Informasi &amp; Publikasi Digital Kesehatan
             </h1>
           </div>
-          <p class="max-w-xs text-sm leading-relaxed text-ink lg:pb-2">
+          <p class="hero-media max-w-xs text-sm leading-relaxed text-ink lg:pb-2">
             Perspektif praktis mengenai teknologi, kebijakan, interoperabilitas, dan
             perubahan layanan kesehatan Indonesia.
           </p>
         </div>
 
-        <BeritaFeatured v-if="featured" :article="featured" class="mt-10 md:mt-14" />
+        <BeritaFeatured v-if="featured" :article="featured" class="hero-media mt-10 md:mt-14" />
       </div>
     </section>
 
     <section class="bg-white py-12 md:py-16 lg:py-20">
       <div class="container-x">
-        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div v-reveal class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <h2 class="text-2xl font-normal text-navy md:text-4xl">Terbaru dari lapangan</h2>
 
           <div role="group" aria-label="Filter topik" class="flex flex-wrap gap-2">
@@ -85,7 +83,7 @@ const list = computed(() =>
         </div>
 
         <ul v-if="list.length" class="mt-8 grid gap-x-6 gap-y-10 md:mt-10 md:grid-cols-2">
-          <li v-for="a in list" :key="a.slug">
+          <li v-for="(a, i) in list" :key="a.slug" v-reveal="i % 2">
             <BeritaCard :article="a" />
           </li>
         </ul>

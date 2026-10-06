@@ -9,7 +9,7 @@ const items = [
 <template>
   <section class="border-y border-gray-200 bg-white">
     <ul class="container-x grid gap-6 py-8 sm:grid-cols-3">
-      <li v-for="item in items" :key="item.no" class="flex items-center gap-3">
+      <li v-for="(item, i) in items" :key="item.no" v-reveal="i" class="flex items-center gap-3">
         <span class="text-base font-bold text-brand">{{ item.no }}</span>
         <div>
           <p class="text-xl text-navy">{{ item.title }}</p>

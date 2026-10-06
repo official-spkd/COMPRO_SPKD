@@ -2,7 +2,7 @@
   <div class="min-h-screen w-full bg-[#f7faf9] text-navy" style="font-family: 'Inter', sans-serif;">
     <section class="w-full px-5 pb-10 pt-12 sm:px-8 md:pt-16 lg:px-18 lg:pb-12 lg:pt-20.5">
       <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="flex flex-col gap-5 lg:max-w-212.5">
+        <div class="hero-enter flex flex-col gap-5 lg:max-w-212.5">
           <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
             Tentang PT SPKD
           </p>
@@ -14,18 +14,18 @@
           </h1>
         </div>
 
-        <p class="text-[15px] leading-[1.7] text-[#425c69] lg:max-w-85 md:text-[16px]">
+        <p class="hero-media text-[15px] leading-[1.7] text-[#425c69] lg:max-w-85 md:text-[16px]">
           Kami menghubungkan teknologi, pembiayaan, dan pendampingan agar fasilitas kesehatan dapat berubah
           secara menyeluruh, bukan sekadar mengganti sistem.
         </p>
       </div>
 
-      <div class="mt-8 flex w-full flex-col gap-4 sm:flex-row md:gap-5">
-        <div class="relative min-h-65 flex-1 overflow-hidden rounded-3xl bg-[#c5d8d5] sm:min-h-95 lg:min-h-135 sm:rounded-4xl lg:rounded-[40px]">
+      <div class="hero-media mt-8 flex w-full flex-col gap-4 sm:flex-row md:gap-5">
+        <div class="group relative min-h-65 flex-1 overflow-hidden rounded-3xl bg-[#c5d8d5] sm:min-h-95 lg:min-h-135 sm:rounded-4xl lg:rounded-[40px]">
           <img
             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
             alt="Tim perawatan kesehatan"
-            class="absolute inset-0 h-full w-full object-cover"
+            class="img-zoom absolute inset-0 h-full w-full object-cover"
           />
         </div>
 
@@ -51,7 +51,7 @@
 
     <section class="w-full bg-white px-5 py-14 sm:px-8 md:py-20 lg:px-18 lg:py-24">
       <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-21.5">
-        <div class="flex flex-col gap-4 lg:w-75 lg:shrink-0">
+        <div v-reveal class="flex flex-col gap-4 lg:w-75 lg:shrink-0">
           <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
             Profil perusahaan
           </p>
@@ -63,7 +63,7 @@
           </p>
         </div>
 
-        <div class="flex flex-1 flex-col gap-5">
+        <div v-reveal="1" class="flex flex-1 flex-col gap-5">
           <p
             class="text-[24px] font-normal leading-[1.28] text-navy sm:text-[28px] lg:text-[34px]"
             style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
@@ -88,7 +88,7 @@
     </section>
 
     <section class="w-full bg-[#f7faf9] px-5 py-14 sm:px-8 md:py-20 lg:px-18 lg:py-24">
-      <div class="flex max-w-180 flex-col gap-4">
+      <div v-reveal class="flex max-w-180 flex-col gap-4">
         <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
           Prinsip kerja
         </p>
@@ -102,9 +102,10 @@
 
       <div class="mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
         <div
-          v-for="principle in principles"
+          v-for="(principle, i) in principles"
           :key="principle.num"
-          class="flex min-h-50 flex-col gap-5 rounded-[18px] border border-[#d9e7e6] bg-white p-6 shadow-[0px_16px_40px_0px_rgba(10,41,66,0.08)] md:min-h-60 md:p-7.5"
+          v-reveal="i % 2"
+          class="hover-lift flex min-h-50 flex-col gap-5 rounded-[18px] border border-[#d9e7e6] bg-white p-6 shadow-[0px_16px_40px_0px_rgba(10,41,66,0.08)] md:min-h-60 md:p-7.5"
         >
           <p
             class="text-[14px] font-bold text-brand"
@@ -191,18 +192,23 @@
 
     <section class="flex w-full flex-col items-start justify-between gap-6 bg-[#f3feff] px-5 py-12 sm:flex-row sm:items-center sm:px-8 md:py-16 lg:px-18">
       <p
+        v-reveal
         class="max-w-190 text-[26px] font-normal leading-[1.18] text-navy sm:text-[32px] lg:text-[42px]"
         style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
       >
         Mari mulai dengan memahami kebutuhan fasilitas kesehatan Anda.
       </p>
 
-      <button class="flex shrink-0 items-center gap-3 rounded-full border border-brand bg-brand px-5 py-3 text-white transition-colors hover:bg-[#0b8a81] md:px-6 md:py-3.5">
+      <NuxtLink
+        v-reveal="1"
+        to="/kontak"
+        class="group flex shrink-0 items-center gap-3 rounded-full border border-brand bg-brand px-5 py-3 text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-[#0b8a81] md:px-6 md:py-3.5"
+      >
         <span class="text-[15px] md:text-[18px] lg:text-[20px]">Diskusikan Kebutuhan Anda</span>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
           <path d="M7 17L17 7M8 7H17V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </button>
+      </NuxtLink>
     </section>
   </div>
 </template>

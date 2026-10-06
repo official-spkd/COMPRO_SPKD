@@ -32,12 +32,12 @@ function validatePhone(event: Event) {
   <div class="contact-page">
     <section class="contact-hero">
       <div class="container-x contact-hero-grid">
-        <div class="contact-hero-copy">
+        <div class="contact-hero-copy hero-enter">
           <p class="contact-eyebrow">Mulai percakapan</p>
           <h1>Mulai Transformasi Digital Fasilitas Kesehatan Anda Sekarang</h1>
         </div>
 
-        <div class="contact-hero-note">
+        <div class="contact-hero-note hero-media">
           <p>
             Ceritakan tantangan yang sedang dihadapi. Tim kami akan membantu memetakan kebutuhan,
             kesiapan, dan langkah awal yang realistis.
@@ -51,7 +51,7 @@ function validatePhone(event: Event) {
     </section>
 
     <section id="kontak" class="container-x contact-workspace">
-      <form class="contact-form" @submit.prevent="handleSubmit">
+      <form v-reveal class="contact-form" @submit.prevent="handleSubmit">
         <div class="contact-form-heading">
           <h2>Permohonan diskusi</h2>
           <p>Kolom bertanda * wajib diisi agar kami dapat menghubungkan Anda dengan tim yang tepat.</p>
@@ -125,7 +125,7 @@ function validatePhone(event: Event) {
       </form>
 
       <aside class="contact-information" aria-label="Informasi kontak SPKD">
-        <section class="contact-company-card">
+        <section v-reveal="1" class="contact-company-card">
           <div class="contact-company-heading">
             <p>PT SPKD</p>
             <h2>PT Sistem Pelayanan Kesehatan dan Data</h2>
@@ -151,7 +151,7 @@ function validatePhone(event: Event) {
           </dl>
         </section>
 
-        <section class="contact-response-card">
+        <section v-reveal="2" class="contact-response-card">
           <Icon name="lucide:clock-3" class="size-7 text-brand" aria-hidden="true" />
           <h2>Apa yang terjadi setelah Anda mengirim?</h2>
           <p>

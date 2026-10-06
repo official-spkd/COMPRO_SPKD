@@ -147,11 +147,11 @@ export const solutions: Solusi[] = [
     intro: {
       eyebrow: 'Deskripsi Modul',
       heading: 'Kemudahan Pertukaran Data Medis Demi Keselamatan Pasien',
-      body: 'TransIRME memfasilitasi pertukaran rekam medis klinis secara andal antar unit kerja di dalam rumah sakit hingga ekosistem SATUSEHAT nasional. Data mengalir akurat dari laboratorium, radiologi, poliklinik, hingga aplikasi Personal Health Record (PHR) pasien.',
+      body: 'MedRecord memfasilitasi pertukaran rekam medis klinis secara andal antar unit kerja di dalam rumah sakit hingga ekosistem SATUSEHAT nasional. Data mengalir akurat dari laboratorium, radiologi, poliklinik, hingga aplikasi Personal Health Record (PHR) pasien.',
       tags: ['HL7 FHIR Interoperability', 'Personal Health Record (PHR)'],
     },
     features: {
-      eyebrow: 'Fitur TransIRME',
+      eyebrow: 'Fitur MedRecord',
       heading: 'Interoperabilitas & Akses Pasien Mandiri',
       items: [
         {
@@ -165,7 +165,7 @@ export const solutions: Solusi[] = [
           bullets: ['User-friendly Interface', 'Lacak Alergi & Imunisasi', 'Booking Jadwal Dokter'],
         },
         {
-          title: 'TransCPG-X & TransCPR-X',
+          title: 'MedPath',
           desc: 'Digitalisasi Clinical Pathway terintegrasi untuk panduan klinis dokter di samping tempat tidur serta pemantauan critical response pasien.',
           bullets: ['Clinical Pathway Otomatis', 'Sistem Keputusan Medis', 'Critical Response Alarm'],
         },
@@ -184,7 +184,7 @@ export const solutions: Solusi[] = [
     },
     flow: {
       eyebrow: 'Arsitektur Data',
-      heading: 'Bagaimana TransIRME Mengalirkan Data',
+      heading: 'Bagaimana MedRecord Mengalirkan Data',
       steps: [
         {
           title: 'Input Rekam Medis',
@@ -192,7 +192,7 @@ export const solutions: Solusi[] = [
         },
         {
           title: 'Konversi FHIR Engine',
-          desc: 'Mesin TransIRME menerjemahkan data mentah lokal menjadi sumber daya berstandar HL7 FHIR.',
+          desc: 'Mesin MedRecord menerjemahkan data mentah lokal menjadi sumber daya berstandar HL7 FHIR.',
         },
         {
           title: 'Sinkronisasi SATUSEHAT',
@@ -314,11 +314,11 @@ export const solutions: Solusi[] = [
     intro: {
       eyebrow: 'Solusi Kepatuhan Nasional',
       heading: 'Kurangi Penolakan Klaim JKN & Penuhi Regulasi Tanpa Hambatan',
-      body: 'TransECA-X merupakan modul integrasi khusus yang menjembatani Rekam Medis Elektronik (RME) faskes Anda dengan ekosistem kesehatan nasional. Dengan standarisasi data otomatis, sistem memvalidasi kelengkapan dokumen klaim BPJS serta sinkronisasi platform SATUSEHAT secara instan.',
+      body: 'MedClaim merupakan modul integrasi khusus yang menjembatani Rekam Medis Elektronik (RME) faskes Anda dengan ekosistem kesehatan nasional. Dengan standarisasi data otomatis, sistem memvalidasi kelengkapan dokumen klaim BPJS serta sinkronisasi platform SATUSEHAT secara instan.',
       tags: ['SATUSEHAT API v4', 'JKN E-Claim Analytics'],
     },
     features: {
-      eyebrow: 'Modul TransECA-X',
+      eyebrow: 'Modul MedClaim',
       heading: 'Fitur Integrasi & Validasi Otomatis',
       items: [
         {
@@ -327,7 +327,7 @@ export const solutions: Solusi[] = [
           bullets: ['FHIR Resource Mapping', 'Kepatuhan Regulasi Pemerintah'],
         },
         {
-          title: 'E-Claim Analytics (TransECA-X)',
+          title: 'E-Claim Analytics (MedClaim)',
           desc: 'Audit koding medis otomatis dengan algoritma validasi kelengkapan berkas guna mencegah penundaan pembayaran dari pihak BPJS.',
           bullets: ['Deteksi Potensi Unclaimed Billing', 'Integrasi vClaim BPJS Instan'],
         },
@@ -359,7 +359,7 @@ export const solutions: Solusi[] = [
         },
         {
           title: 'E-Claim Pre-Audit',
-          desc: 'Sistem TransECA-X memverifikasi kelengkapan berkas rujukan dan coding penyakit BPJS.',
+          desc: 'Sistem MedClaim memverifikasi kelengkapan berkas rujukan dan coding penyakit BPJS.',
         },
         {
           title: 'SATUSEHAT Push',
@@ -385,7 +385,7 @@ export const solutions: Solusi[] = [
     hero: {
       eyebrow: 'Logistik & Solusi Finansial',
       title: 'Efisiensi Pengadaan Obat & Penjaminan Arus Kas Rumah Sakit',
-      desc: 'Solusi cerdas tata kelola rantai pasok medis (TransLOG-X) yang terhubung langsung dengan distributor farmasi terpercaya dan program pendanaan talangan arus kas faskes.',
+      desc: 'Solusi cerdas tata kelola rantai pasok medis (MedLog) yang terhubung langsung dengan distributor farmasi terpercaya dan program pendanaan talangan arus kas faskes.',
       button: 'Diskusikan Kebutuhan Supply Chain',
       image: {
         src: '/images/beranda-berita.svg',
@@ -395,15 +395,15 @@ export const solutions: Solusi[] = [
     intro: {
       eyebrow: 'Solusi Manajemen Logistik',
       heading: 'Kendali Penuh Rantai Pasok Tanpa Risiko Kekosongan Obat',
-      body: 'Melalui TransLOG-X, kami menghadirkan transparansi logistik faskes dari level depo farmasi hingga jaringan prinsipal obat. Dipadukan dengan Supply Chain Financing (SCF), rumah sakit Anda dapat menjaga ketersediaan barang medis habis pakai (BMHP) sembari mengamankan arus kas operasional dari jatuh tempo tagihan vendor.',
+      body: 'Melalui MedLog, kami menghadirkan transparansi logistik faskes dari level depo farmasi hingga jaringan prinsipal obat. Dipadukan dengan Supply Chain Financing (SCF), rumah sakit Anda dapat menjaga ketersediaan barang medis habis pakai (BMHP) sembari mengamankan arus kas operasional dari jatuh tempo tagihan vendor.',
       tags: ['Lot & Expiry Tracker', 'Supply Chain Financing'],
     },
     features: {
-      eyebrow: 'Modul TransLOG-X & SCF',
+      eyebrow: 'Modul MedLog & SCF',
       heading: 'Layanan Logistik & Keuangan Cerdas',
       items: [
         {
-          title: 'TransLOG-X (e-Logistic)',
+          title: 'MedLog (e-Logistic)',
           desc: 'Sistem inventarisasi obat & BMHP multi-lokasi yang mendeteksi nomor lot, tanggal kedaluwarsa secara dinamis, dan analisis prediksi konsumsi.',
           bullets: ['Predictive stock analytics', 'Expiry Warning System'],
         },
@@ -436,7 +436,7 @@ export const solutions: Solusi[] = [
       steps: [
         {
           title: 'Deteksi Kebutuhan',
-          desc: 'Sistem TransLOG-X menganalisis batas aman minimum stok obat di gudang faskes.',
+          desc: 'Sistem MedLog menganalisis batas aman minimum stok obat di gudang faskes.',
         },
         {
           title: 'E-Procurement',

@@ -9,7 +9,7 @@ const solutions = [
   {
     no: '02',
     title: 'Interoperabilitas RME',
-    desc: 'Pertukaran data klinis berbasis HL7 FHIR melalui TransIRME dan Personal Health Record.',
+    desc: 'Pertukaran data klinis berbasis HL7 FHIR melalui MedRecord dan Personal Health Record.',
     slug: 'interoperabilitas-rme',
   },
   {
@@ -36,7 +36,7 @@ const solutions = [
 <template>
   <section class="bg-navy py-14 md:py-20 lg:py-24">
     <div class="container-x">
-      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div v-reveal class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div class="max-w-xl">
           <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-mint">
             <span class="size-1.5 rounded-full bg-mint" />
@@ -60,13 +60,13 @@ const solutions = [
       </div>
 
       <ul class="mt-10 md:mt-14">
-        <li v-for="s in solutions" :key="s.no" class="border-b border-gray-200 first:border-t-0">
+        <li v-for="(s, i) in solutions" :key="s.no" v-reveal="i" class="border-b border-gray-200 first:border-t-0">
           <NuxtLink
             :to="`/solusi/${s.slug}`"
             class="group grid grid-cols-[auto_1fr_auto] items-center gap-x-4 gap-y-1 py-5 md:grid-cols-[3rem_minmax(0,22rem)_1fr_auto] md:gap-x-6 md:py-6"
           >
             <span class="text-xs font-bold text-white">{{ s.no }}</span>
-            <h3 class="text-lg font-medium text-mint md:text-xl">{{ s.title }}</h3>
+            <h3 class="text-lg font-medium text-mint transition duration-300 group-hover:translate-x-1 group-hover:text-white md:text-xl">{{ s.title }}</h3>
             <Icon
               name="lucide:arrow-right"
               class="size-4 text-brand transition group-hover:translate-x-1 md:order-last"

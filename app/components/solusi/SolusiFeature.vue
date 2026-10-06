@@ -7,7 +7,7 @@ defineProps<{ data: Solusi['features'] }>()
 <template>
   <section class="bg-[#f3f9f9] py-12 md:py-16 lg:py-20">
     <div class="container-x">
-      <div class="text-center">
+      <div v-reveal class="text-center">
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
           {{ data.eyebrow }}
         </p>
@@ -23,7 +23,8 @@ defineProps<{ data: Solusi['features'] }>()
         <li
           v-for="(item, i) in data.items"
           :key="item.title"
-          class="rounded-2xl border border-gray-200 bg-white p-6 md:p-7"
+          v-reveal="i"
+          class="hover-lift rounded-2xl border border-gray-200 bg-white p-6 md:p-7"
         >
           <p class="text-xs font-bold text-brand">
             {{ String(i + 1).padStart(2, '0') }}

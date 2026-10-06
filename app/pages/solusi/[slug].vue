@@ -25,7 +25,7 @@ useSeoMeta({
   <div v-if="solution">
     <SolusiHero :data="solution.hero" />
     <SolusiIntro :data="solution.intro" />
-    <SolusiFeatures :data="solution.features" />
+    <SolusiFeature :data="solution.features" />
     <SolusiImpact :data="solution.impact" />
     <SolusiFlow :data="solution.flow" />
     <SolusiCta :data="solution.cta" />

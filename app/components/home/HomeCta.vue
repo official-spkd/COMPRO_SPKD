@@ -10,6 +10,7 @@ const perks = [
   <section class="bg-[#eaecfb] py-12 md:py-16">
     <div class="container-wide">
       <div
+        v-reveal
         class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-deep via-[#08476b] to-[#0a5c72] px-6 py-12 text-center text-white md:px-12 md:py-16"
       >
         <img

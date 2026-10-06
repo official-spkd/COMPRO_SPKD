@@ -26,6 +26,181 @@
   @media (min-width: 64rem) { padding-inline: 72px; }
 }
 
+/* ============================================================
+   Motion & interaksi global
+   Satu sistem animasi untuk semua halaman, memakai warna brand.
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgb(27 155 141 / 22%);
+  color: var(--color-navy);
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Muncul saat scroll — kelas dipasang oleh plugin v-reveal dan dilepas lagi setelah
+   selesai, supaya transisi hover milik elemen (mis. .hover-lift) tetap berlaku. */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Grafik batang tumbuh dari bawah saat bloknya terlihat */
+.reveal .bar-grow {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible .bar-grow {
+  transform: scaleY(1);
+}
+
+/* Animasi masuk untuk teks hero di setiap halaman */
+@keyframes spkd-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-enter > * {
+  animation: spkd-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter > :nth-child(2) { animation-delay: 90ms; }
+.hero-enter > :nth-child(3) { animation-delay: 180ms; }
+.hero-enter > :nth-child(4) { animation-delay: 270ms; }
+.hero-enter > :nth-child(n + 5) { animation-delay: 360ms; }
+
+@keyframes spkd-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-enter > .contact-thank-you-icon {
+  animation-name: spkd-pop;
+  animation-duration: 600ms;
+}
+
+.hero-media {
+  animation: spkd-enter 1000ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
+}
+
+/* Transisi antar halaman */
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Kartu: terangkat halus saat hover */
+.hover-lift {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand);
+  box-shadow: 0 16px 40px rgb(10 41 66 / 10%);
+}
+
+/* Gambar dalam kartu sedikit membesar saat kartu di-hover */
+.img-zoom {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.04);
+}
+
+/* Ikon panah di tombol/link bergerak sedikit saat hover */
+:where(a, button) .iconify:is(.i-lucide\:arrow-right, .i-lucide\:arrow-up-right) {
+  transition: transform 200ms ease;
+}
+
+:where(a, button):hover .iconify.i-lucide\:arrow-right {
+  transform: translateX(3px);
+}
+
+:where(a, button):hover .iconify.i-lucide\:arrow-up-right {
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-visible,
+  .reveal .bar-grow {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-enter > *,
+  .hero-media {
+    animation: none;
+  }
+
+  .page-enter-active,
+  .page-leave-active,
+  .hover-lift,
+  .img-zoom {
+    transition: none;
+  }
+
+  .hover-lift:hover,
+  .group:hover .img-zoom,
+  :where(a, button):hover .iconify {
+    transform: none;
+  }
+}
+
 .compliance-page {
   --color-brand: #0d9b91;
   --color-navy: #0a2942;
@@ -954,6 +1129,87 @@
   line-height: 1.5;
 }
 
+.partnership-eligibility {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: #f7faf9;
+}
+
+.partnership-eligibility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.partnership-eligibility-card {
+  border: 1px solid var(--partnership-line);
+  border-radius: 12px;
+  background: white;
+  padding: 26px;
+}
+
+.partnership-eligibility-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--partnership-mint);
+  color: var(--partnership-green);
+}
+
+.partnership-eligibility-card h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.partnership-eligibility-card p {
+  margin-top: 10px;
+  color: var(--partnership-ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.partnership-requirements {
+  border-radius: 16px;
+  background: var(--partnership-navy);
+  padding: 28px 32px;
+}
+
+.partnership-requirements h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.partnership-requirements ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 32px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partnership-requirements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--partnership-mint);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.partnership-requirements li .iconify,
+.partnership-requirements li svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--partnership-teal);
+}
+
 .partnership-mechanics {
   display: grid;
   grid-template-columns: minmax(320px, 500px) minmax(0, 1fr);
@@ -1118,7 +1374,8 @@
   }
 
   .partnership-metrics,
-  .partnership-stage-grid {
+  .partnership-stage-grid,
+  .partnership-eligibility-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1206,8 +1463,14 @@
   }
 
   .partnership-metrics,
-  .partnership-stage-grid {
+  .partnership-stage-grid,
+  .partnership-eligibility-grid,
+  .partnership-requirements ul {
     grid-template-columns: 1fr;
+  }
+
+  .partnership-requirements {
+    padding: 24px 20px;
   }
 
   .partnership-metric {
@@ -1250,8 +1513,102 @@
   }
 }
 
+/* Kerja sama: warna & interaksi */
+.partnership-mechanics,
+.partnership-requirements,
+.partnership-bank-badge {
+  background: linear-gradient(135deg, var(--partnership-navy) 0%, #08476b 60%, #0a5c72 100%);
+}
+
+.partnership-mechanics {
+  position: relative;
+}
+
+.partnership-mechanics::before {
+  position: absolute;
+  top: -160px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(127 240 214 / 16%) 0%, transparent 70%);
+  content: "";
+  pointer-events: none;
+}
+
+.partnership-mechanics > * {
+  position: relative;
+}
+
+.partnership-bank-badge {
+  box-shadow: 0 24px 56px rgb(6 29 48 / 14%);
+}
+
+.partnership-hero-image {
+  box-shadow: 0 24px 56px rgb(6 29 48 / 14%);
+}
+
+.partnership-metric,
+.partnership-stage,
+.partnership-eligibility-card {
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.partnership-metric:hover,
+.partnership-stage:hover,
+.partnership-eligibility-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--partnership-teal);
+  box-shadow: 0 16px 40px rgb(10 41 66 / 10%);
+}
+
+.partnership-eligibility-icon {
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.partnership-eligibility-card:hover .partnership-eligibility-icon {
+  background: var(--partnership-teal);
+  color: white;
+}
+
+.partnership-role {
+  border: 1px solid rgb(255 255 255 / 6%);
+  background: rgb(255 255 255 / 6%);
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.partnership-role:hover {
+  transform: translateX(4px);
+  border-color: rgb(127 240 214 / 30%);
+  background: rgb(255 255 255 / 10%);
+}
+
+.partnership-tags li {
+  border: 1px solid var(--partnership-line);
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.partnership-tags li:hover {
+  border-color: var(--partnership-teal);
+  background: var(--partnership-teal);
+  color: white;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .partnership-cta {
+  .partnership-cta,
+  .partnership-metric,
+  .partnership-stage,
+  .partnership-eligibility-card,
+  .partnership-eligibility-icon,
+  .partnership-role,
+  .partnership-tags li {
     transition: none;
+  }
+
+  .partnership-metric:hover,
+  .partnership-stage:hover,
+  .partnership-eligibility-card:hover,
+  .partnership-role:hover {
+    transform: none;
   }
 }

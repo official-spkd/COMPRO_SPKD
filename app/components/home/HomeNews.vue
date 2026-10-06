@@ -63,7 +63,7 @@ const posts = computed(() => {
 <template>
   <section class="bg-[#f6f6fd] py-14 md:py-20">
     <div class="container-wide">
-      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div v-reveal class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div class="max-w-xl">
           <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
             Wawasan &amp; Regulasi
@@ -86,19 +86,19 @@ const posts = computed(() => {
       </div>
 
       <ul class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <li v-for="p in posts" :key="p.slug">
+        <li v-for="(p, i) in posts" :key="p.slug" v-reveal="i">
           <NuxtLink
             :to="`/berita/${p.slug}`"
-            class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
+            class="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
           >
-            <div class="relative">
+            <div class="relative overflow-hidden">
               <img
                 :src="p.image.src"
                 :alt="p.image.alt"
                 width="600"
                 height="260"
                 loading="lazy"
-                class="h-44 w-full object-cover md:h-48"
+                class="img-zoom h-44 w-full object-cover md:h-48"
               />
               <span
                 class="absolute left-3 top-3 rounded-full bg-deep/90 px-2.5 py-1 text-[10px] font-bold text-white"

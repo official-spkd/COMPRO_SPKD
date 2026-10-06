@@ -4,11 +4,11 @@ const audiences = ['RS Umum', 'RS Khusus', 'RS Pendidikan', 'Rujukan Nasional']
 
 <template>
   <section class="partnership-section partnership-impact">
-    <div class="partnership-impact-metric">
+    <div v-reveal class="partnership-impact-metric">
       <strong>37</strong>
       <p>potensi RS Vertikal Kementerian Kesehatan</p>
     </div>
-    <div class="partnership-impact-copy">
+    <div v-reveal="1" class="partnership-impact-copy">
       <p class="partnership-eyebrow">Skala dampak</p>
       <h2>Satu kerangka kolaborasi, dapat direplikasi sesuai karakter tiap rumah sakit.</h2>
       <p>
