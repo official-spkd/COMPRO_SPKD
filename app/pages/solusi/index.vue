@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { getSolution } from '~/data/solusi'
+
+const keyOf = (slug: string) => getSolution(slug)?.solutionKey ?? ''
+
 useSeoMeta({
   title: 'Solusi Digital Kesehatan',
   description:
@@ -192,7 +196,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
             </li>
           </ul>
           <NuxtLink
-            :to="`/solusi/${solution.slug}`"
+            :to="{ path: `/solusi/${solution.slug}`, query: { solution_key: keyOf(solution.slug) } }"
             class="inline-flex h-[50px] items-center justify-center gap-3 rounded-full border border-brand px-5 text-sm font-medium text-[#08756f] transition hover:bg-brand hover:text-white"
           >
             Pelajari kapabilitas
@@ -291,7 +295,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
               </li>
             </ul>
             <NuxtLink
-              to="/solusi/tele-health-smart-emergency"
+              :to="{ path: '/solusi/tele-health-smart-emergency', query: { solution_key: keyOf('tele-health-smart-emergency') } }"
               class="inline-flex h-[50px] w-fit items-center justify-center gap-3 rounded-full border border-brand px-5 text-sm font-medium text-white transition hover:bg-brand"
             >
               Pelajari kapabilitas
@@ -324,7 +328,7 @@ const chartBars = [44, 68, 52, 88, 72, 94, 78, 100, 82]
             </li>
           </ul>
           <NuxtLink
-            :to="`/solusi/${solution.slug}`"
+            :to="{ path: `/solusi/${solution.slug}`, query: { solution_key: keyOf(solution.slug) } }"
             class="inline-flex h-[50px] items-center justify-center gap-3 rounded-full border border-brand px-5 text-sm font-medium text-[#08756f] transition hover:bg-brand hover:text-white"
           >
             Pelajari kapabilitas
