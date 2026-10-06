@@ -65,6 +65,15 @@ async function handleSubmit(event: Event) {
     turnstile_token: turnstileToken.value,
   }
 
+  // DEBUG: hapus sebelum production
+  console.log('[DEBUG] URL:', `${config.public.apiBase}/discussion-requests`)
+  console.log('[DEBUG] Payload:', JSON.stringify(
+    { ...payload, turnstile_token: payload.turnstile_token.slice(0, 20) + '...' },
+    null,
+    2,
+  ))
+  console.table({ ...payload, turnstile_token: payload.turnstile_token.slice(0, 20) + '...' })
+
   isSubmitting.value = true
   errorMessage.value = ''
 
