@@ -1,9 +1,94 @@
 <script setup lang="ts">
-async function handleSubmit() {
-  await navigateTo('/terimakasih')
+import { solutionKeys } from '~/data/solusi'
+
+const route = useRoute()
+const config = useRuntimeConfig()
+
+// solution_key otomatis dari query (?solution_key=...), divalidasi dulu
+const queryKey = String(route.query.solution_key ?? '')
+const selectedSolutionKey = solutionKeys.includes(queryKey) ? queryKey : ''
+
+const isSubmitting = ref(false)
+const errorMessage = ref('')
+const turnstileToken = ref('')
+const turnstileEl = ref<HTMLElement | null>(null)
+let turnstileWidgetId: string | undefined
+let turnstileTimer: ReturnType<typeof setInterval> | undefined
+
+useHead({
+  script: [
+    {
+      src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
+      async: true,
+      defer: true,
+    },
+  ],
+})
+
+onMounted(() => {
+  turnstileTimer = setInterval(() => {
+    const turnstile = (window as any).turnstile
+    if (!turnstile || !turnstileEl.value) return
+    clearInterval(turnstileTimer)
+    turnstileWidgetId = turnstile.render(turnstileEl.value, {
+      sitekey: config.public.turnstileSiteKey,
+      callback: (token: string) => (turnstileToken.value = token),
+      'expired-callback': () => (turnstileToken.value = ''),
+      'error-callback': () => (turnstileToken.value = ''),
+    })
+  }, 200)
+})
+
+onBeforeUnmount(() => {
+  if (turnstileTimer) clearInterval(turnstileTimer)
+})
+
+async function handleSubmit(event: Event) {
+  if (isSubmitting.value) return
+
+  if (!turnstileToken.value) {
+    errorMessage.value = 'Selesaikan verifikasi keamanan terlebih dahulu.'
+    return
+  }
+
+  const formData = new FormData(event.target as HTMLFormElement)
+  const field = (key: string) => String(formData.get(key) ?? '').trim()
+
+  const payload = {
+    solution_key: selectedSolutionKey,
+    name: field('name'),
+    email: field('email'),
+    phone: field('phone'),
+    role: field('role'),
+    institution: field('institution'),
+    message: field('message'),
+    turnstile_token: turnstileToken.value,
+  }
+
+  isSubmitting.value = true
+  errorMessage.value = ''
+
+  try {
+    await $fetch(`${config.public.apiBase}/discussion-requests`, {
+      method: 'POST',
+      body: payload,
+    })
+    await navigateTo('/terimakasih')
+  } catch (error: any) {
+    const errors = error?.data?.errors as Record<string, string[]> | undefined
+    console.error('Status:', error?.statusCode, 'Data:', JSON.stringify(error?.data, null, 2))
+    errorMessage.value = errors
+      ? Object.values(errors).flat().join(' ')
+      : error?.data?.message || 'Permohonan gagal dikirim. Silakan coba lagi.'
+    turnstileToken.value = ''
+    ;(window as any).turnstile?.reset(turnstileWidgetId)
+  } finally {
+    isSubmitting.value = false
+  }
 }
 
 function validatePhone(event: Event) {
+  
   const input = event.target as HTMLInputElement
   const value = input.value.trim()
 
@@ -111,13 +196,16 @@ function validatePhone(event: Event) {
           />
         </label>
 
+        <div ref="turnstileEl" />
+        <p v-if="errorMessage" role="alert" class="text-sm text-red-600">{{ errorMessage }}</p>
+
         <div class="contact-form-action">
           <p>
             Dengan mengirim formulir, Anda menyetujui pemrosesan data untuk keperluan tindak lanjut
             permohonan.
           </p>
-          <button type="submit">
-            Kirim Permohonan Diskusi
+          <button type="submit" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Mengirim...' : 'Kirim Permohonan Diskusi' }}
             <Icon name="lucide:arrow-right" class="size-[17px]" aria-hidden="true" />
           </button>
         </div>

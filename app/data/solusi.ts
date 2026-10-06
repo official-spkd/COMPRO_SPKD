@@ -467,3 +467,4 @@ export const solutions: Solusi[] = [
 ]
 
 export const getSolution = (slug: string) => solutions.find((s) => s.slug === slug)
+export const solutionKeys = solutions.map((s) => s.solutionKey)
