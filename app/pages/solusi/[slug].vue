@@ -28,6 +28,5 @@ useSeoMeta({
     <SolusiFeature :data="solution.features" />
     <SolusiImpact :data="solution.impact" />
     <SolusiFlow :data="solution.flow" />
-    <SolusiCta :data="solution.cta" />
-  </div>
+    <SolusiCta :data="solution.cta" :solution-key="solution.solutionKey" />  </div>
 </template>

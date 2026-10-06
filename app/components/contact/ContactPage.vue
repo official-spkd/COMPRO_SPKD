@@ -5,8 +5,11 @@ const route = useRoute()
 const config = useRuntimeConfig()
 
 // solution_key otomatis dari query (?solution_key=...), divalidasi dulu
-const queryKey = String(route.query.solution_key ?? '')
-const selectedSolutionKey = solutionKeys.includes(queryKey) ? queryKey : ''
+const selectedSolutionKey = computed(() => {
+  const raw = route.query.solution_key
+  const key = String(Array.isArray(raw) ? raw[0] : raw ?? '').trim()
+  return solutionKeys.includes(key) ? key : ''
+})
 
 const isSubmitting = ref(false)
 const errorMessage = ref('')
@@ -55,7 +58,7 @@ async function handleSubmit(event: Event) {
   const field = (key: string) => String(formData.get(key) ?? '').trim()
 
   const payload = {
-    solution_key: selectedSolutionKey,
+    solution_key: selectedSolutionKey.value,
     name: field('name'),
     email: field('email'),
     phone: field('phone'),
