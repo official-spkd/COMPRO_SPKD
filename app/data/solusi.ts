@@ -6,6 +6,7 @@ export interface SolusiFeature {
 
 export interface Solusi {
   slug: string
+  solutionKey: string 
   name: string // untuk <title> SEO
   hero: {
     eyebrow: string
@@ -47,6 +48,7 @@ export const solutions: Solusi[] = [
   // 01 SIMRS-ERP
   {
     slug: 'simrs-erp',
+    solutionKey: 'DEMO FOR SIMRS-ERP',
     name: 'SIMRS-ERP Terpadu',
     hero: {
       eyebrow: 'Solusi SIMRS-ERP Terpadu',
@@ -133,6 +135,7 @@ export const solutions: Solusi[] = [
   // 02 Interoperabilitas RME
   {
     slug: 'interoperabilitas-rme',
+    solutionKey: 'DEMO FOR MEDCLAIM',
     name: 'Interoperabilitas Rekam Medis Elektronik',
     hero: {
       eyebrow: 'Solusi Interoperabilitas RME',
@@ -213,6 +216,7 @@ export const solutions: Solusi[] = [
 
   // 03 Tele-Health & Smart Emergency
   {
+    solutionKey: 'DEMO FOR MEDCREDIX',
     slug: 'tele-health-smart-emergency',
     name: 'Tele-Health & Smart Emergency',
     hero: {
@@ -299,6 +303,7 @@ export const solutions: Solusi[] = [
 
   // 04 SATUSEHAT & BPJS
   {
+    solutionKey: 'DEMO FOR MEDPATH',
     slug: 'satusehat-bpjs',
     name: 'Integrasi SATUSEHAT & BPJS',
     hero: {
@@ -380,6 +385,7 @@ export const solutions: Solusi[] = [
 
   // 05 Cash & Supply Chain
   {
+    solutionKey: 'DEMO FOR MEDPAY',
     slug: 'cash-supply-chain',
     name: 'Cash & Supply Chain',
     hero: {
