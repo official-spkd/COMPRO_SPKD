@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { Solusi } from '~/data/solusi'
-
-defineProps<{ data: Solusi['hero'] }>()
+defineProps<{
+  data: Solusi['hero']
+  solutionKey: string
+}>()
 </script>
 
 <template>
@@ -22,8 +24,8 @@ defineProps<{ data: Solusi['hero'] }>()
           {{ data.desc }}
         </p>
         <NuxtLink
-          to="/kontak"
-          class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-brand/90"
+          :to="{ path: '/kontak', query: { solution_key: solutionKey } }"
+          class="mt-8 inline-flex ..."
         >
           {{ data.button }}
           <Icon name="lucide:arrow-up-right" class="size-4" />
