@@ -25,10 +25,11 @@ const links: NavLink[] = [
   {
     label: 'Kerja sama',
     to: '/kerja-sama',
-    children: [
-      { label: 'Skema kerja sama', to: '/kerja-sama' },
-      { label: 'Model kemitraan', to: '/kerja-sama#model' },
-    ],
+    // children: [
+    //   { label: 'Bidang kerja sama', to: '/kerja-sama#bidang' },
+    //   { label: 'Skema kerja sama', to: '/kerja-sama#skema' },
+    //   { label: 'Cara bermitra', to: '/kerja-sama#cara-bermitra' },
+    // ],
   },
   { label: 'Berita', to: '/berita' },
   { label: 'Kontak', to: '/kontak' },

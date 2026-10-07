@@ -2,16 +2,19 @@
 useSeoMeta({
   title: 'Kerja Sama',
   description:
-    'Skema kemitraan KSO dan KSM berkelanjutan untuk transformasi digital rumah sakit tanpa beban anggaran awal.',
+    'Bangun layanan kesehatan berbasis data bersama SPKD: implementasi produk, integrasi sistem, pembiayaan transformasi digital, dan pendampingan di lokasi.',
 })
 </script>
 
 <template>
-  <div class="partnership-page">
+  <div>
     <KerjaSamaHero />
-    <KerjaSamaModel />
-    <KerjaSamaEligib ility />
-    <KerjaSamaMechanics />
+    <KerjaSamaFields />
+    <KerjaSamaPartners />
+    <KerjaSamaRoles />
+    <KerjaSamaSchemes />
+    <KerjaSamaSteps />
     <KerjaSamaImpact />
+    <KerjaSamaSupport />
   </div>
 </template>
