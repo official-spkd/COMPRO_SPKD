@@ -11,6 +11,9 @@
   --color-ink: #3e566d;
   --color-muted: #6b7f93;
   --color-mint: #7ff0d6;
+  /* Warna gradasi branding SPKD (navy → teal) */
+  --color-gradient-from: #174670;
+  --color-gradient-to: #2196a4;
 }
 
 @utility container-x {
@@ -20,9 +23,27 @@
   @media (min-width: 64rem) { padding-inline: 72px; }
 }
 
-/* Tombol gradasi navy → teal (desain beranda) */
+/* Gradasi branding navy → teal sesuai Figma: warna awal tertahan sampai 34%, lalu memudar ke teal.
+   Sudut bisa disesuaikan per elemen lewat `[--gradient-angle:95deg]`. */
 @utility btn-gradient {
-  background-image: linear-gradient(92deg, #14285c 34.054%, #2198a5 100%);
+  background-image: linear-gradient(
+    var(--gradient-angle, 92deg),
+    var(--color-gradient-from) 34.054%,
+    var(--color-gradient-to) 100%
+  );
+}
+
+/* Teks bergradasi. Gradasi dihitung dari lebar seluruh elemen (seperti di Figma), jadi
+   pasang di elemen induknya dan beri warna solid pada bagian teks yang tidak bergradasi. */
+@utility text-gradient {
+  background-image: linear-gradient(
+    var(--gradient-angle, 92deg),
+    var(--color-gradient-from) 34.054%,
+    var(--color-gradient-to) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @utility container-wide {

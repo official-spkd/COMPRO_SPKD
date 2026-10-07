@@ -1,242 +1,295 @@
 <template>
-  <div class="min-h-screen w-full bg-[#f7faf9] text-navy" style="font-family: 'Inter', sans-serif;">
-    <section class="w-full px-5 pb-10 pt-12 sm:px-8 md:pt-16 lg:px-18 lg:pb-12 lg:pt-20.5">
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="hero-enter flex flex-col gap-5 lg:max-w-212.5">
-          <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
-            Tentang PT SPKD
-          </p>
-          <h1
-            class="text-[38px] font-normal leading-[1.05] text-navy sm:text-[48px] lg:text-[64px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            Mitra Strategis Transformasi Digital Kesehatan Indonesia
+  <div class="w-full bg-[#f8fafc] font-sans text-[#0b1f3a]">
+    <!-- Hero -->
+    <section class="bg-[#f8fafc]">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:items-start lg:gap-[30px] lg:px-[88px] lg:py-[88px]"
+      >
+        <div class="hero-enter flex w-full flex-col items-start gap-6 lg:w-[670px] lg:shrink-0">
+          <p class="text-[14px] font-bold text-[#2198a5]">Tentang SPKD</p>
+          <!-- Gradasi dipasang di h1 agar mengikuti lebar seluruh judul seperti di Figma -->
+          <h1 class="text-gradient w-full pb-[0.12em] text-[40px] font-bold leading-[0.97] sm:text-[52px] lg:text-[64px]">
+            <span class="text-[#0b1f3a]">Kami membangun teknologi agar data rumah sakit</span>
+            bekerja untuk pelayanan
           </h1>
+          <p class="text-[17px] leading-[1.65] text-[#566b7a] md:text-[20px]">
+            PT Sistem Pelayanan Kesehatan dan Data (SPKD) membantu rumah sakit dan fasilitas kesehatan
+            mengubah data pelayanan menjadi keputusan, klaim, dan pendapatan yang tepat.
+          </p>
+          <NuxtLink
+            to="/kontak"
+            class="btn-gradient inline-flex h-[54px] items-center rounded-full px-6 text-[15px] font-bold text-white transition hover:-translate-y-0.5 hover:brightness-110"
+          >
+            Jadwalkan demo
+          </NuxtLink>
         </div>
 
-        <p class="hero-media text-[15px] leading-[1.7] text-[#425c69] lg:max-w-85 md:text-[16px]">
-          Kami menghubungkan teknologi, pembiayaan, dan pendampingan agar fasilitas kesehatan dapat berubah
-          secara menyeluruh, bukan sekadar mengganti sistem.
-        </p>
-      </div>
-
-      <div class="hero-media mt-8 flex w-full flex-col gap-4 sm:flex-row md:gap-5">
-        <div class="group relative min-h-65 flex-1 overflow-hidden rounded-3xl bg-[#c5d8d5] sm:min-h-95 lg:min-h-135 sm:rounded-4xl lg:rounded-[40px]">
-          <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
-            alt="Tim perawatan kesehatan"
-            class="img-zoom absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-
-        <div class="flex min-h-55 flex-col justify-between rounded-3xl bg-navy p-6 text-white sm:min-h-95 sm:w-70 sm:rounded-4xl sm:p-7 lg:min-h-135 lg:w-95 lg:rounded-[40px] lg:p-9">
-          <p
-            class="text-[56px] font-medium leading-none text-brand lg:text-[68px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
+        <div class="hero-media group w-full min-w-0 flex-1">
+          <div
+            class="relative h-[300px] overflow-hidden rounded-tl-[80px] rounded-tr-[24px] rounded-br-[80px] rounded-bl-[24px] sm:h-[400px] lg:h-[486px] lg:rounded-tl-[140px] lg:rounded-tr-[32px] lg:rounded-br-[140px] lg:rounded-bl-[32px]"
           >
-            "
-          </p>
-          <p
-            class="text-[22px] font-normal leading-[1.32] text-white sm:text-[24px] lg:text-[29px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            No ERM, No Claim
-          </p>
-          <p class="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#ddf5f1] lg:text-[13px]">
-            Misi PT SPKD
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="w-full bg-white px-5 py-14 sm:px-8 md:py-20 lg:px-18 lg:py-24">
-      <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-21.5">
-        <div v-reveal class="flex flex-col gap-4 lg:w-75 lg:shrink-0">
-          <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
-            Profil perusahaan
-          </p>
-          <p
-            class="text-[24px] font-normal leading-tight text-navy md:text-[28px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            PT Sistem Pelayanan Kesehatan dan Data
-          </p>
-        </div>
-
-        <div v-reveal="1" class="flex flex-1 flex-col gap-5">
-          <p
-            class="text-[24px] font-normal leading-[1.28] text-navy sm:text-[28px] lg:text-[34px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            SPKD hadir untuk menjembatani kompleksitas transformasi digital dengan realitas operasional rumah
-            sakit di Indonesia.
-          </p>
-
-          <div class="flex flex-col gap-6 text-[15px] leading-[1.75] text-[#425c69] sm:flex-row sm:gap-8">
-            <p class="flex-1">
-              Kami membangun ekosistem solusi yang mencakup SIMRS–ERP, interoperabilitas rekam medis,
-              tele-health, integrasi klaim, dan rantai pasok. Seluruhnya dirancang agar data dapat mengalir
-              secara aman dan berguna.
-            </p>
-            <p class="flex-1">
-              Pendekatan kami menggabungkan assessment, implementasi, migrasi data, pelatihan, serta dukungan
-              berkelanjutan. Tim SPKD bekerja berdampingan dengan tenaga kesehatan dan manajemen rumah sakit.
-            </p>
+            <img
+              src="/images/tentang-kami/healthcare-scene.jpg"
+              alt="Tenaga kesehatan berdiskusi menggunakan data pasien"
+              class="img-zoom absolute inset-0 h-full w-full object-cover"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="w-full bg-[#f7faf9] px-5 py-14 sm:px-8 md:py-20 lg:px-18 lg:py-24">
-      <div v-reveal class="flex max-w-180 flex-col gap-4">
-        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08756f] md:text-[12px]">
-          Prinsip kerja
-        </p>
-        <p
-          class="text-[28px] font-normal leading-[1.12] text-navy sm:text-[34px] lg:text-[40px]"
-          style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-        >
-          Empat prinsip yang menjaga kami tetap dekat dengan kebutuhan layanan.
-        </p>
-      </div>
+    <!-- Cerita kami -->
+    <section class="bg-white">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
+        <div v-reveal class="flex max-w-[1000px] flex-col gap-[18px] font-bold">
+          <p class="text-[14px] text-[#2198a5]">Cerita kami</p>
+          <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
+            Ada celah antara data yang dicatat dan pendapatan yang diterima.
+          </h2>
+        </div>
 
-      <div class="mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
-        <div
-          v-for="(principle, i) in principles"
-          :key="principle.num"
-          v-reveal="i % 2"
-          class="hover-lift flex min-h-50 flex-col gap-5 rounded-[18px] border border-[#d9e7e6] bg-white p-6 shadow-[0px_16px_40px_0px_rgba(10,41,66,0.08)] md:min-h-60 md:p-7.5"
-        >
-          <p
-            class="text-[14px] font-bold text-brand"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            {{ principle.num }}
-          </p>
-          <p
-            class="text-[22px] font-normal text-navy md:text-[28px]"
-            style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-          >
-            {{ principle.title }}
-          </p>
-          <p class="text-[14px] leading-[1.65] text-[#425c69] md:text-[15px]">
-            {{ principle.desc }}
+        <div class="flex flex-col gap-6 font-inter text-[16px] leading-[1.75] text-[#425c69] md:flex-row md:gap-[34px]">
+          <p v-for="(paragraph, i) in story" :key="i" v-reveal="i" class="flex-1">
+            {{ paragraph }}
           </p>
         </div>
       </div>
     </section>
-    <!-- HOLD DULU -->
-    <!-- <section class="relative overflow-hidden bg-linear-to-b from-navy to-[#00355f] px-5 py-14 sm:px-8 md:py-20 lg:px-18 lg:py-24">
-      <div class="pointer-events-none absolute -left-25 -top-12.75 h-90 w-90 rounded-full bg-[rgba(15,74,121,0.35)] blur-[36px]" />
-      <div class="pointer-events-none absolute -right-25 top-24 h-90 w-90 rounded-full bg-[rgba(15,74,121,0.35)] blur-[36px]" />
 
-      <div class="relative flex flex-col items-center gap-12 lg:flex-row lg:gap-18">
-        <div class="flex flex-col gap-6 lg:w-117.5 lg:shrink-0">
-          <div class="flex flex-col gap-4">
-            <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#ddf5f1] md:text-[12px]">
-              Ekosistem kesehatan
-            </p>
-            <p
-              class="text-[28px] font-normal leading-[1.12] text-white sm:text-[34px] lg:text-[40px]"
-              style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-            >
-              Satu data, banyak peran, satu tujuan pelayanan.
-            </p>
-            <p class="text-[15px] leading-[1.65] text-[#ddf5f1] md:text-[16px]">
-              SPKD menyatukan pasien, tenaga kesehatan, fasilitas, pembayar, regulator, dan mitra pembiayaan
-              dalam alur data yang terjaga.
-            </p>
-          </div>
-
-          <div class="flex gap-8 md:gap-7.5">
-            <div v-for="metric in ecosystemMetrics" :key="metric.label" class="flex flex-col gap-2">
-              <p
-                class="text-[44px] font-normal leading-none text-white sm:text-[52px] lg:text-[56px]"
-                style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-              >
-                {{ metric.num }}
-              </p>
-              <p class="text-[13px] leading-[1.45] text-[#ddf5f1] md:text-[14px]">
-                {{ metric.label }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-1 items-center justify-center">
-          <div class="relative h-80 w-[320px] sm:h-95 sm:w-95 lg:h-115 lg:w-115">
-            <div class="absolute inset-0 rounded-full border border-[#5fb3b4]/50" />
-            <div class="absolute inset-[12%] rounded-full border border-[#5fb3b4]/40" />
-            <div class="absolute inset-[30%] rounded-full border border-[#5fb3b4]/30" />
-            <div class="absolute left-[34%] top-[34%] flex h-[32%] w-[32%] items-center justify-center rounded-[70px] bg-brand">
-              <p
-                class="text-[18px] font-bold text-white sm:text-[22px] lg:text-[26px]"
-                style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
-              >
-                SPKD
-              </p>
-            </div>
-
-            <div
-              v-for="node in ecosystemNodes"
-              :key="node.label"
-              class="absolute rounded-full bg-white px-3 py-2 text-[11px] whitespace-nowrap text-navy shadow-sm sm:text-[13px]"
-              :style="node.style"
-            >
-              {{ node.label }}
-            </div>
-          </div>
+    <!-- Visi -->
+    <section class="relative overflow-hidden bg-[#14285c]">
+      <img
+        src="/images/beranda/produk-mesh-1.svg"
+        alt=""
+        aria-hidden="true"
+        width="752"
+        height="668"
+        class="pointer-events-none absolute -bottom-[274px] -right-[271px] h-[668px] w-[752px] max-w-none select-none"
+      />
+      <div class="relative mx-auto max-w-[1440px] px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
+        <div v-reveal class="flex max-w-[1227px] flex-col gap-[18px] font-bold">
+          <p class="text-[20px] text-[#34d8eb]">Visi</p>
+          <h2 class="text-[28px] leading-[1.18] text-white sm:text-[36px] lg:text-[42px]">
+            Menjadi mitra teknologi kesehatan yang memastikan setiap data pelayanan di Indonesia tercatat
+            lengkap, aman, dan bermanfaat.
+          </h2>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <section class="flex w-full flex-col items-start justify-between gap-6 bg-[#f3feff] px-5 py-12 sm:flex-row sm:items-center sm:px-8 md:py-16 lg:px-18">
-      <p
-        v-reveal
-        class="max-w-190 text-[26px] font-normal leading-[1.18] text-navy sm:text-[32px] lg:text-[42px]"
-        style="font-family: 'DM Sans', sans-serif; font-variation-settings: 'opsz' 14;"
+    <!-- Misi -->
+    <section class="bg-white">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:gap-14 lg:px-[88px] lg:py-[88px]"
       >
-        Mari mulai dengan memahami kebutuhan fasilitas kesehatan Anda.
-      </p>
+        <h2
+          v-reveal
+          class="text-gradient [--gradient-angle:95deg] text-[34px] font-bold leading-[1.18] lg:w-[400px] lg:shrink-0 lg:text-[42px]"
+        >
+          Misi
+        </h2>
 
-      <NuxtLink
-        v-reveal="1"
-        to="/kontak"
-        class="group flex shrink-0 items-center gap-3 rounded-full border border-brand bg-brand px-5 py-3 text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-[#0b8a81] md:px-6 md:py-3.5"
+        <ul class="flex min-w-0 flex-1 flex-col gap-6">
+          <li
+            v-for="(item, i) in missions"
+            :key="item"
+            v-reveal="i"
+            class="border-b border-[#dae5e9] py-[22px] text-[19px] font-bold leading-[1.65] md:text-[23px]"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Prinsip kerja -->
+    <section class="bg-[#f8fafc]">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:gap-14 lg:px-[88px] lg:py-[88px]">
+        <div v-reveal class="flex flex-col gap-[18px] font-bold">
+          <p class="text-[14px] text-[#078b80]">Prinsip kerja</p>
+          <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
+            Empat hal yang kami pegang di setiap pekerjaan
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div
+            v-for="(principle, i) in principles"
+            :key="principle.title"
+            v-reveal="i % 2"
+            class="hover-lift rounded-[28px] border border-[#dae5e9] p-7"
+            :class="principle.highlight ? 'bg-[#e8f7f4]' : 'bg-[#f8fafc]'"
+          >
+            <h3 class="text-[20px] font-bold leading-[1.65] md:text-[24px]">{{ principle.title }}</h3>
+            <p class="text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">{{ principle.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tim kami -->
+    <section class="bg-white">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-6 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:gap-14 lg:px-[88px] lg:py-[88px]"
       >
-        <span class="text-[15px] md:text-[18px] lg:text-[20px]">Diskusikan Kebutuhan Anda</span>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-          <path d="M7 17L17 7M8 7H17V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </NuxtLink>
+        <div v-reveal class="flex flex-col gap-[18px] font-bold lg:w-[580px] lg:shrink-0">
+          <p class="text-[14px] text-[#078b80]">Tim kami</p>
+          <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
+            Gabungan pemahaman klinis, casemix, dan teknologi
+          </h2>
+        </div>
+        <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">
+          Tim SPKD terdiri dari [praktisi casemix, tenaga medis, pengembang perangkat lunak, dan analis data]
+          dengan pengalaman [x] tahun di lingkungan rumah sakit dan program JKN.
+        </p>
+      </div>
+    </section>
+
+    <!-- Peta produk -->
+    <section class="bg-white">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-14">
+          <div v-reveal class="flex flex-col gap-[18px] font-bold lg:w-[580px] lg:shrink-0">
+            <p class="text-[14px] text-[#078b80]">Peta produk</p>
+            <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
+              Lima produk, dibangun bertahap bersama rumah sakit
+            </h2>
+          </div>
+          <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">
+            Kami mengembangkan produk secara bertahap dan menguji setiap tahap bersama rumah sakit mitra. Rumah
+            sakit yang ikut uji coba awal ikut menentukan arah produk.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div
+            v-for="(product, i) in products"
+            :key="product.name"
+            v-reveal="i"
+            class="hover-lift flex flex-col items-start gap-[18px] rounded-[24px] border border-[#dae5e9] bg-[#f8fafc] p-5"
+          >
+            <h3 class="text-[23px] font-bold leading-[1.65]">{{ product.name }}</h3>
+            <span class="rounded-full bg-[#e8f7f4] px-3.5 py-[7px] text-[13px] font-semibold text-[#0e3b5c]">
+              ({{ product.category }})
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <NuxtLink
+            to="/kontak"
+            class="btn-gradient inline-flex h-[54px] items-center rounded-full px-6 text-[15px] font-bold text-white transition hover:-translate-y-0.5 hover:brightness-110"
+          >
+            Ikut uji coba awal
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keamanan data -->
+    <section class="btn-gradient [--gradient-angle:91deg]">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:gap-14 lg:px-[88px] lg:py-[88px]"
+      >
+        <div v-reveal class="flex flex-col gap-[18px] lg:w-[400px] lg:shrink-0">
+          <p class="text-[14px] font-bold text-[#34d8eb]">Keamanan data</p>
+          <h2 class="text-[30px] font-bold leading-[1.18] text-white sm:text-[36px] lg:text-[42px]">
+            Data pasien adalah amanah.
+          </h2>
+          <p class="text-[16px] leading-[1.65] text-[#b7cdd7] md:text-[18px]">
+            Prinsip yang kami terapkan di setiap produk:
+          </p>
+        </div>
+
+        <ul class="flex min-w-0 flex-1 flex-col gap-6">
+          <li
+            v-for="(item, i) in securityPoints"
+            :key="item"
+            v-reveal="i"
+            class="border-b border-white/13 py-[22px] text-[19px] font-bold leading-[1.65] text-white md:text-[23px]"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Ajakan penutup -->
+    <section class="bg-white">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col items-center gap-[26px] px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]"
+      >
+        <div v-reveal class="flex max-w-[1000px] flex-col items-center gap-[22px] text-center">
+          <h2
+            class="text-gradient [--gradient-angle:100deg] w-full text-[34px] font-bold leading-[1.18] sm:text-[40px] lg:text-[48px]"
+          >
+            Mari berkenalan lebih dekat
+          </h2>
+          <p class="text-[17px] leading-[1.65] text-[#1c6d89] md:text-[20px]">
+            Ceritakan tantangan rumah sakit Anda. Kami akan tunjukkan bagaimana SPKD bisa membantu.
+          </p>
+        </div>
+
+        <div v-reveal="1" class="flex flex-col items-center gap-4 sm:flex-row">
+          <NuxtLink
+            to="/kontak"
+            class="btn-gradient inline-flex h-[54px] items-center rounded-full px-6 text-[15px] font-bold text-white transition hover:-translate-y-0.5 hover:brightness-110"
+          >
+            Jadwalkan demo
+          </NuxtLink>
+          <NuxtLink
+            to="/kerja-sama"
+            class="inline-flex h-[54px] items-center rounded-full border border-[#1c6d89] px-6 text-[15px] font-bold text-[#1a5c7e] transition hover:bg-[#1c6d89]/5"
+          >
+            Lihat peluang kerja sama
+          </NuxtLink>
+        </div>
+      </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Tentang Kami',
+  description:
+    'PT Sistem Pelayanan Kesehatan dan Data (SPKD) membantu rumah sakit dan fasilitas kesehatan mengubah data pelayanan menjadi keputusan, klaim, dan pendapatan yang tepat.',
+})
+
+const story = [
+  'Rekam medis elektronik kini wajib bagi setiap fasilitas pelayanan kesehatan sesuai Permenkes Nomor 24 Tahun 2022. Banyak rumah sakit sudah memakai sistem, tetapi datanya belum sepenuhnya membantu klaim dan keputusan manajemen.',
+  'Koding yang kurang tepat, dokumen yang tidak lengkap, dan selisih tarif yang tidak tertagih membuat pendapatan bocor tanpa terlihat. Mutu layanan juga sulit dibuktikan karena datanya tersebar.',
+  'SPKD hadir untuk menutup celah itu: dari pencatatan di SIMRS, pemeriksaan klaim, sampai penagihan dan pemantauan mutu.',
+]
+
+const missions = [
+  'Membangun sistem yang memudahkan tenaga kesehatan mencatat dengan benar sejak awal.',
+  'Membantu rumah sakit mengklaim dan menagih sesuai haknya.',
+  'Menyediakan data yang bisa dipakai untuk meningkatkan mutu dan keselamatan pasien.',
+  'Bekerja sesuai regulasi dan menjaga data pasien sebagai amanah.',
+]
+
+// Kartu disusun selang-seling (hijau muda di kiri atas & kanan bawah) sesuai desain
 const principles = [
-  { num: '01', title: 'Inovatif', desc: 'Memecahkan kebutuhan layanan dengan teknologi yang relevan, terukur, dan mudah diadopsi.' },
-  { num: '02', title: 'Aman & Terpercaya', desc: 'Menempatkan privasi, keamanan data, dan kepatuhan sebagai fondasi setiap keputusan.' },
-  { num: '03', title: 'Terintegrasi', desc: 'Menyatukan alur klinis, operasional, keuangan, dan ekosistem kesehatan nasional.' },
-  { num: '04', title: 'Berorientasi Pelayanan', desc: 'Merancang dari pengalaman pasien, tenaga kesehatan, dan pengelola fasilitas kesehatan.' },
+  { title: 'Berangkat dari masalah nyata', desc: 'Setiap fitur dimulai dari alur kerja yang dijalani tim rumah sakit setiap hari.', highlight: true },
+  { title: 'Patuh regulasi sejak desain', desc: 'Standar SATUSEHAT, INA-CBG, dan ketentuan BPJS menjadi dasar rancangan, bukan tambahan.', highlight: false },
+  { title: 'Menjaga data sebagai amanah', desc: 'Akses dibatasi sesuai peran, setiap perubahan tercatat, dan data tetap milik rumah sakit.', highlight: false },
+  { title: 'Hadir sampai berhasil', desc: 'Kami mendampingi sampai sistem benar-benar dipakai, bukan berhenti saat go-live.', highlight: true },
 ]
 
-const ecosystemMetrics = [
-  { num: '68', label: 'modul operasional' },
-  { num: '37', label: 'Client' },
+const products = [
+  { name: 'SIMRS', category: 'Pelayanan dan Mutu' },
+  { name: 'MedClaim', category: 'Klaim dan Pendapatan' },
+  { name: 'MedCredix', category: 'Kredensial' },
+  { name: 'MedPath', category: 'Pelayanan dan Mutu' },
+  { name: 'MedPay', category: 'Klaim dan Pendapatan' },
 ]
 
-const ecosystemNodes = [
-  { label: 'Pasien', style: { top: '12%', left: '-2%' } },
-  { label: 'Faskes', style: { top: '8%', right: '5%' } },
-  { label: 'Kemenkes', style: { top: '44%', right: '-6%' } },
-  { label: 'BPJS', style: { bottom: '12%', right: '10%' } },
-  { label: 'Mitra', style: { bottom: '16%', left: '0%' } },
-]
-
-const footerColumns = [
-  { heading: 'Perusahaan', links: ['Tentang Kami', 'Kerja Sama', 'Berita'] },
-  { heading: 'Solusi', links: ['SIMRS & RCM', 'Interoperabilitas RME', 'Tele-Health', 'Supply Chain'] },
-  { heading: 'Kepercayaan', links: ['Kepatuhan & Standar', 'Keamanan Data', 'Kontak'] },
+const securityPoints = [
+  'Mengikuti Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi.',
+  'Hak akses berbasis peran dan jejak audit untuk setiap perubahan data.',
+  'Integrasi hanya membaca data yang diperlukan, bila memungkinkan.',
+  '[Enkripsi data saat dikirim dan disimpan: konfirmasi tim teknis]',
+  'Data tetap milik rumah sakit, termasuk saat kerja sama berakhir.',
 ]
 </script>
