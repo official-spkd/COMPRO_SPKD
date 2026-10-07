@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="720" height="670" viewBox="0 0 720 670" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse id="Cahaya teal" cx="360" cy="335" rx="360" ry="335" fill="url(#paint0_radial_0_39)"/>
+<defs>
+<radialGradient id="paint0_radial_0_39" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 335) scale(360 335)">
+<stop stop-color="#2198A5" stop-opacity="0.75"/>
+<stop offset="1" stop-color="#2198A5" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

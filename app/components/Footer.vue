@@ -3,28 +3,28 @@ const columns = [
   {
     heading: 'Perusahaan',
     links: [
-      { label: 'Tentang Kami', to: '/tentang-kami' },
-      { label: 'Kerja Sama', to: '/kerja-sama' },
+      { label: 'Tentang kami', to: '/tentang-kami' },
+      { label: 'Kerja sama', to: '/kerja-sama' },
       { label: 'Berita', to: '/berita' },
-    ],
-  },
-  {
-    heading: 'Solusi',
-    links: [
-      { label: 'SIMRS & RCM', to: '/solusi/simrs-erp' },
-      { label: 'Interoperabilitas RME', to: '/solusi/interoperabilitas-rme' },
-      { label: 'Tele-Health', to: '/solusi/tele-health-smart-emergency' },
-      { label: 'Supply Chain', to: '/solusi/cash-supply-chain' },
-    ],
-  },
-  {
-    heading: 'Kepercayaan',
-    links: [
-      { label: 'Kepatuhan & Standar', to: '/kepatuhan-standar' },
-      { label: 'Keamanan Data', to: '/keamanan-informasi' },
       { label: 'Kontak', to: '/kontak' },
     ],
   },
+  {
+    heading: 'Produk',
+    links: ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay'].map((label) => ({
+      label,
+      to: '/solusi',
+    })),
+  },
+]
+
+// Isi `href` dengan alamat akun resmi; ikon tanpa href tampil tanpa tautan
+const socials = [
+  { label: 'Instagram', icon: '/images/beranda/social-instagram.svg', href: '' },
+  { label: 'LinkedIn', icon: '/images/beranda/social-linkedin.svg', href: '' },
+  { label: 'Threads', icon: '/images/beranda/social-threads.svg', href: '' },
+  { label: 'X', icon: '/images/beranda/social-x.svg', href: '' },
+  { label: 'TikTok', icon: '/images/beranda/social-tiktok.svg', href: '' },
 ]
 
 const legal = [
@@ -35,62 +35,89 @@ const legal = [
 </script>
 
 <template>
-  <footer class="w-full bg-[#0a2942] px-5 pb-8 pt-12 sm:px-8 md:pt-16 lg:px-[72px] lg:pt-[72px]">
-    <div class="flex flex-col justify-between gap-10 pb-12 md:pb-[54px] lg:flex-row">
-      <div class="flex flex-col gap-5 lg:w-[420px]">
-        <NuxtLink to="/" class="flex items-center gap-3">
-          <div class="relative h-[38px] w-[43px] shrink-0 md:h-[45px] md:w-[51px]">
+  <footer class="w-full bg-[#11214b] font-inter">
+    <div
+      class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 pb-[34px] pt-12 sm:px-8 md:gap-[54px] lg:px-[72px] lg:pt-[72px]"
+    >
+      <div class="flex flex-col justify-between gap-10 lg:flex-row">
+        <div class="flex flex-col gap-5 lg:w-[420px]">
+          <NuxtLink to="/" class="flex items-center gap-[17px]">
             <img
-              src="~/assets/images/logo-spkd-white.svg"
+              src="/images/beranda/logo-spkd-footer.svg"
               alt="Logo SPKD"
-              class="absolute inset-0 h-full w-full object-contain"
+              width="73.6667"
+              height="65"
+              class="h-[52px] w-auto shrink-0 md:h-[65px]"
             />
-          </div>
-          <div class="flex flex-col leading-normal text-white">
-            <p class="text-[20px] font-black md:text-[24px]">PT SPKD</p>
-            <p class="text-[8px] font-semibold uppercase tracking-[0.15em] md:text-[9px]">
-              Sistem Pelayanan Kesehatan &amp; Data
-            </p>
-          </div>
-        </NuxtLink>
-
-        <p class="text-[14px] leading-[1.65] text-[#ddf5f1] md:text-[15px]">
-          Mitra teknologi kesehatan Indonesia untuk layanan yang terintegrasi, aman, efisien, dan
-          berorientasi pada pengalaman manusia.
-        </p>
-
-        <p class="text-[13px] leading-[1.7] text-white md:text-[14px]">
-          <a href="mailto:halo@spkd.co.id" class="hover:text-[#ddf5f1]">halo@spkd.co.id</a>
-          &nbsp;·&nbsp;
-          <a href="tel:+622150882026" class="hover:text-[#ddf5f1]">+62 21 5088 2026</a>
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-[68px]">
-        <nav v-for="col in columns" :key="col.heading" :aria-label="col.heading" class="flex flex-col gap-3">
-          <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0d9b91] md:text-[12px]">
-            {{ col.heading }}
-          </p>
-          <NuxtLink
-            v-for="link in col.links"
-            :key="link.to"
-            :to="link.to"
-            class="text-[13px] text-white transition-colors hover:text-[#ddf5f1] md:text-[14px]"
-          >
-            {{ link.label }}
+            <span class="flex flex-col whitespace-nowrap text-white">
+              <span class="font-dm-sans text-[28px] font-black md:text-[34.667px]">PT SPKD</span>
+              <span class="text-[11px] font-semibold uppercase md:text-[13px]">
+                Sistem Pelayanan Kesehatan &amp; Data
+              </span>
+            </span>
           </NuxtLink>
-        </nav>
-      </div>
-    </div>
+          <p class="text-xl font-medium leading-[1.65] text-[#2dd4bf] md:text-[22px]">No ERM, No Claim.</p>
+          <p class="text-sm leading-[1.65] text-[#ddf5f1] md:text-[15px]">
+            Kami membangun sistem dan analitik data agar rumah sakit dan fasilitas kesehatan di
+            Indonesia bisa mencatat dengan rapi, mengklaim dengan tepat, dan melayani lebih baik.
+          </p>
+        </div>
 
-    <div class="mb-6 h-px w-full bg-[#315167]" />
-    <div class="flex flex-col justify-between gap-3 text-[11px] text-[#738893] sm:flex-row md:text-[12px]">
-      <p>© 2026 PT Sistem Pelayanan Kesehatan dan Data. Seluruh hak dilindungi.</p>
-      <p class="flex flex-wrap gap-x-4 gap-y-1">
-        <NuxtLink v-for="l in legal" :key="l.to" :to="l.to" class="hover:text-white">
-          {{ l.label }}
-        </NuxtLink>
-      </p>
+        <div class="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-[150px_140px_1fr] lg:gap-x-[39px]">
+          <nav v-for="col in columns" :key="col.heading" :aria-label="col.heading" class="text-sm leading-[2.3]">
+            <p class="font-semibold text-white">{{ col.heading }}</p>
+            <NuxtLink
+              v-for="link in col.links"
+              :key="link.label"
+              :to="link.to"
+              class="block text-[#bdd1df] transition-colors hover:text-white"
+            >
+              {{ link.label }}
+            </NuxtLink>
+          </nav>
+
+          <div class="col-span-2 flex flex-col gap-4 sm:col-span-1 lg:w-[303px]">
+            <address class="text-sm not-italic leading-[2.1] text-[#bdd1df]">
+              <p class="font-semibold text-white">Hubungi kami</p>
+              <a href="mailto:officialspkd@gmail.com" class="block transition-colors hover:text-white">
+                officialspkd@gmail.com
+              </a>
+              <p>
+                Jl. Prof. DR. Soepomo No.323, RT.13/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta
+                Selatan, Daerah Khusus Ibukota Jakarta 12810
+              </p>
+              <p>Senin–Jumat, 08.00–17.00 WIB</p>
+              <p class="mt-[2.1em] text-xs">Instagram · LinkedIn · Threads · X · TikTok</p>
+            </address>
+            <ul class="flex gap-5">
+              <li v-for="s in socials" :key="s.label">
+                <component
+                  :is="s.href ? 'a' : 'span'"
+                  :href="s.href || undefined"
+                  :target="s.href ? '_blank' : undefined"
+                  :rel="s.href ? 'noopener noreferrer' : undefined"
+                  :aria-label="s.href ? s.label : undefined"
+                  class="block transition-opacity hover:opacity-80"
+                >
+                  <img :src="s.icon" :alt="s.href ? '' : s.label" width="18" height="18" />
+                </component>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px w-full bg-[#315167]" />
+
+      <div class="flex flex-col justify-between gap-3 text-xs text-[#738893] sm:flex-row">
+        <p>© 2026 PT Sistem Pelayanan Kesehatan dan Data. Seluruh hak dilindungi.</p>
+        <p class="flex flex-wrap items-center gap-x-2">
+          <template v-for="(l, i) in legal" :key="l.to">
+            <span v-if="i" aria-hidden="true">·</span>
+            <NuxtLink :to="l.to" class="transition-colors hover:text-white">{{ l.label }}</NuxtLink>
+          </template>
+        </p>
+      </div>
     </div>
   </footer>
 </template>

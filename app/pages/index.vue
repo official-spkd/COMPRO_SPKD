@@ -1,10 +1,10 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Transforming Healthcare Through Smart Data & Modern Technology',
+  title: 'No ERM, No Claim',
   description:
-    'Solusi ekosistem digital terintegrasi untuk mempercepat transformasi layanan, efisiensi operasional, dan kepatuhan regulasi fasilitas kesehatan.',
+    'Rekam medis elektronik yang lengkap adalah syarat klaim. SPKD membantu rumah sakit mencatat dengan rapi, mengklaim dengan tepat, dan menagih tanpa ada yang terlewat.',
   ogTitle: 'SPKD - Sistem Pelayanan Kesehatan & Data',
-  ogDescription: 'Ekosistem digital kesehatan Indonesia.',
+  ogDescription: 'Teknologi data untuk rumah sakit Indonesia.',
   ogImage: '/images/og-image.png',
   twitterCard: 'summary_large_image',
 })
@@ -12,9 +12,13 @@ useSeoMeta({
 
 <template>
   <div>
-    <HomeHero />
+    <HomeHeroFlow />
     <HomeValues />
+    <HomeChallenges />
     <HomeSolutions />
+    <HomeReadiness />
+    <HomeIntegration />
+    <HomeProcess />
     <HomeNews />
     <HomeCta />
   </div>

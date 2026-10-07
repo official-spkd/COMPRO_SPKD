@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="752" height="668" viewBox="0 0 752 668" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse id="Atmospheric mesh" cx="376" cy="334" rx="376" ry="334" fill="url(#paint0_radial_0_54)"/>
+<defs>
+<radialGradient id="paint0_radial_0_54" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(376 334) scale(376 334)">
+<stop stop-color="#34D8EB" stop-opacity="0.5"/>
+<stop offset="1" stop-color="#14B8A6" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
