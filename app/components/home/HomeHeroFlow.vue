@@ -7,7 +7,7 @@ const CYCLE = STEP * flow.length
 
 <template>
   <section
-    class="relative overflow-hidden bg-gradient-to-r from-[#101f47] via-[#14285c] via-[18.27%] to-[#0e3b5c]"
+    class="relative min-h-screen overflow-hidden bg-gradient-to-r from-[#101f47] via-[#14285c] via-[18.27%] to-[#0e3b5c]"
   >
     <img
       src="/images/beranda/hero-mesh.svg"
@@ -37,13 +37,13 @@ const CYCLE = STEP * flow.length
         <div class="flex flex-wrap gap-3">
           <NuxtLink
             to="/kontak"
-            class="btn-gradient inline-flex items-center rounded-xl px-6 py-4 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110"
+            class="btn-gradient inline-flex items-center rounded-full px-6 py-4 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110"
           >
             Jadwalkan demo gratis ↗
           </NuxtLink>
           <NuxtLink
             to="/solusi"
-            class="inline-flex items-center rounded-xl border border-white/31 bg-white/5 px-6 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10"
+            class="inline-flex items-center rounded-full border border-white/31 bg-white/5 px-6 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10"
           >
             Lihat produk kami ↗
           </NuxtLink>

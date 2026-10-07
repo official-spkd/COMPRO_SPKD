@@ -20,11 +20,11 @@ const columns = [
 
 // Isi `href` dengan alamat akun resmi; ikon tanpa href tampil tanpa tautan
 const socials = [
-  { label: 'Instagram', icon: '/images/beranda/social-instagram.svg', href: '' },
-  { label: 'LinkedIn', icon: '/images/beranda/social-linkedin.svg', href: '' },
-  { label: 'Threads', icon: '/images/beranda/social-threads.svg', href: '' },
-  { label: 'X', icon: '/images/beranda/social-x.svg', href: '' },
-  { label: 'TikTok', icon: '/images/beranda/social-tiktok.svg', href: '' },
+  { label: 'Instagram', icon: '/images/beranda/social-instagram.svg', href: 'https://www.instagram.com/spkd.official/' },
+  { label: 'LinkedIn', icon: '/images/beranda/social-linkedin.svg', href: 'https://www.linkedin.com/company/pt-spkd/about/' },
+  { label: 'Threads', icon: '/images/beranda/social-threads.svg', href: 'https://www.threads.com/@spkd.official' },
+  { label: 'X', icon: '/images/beranda/social-x.svg', href: 'https://x.com/SPKD_ID' },
+  { label: 'TikTok', icon: '/images/beranda/social-tiktok.svg', href: 'https://www.tiktok.com/@official.spkd' },
 ]
 
 const legal = [
@@ -79,15 +79,14 @@ const legal = [
           <div class="col-span-2 flex flex-col gap-4 sm:col-span-1 lg:w-[303px]">
             <address class="text-sm not-italic leading-[2.1] text-[#bdd1df]">
               <p class="font-semibold text-white">Hubungi kami</p>
-              <a href="mailto:officialspkd@gmail.com" class="block transition-colors hover:text-white">
-                officialspkd@gmail.com
-              </a>
+              <a href="mailto:officialspkd@gmail.com" class="block transition-colors hover:text-white"> officialspkd@gmail.com </a>
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-white">+62 812-3456-7890</a>
               <p>
                 Jl. Prof. DR. Soepomo No.323, RT.13/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta
                 Selatan, Daerah Khusus Ibukota Jakarta 12810
               </p>
-              <p>Senin–Jumat, 08.00–17.00 WIB</p>
-              <p class="mt-[2.1em] text-xs">Instagram · LinkedIn · Threads · X · TikTok</p>
+              <p>Senin – Jumat, 08.00–17.00 WIB</p>
+              <!-- <p class="mt-[2.1em] text-xs">Instagram · LinkedIn · Threads · X · TikTok</p> -->
             </address>
             <ul class="flex gap-5">
               <li v-for="s in socials" :key="s.label">

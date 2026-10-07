@@ -68,6 +68,12 @@ onMounted(() => {
   document.addEventListener('click', onClickOutside)
   document.addEventListener('keydown', onKeydown)
 })
+// Gelap (navy) di posisi atas, putih semi-transparan setelah di-scroll
+const linkClass = (active: boolean) =>
+  scrolled.value
+    ? active ? 'font-semibold text-[#2198a5]' : 'text-[#102b46] hover:text-[#2198a5]'
+    : active ? 'font-semibold text-[#34d8eb]' : 'text-white hover:text-[#34d8eb]'
+
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
   document.removeEventListener('click', onClickOutside)
@@ -77,17 +83,39 @@ onBeforeUnmount(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 border-b border-white/7 bg-[#11214b] font-inter transition-shadow duration-300"
-    :class="{ 'shadow-[0_8px_30px_rgba(0,18,37,0.35)]': scrolled }"
+    class="sticky top-0 z-50 border-b font-inter transition-[background-color,border-color,box-shadow] duration-300"
+    :class="
+      scrolled
+        ? 'border-[#dce7ed]/70 bg-white/80 shadow-[0_8px_30px_rgba(10,41,66,0.08)] backdrop-blur-md'
+        : 'border-white/7 bg-[#11214b]'
+    "
   >
     <nav
       ref="navRef"
       class="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 sm:h-[72px] sm:px-8 lg:h-24 lg:px-20"
     >
-      <NuxtLink to="/" class="font-bold text-white lg:w-[260px]" aria-label="SPKD — Beranda">
-        <span class="block text-2xl leading-[1.1] lg:text-[30px]">SPKD</span>
-        <span class="block text-[10px] font-normal leading-[1.1] text-[#bdd1df]">
-          Sistem Pelayanan Kesehatan &amp; Data
+      <!-- Logo putih di atas navy, logo berwarna setelah navbar jadi putih -->
+      <NuxtLink to="/" class="group flex items-center gap-3 lg:w-[260px]" aria-label="SPKD — Beranda">
+        <img
+          :src="scrolled ? '/images/beranda/logo-spkd-nav-light.svg' : '/images/beranda/logo-spkd-nav-dark.svg'"
+          alt="Logo SPKD"
+          width="51"
+          height="45"
+          class="h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-[45px]"
+        />
+        <span class="flex flex-col whitespace-nowrap transition-colors">
+          <span
+            class="font-dm-sans text-2xl"
+            :class="scrolled ? 'font-extrabold text-[#0a2942]' : 'font-black text-white'"
+          >
+            SPKD
+          </span>
+          <span
+            class="text-[9px] font-semibold"
+            :class="scrolled ? 'text-[#738893]' : 'uppercase text-white'"
+          >
+            Sistem Pelayanan Kesehatan &amp; Data
+          </span>
         </span>
       </NuxtLink>
 
@@ -104,7 +132,7 @@ onBeforeUnmount(() => {
             v-if="!link.children"
             :to="link.to"
             class="block whitespace-nowrap py-2 text-sm transition-colors"
-            :class="isActive(link.to) ? 'font-semibold text-[#34d8eb]' : 'text-white hover:text-[#34d8eb]'"
+            :class="linkClass(isActive(link.to))"
           >
             {{ link.label }}
           </NuxtLink>
@@ -112,7 +140,7 @@ onBeforeUnmount(() => {
             <button
               type="button"
               class="flex items-center gap-1 whitespace-nowrap py-2 text-sm transition-colors"
-              :class="isActive(link.to) ? 'font-semibold text-[#34d8eb]' : 'text-white hover:text-[#34d8eb]'"
+              :class="linkClass(isActive(link.to))"
               aria-haspopup="true"
               :aria-expanded="submenu === link.label"
               @click.stop="submenu = link.label"
@@ -132,13 +160,22 @@ onBeforeUnmount(() => {
             >
               <div v-if="submenu === link.label" class="absolute left-1/2 top-full -translate-x-1/2 pt-3">
                 <ul
-                  class="min-w-[260px] overflow-hidden rounded-2xl border border-white/13 bg-[#14285c] p-2 shadow-[0_24px_60px_rgba(0,18,37,0.35)]"
+                  class="min-w-[260px] overflow-hidden rounded-2xl border p-2"
+                  :class="
+                    scrolled
+                      ? 'border-[#dce7ed] bg-white shadow-[0_24px_60px_rgba(10,41,66,0.12)]'
+                      : 'border-white/13 bg-[#14285c] shadow-[0_24px_60px_rgba(0,18,37,0.35)]'
+                  "
                 >
                   <li v-for="child in link.children" :key="child.label">
                     <NuxtLink
                       :to="child.to"
-                      class="block rounded-xl px-4 py-2.5 text-sm text-[#bdd1df] transition-colors hover:bg-white/6 hover:text-white"
-                      :class="{ 'text-white': route.fullPath === child.to }"
+                      class="block rounded-xl px-4 py-2.5 text-sm transition-colors"
+                      :class="
+                        scrolled
+                          ? 'text-[#53677b] hover:bg-[#e9faf6] hover:text-[#102b46]'
+                          : 'text-[#bdd1df] hover:bg-white/6 hover:text-white'
+                      "
                     >
                       {{ child.label }}
                     </NuxtLink>
@@ -152,14 +189,15 @@ onBeforeUnmount(() => {
 
       <NuxtLink
         to="/kontak"
-        class="btn-gradient hidden items-center rounded-xl px-[22px] py-[17px] text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110 lg:inline-flex"
+        class="btn-gradient hidden items-center rounded-full px-[22px] py-[17px] text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110 lg:inline-flex"
       >
         Jadwalkan demo&nbsp;&nbsp;&nbsp;↗
       </NuxtLink>
 
       <!-- Hamburger (mobile & tablet) -->
       <button
-        class="rounded-md p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
+        class="rounded-md p-2 transition-colors lg:hidden"
+        :class="scrolled ? 'text-[#102b46] hover:bg-[#e9faf6]' : 'text-white hover:bg-white/10'"
         aria-label="Toggle menu"
         :aria-expanded="open"
         @click="open = !open"
@@ -180,14 +218,18 @@ onBeforeUnmount(() => {
       leave-active-class="transition duration-150 ease-in"
       leave-to-class="-translate-y-2 opacity-0"
     >
-      <div v-if="open" class="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/7 bg-[#11214b] px-4 pb-5 pt-2 lg:hidden">
+      <div
+        v-if="open"
+        class="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t px-4 pb-5 pt-2 lg:hidden"
+        :class="scrolled ? 'border-[#dce7ed]' : 'border-white/7 bg-[#11214b]'"
+      >
         <ul>
           <li v-for="link in links" :key="link.label">
             <NuxtLink
               v-if="!link.children"
               :to="link.to"
               class="block rounded-md px-3 py-2.5 text-sm transition-colors"
-              :class="isActive(link.to) ? 'bg-white/6 font-semibold text-[#34d8eb]' : 'text-white hover:bg-white/6'"
+              :class="linkClass(isActive(link.to))"
             >
               {{ link.label }}
             </NuxtLink>
@@ -195,7 +237,7 @@ onBeforeUnmount(() => {
               <button
                 type="button"
                 class="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm transition-colors"
-                :class="isActive(link.to) ? 'font-semibold text-[#34d8eb]' : 'text-white hover:bg-white/6'"
+                :class="linkClass(isActive(link.to))"
                 :aria-expanded="submenu === link.label"
                 @click="toggleSubmenu(link.label)"
               >
@@ -206,11 +248,20 @@ onBeforeUnmount(() => {
                   :class="{ 'rotate-180': submenu === link.label }"
                 />
               </button>
-              <ul v-if="submenu === link.label" class="mb-1 ml-3 border-l border-white/13 pl-2">
+              <ul
+                v-if="submenu === link.label"
+                class="mb-1 ml-3 border-l pl-2"
+                :class="scrolled ? 'border-[#dce7ed]' : 'border-white/13'"
+              >
                 <li v-for="child in link.children" :key="child.label">
                   <NuxtLink
                     :to="child.to"
-                    class="block rounded-md px-3 py-2 text-sm text-[#bdd1df] transition-colors hover:bg-white/6 hover:text-white"
+                    class="block rounded-md px-3 py-2 text-sm transition-colors"
+                    :class="
+                      scrolled
+                        ? 'text-[#53677b] hover:bg-[#e9faf6] hover:text-[#102b46]'
+                        : 'text-[#bdd1df] hover:bg-white/6 hover:text-white'
+                    "
                   >
                     {{ child.label }}
                   </NuxtLink>
@@ -221,7 +272,7 @@ onBeforeUnmount(() => {
         </ul>
         <NuxtLink
           to="/kontak"
-          class="btn-gradient mt-3 flex items-center justify-center rounded-xl px-[22px] py-4 text-[15px] font-semibold text-white"
+          class="btn-gradient mt-3 flex items-center justify-center rounded-full px-[22px] py-4 text-[15px] font-semibold text-white"
         >
           Jadwalkan demo&nbsp;&nbsp;&nbsp;↗
         </NuxtLink>
