@@ -107,7 +107,7 @@ onBeforeUnmount(() => clearInterval(timer))
             <Icon name="lucide:arrow-up-right" class="size-4" />
           </NuxtLink>
           <NuxtLink
-            to="/solusi"
+            to="/produk"
             class="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-brand"
           >
             Jelajahi solusi

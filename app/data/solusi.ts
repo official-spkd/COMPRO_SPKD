@@ -468,3 +468,66 @@ export const solutions: Solusi[] = [
 
 export const getSolution = (slug: string) => solutions.find((s) => s.slug === slug)
 export const solutionKeys = solutions.map((s) => s.solutionKey)
+// Ringkasan produk untuk halaman /produk, menu navigasi, footer, dan beranda
+export const productCategories = ['Pelayanan dan mutu', 'Klaim dan pendapatan', 'Kredensial'] as const
+export type ProductCategory = (typeof productCategories)[number]
+
+export interface Product {
+  name: string
+  solutionKey: string
+  category: ProductCategory
+  icon: string
+  tagline: string
+  stage: string
+}
+
+export const products: Product[] = [
+  {
+    name: 'SIMRS',
+    solutionKey: 'DEMOFORSIMRS-ERP',
+    category: 'Pelayanan dan mutu',
+    icon: 'lucide:hospital',
+    tagline: 'Satu sistem untuk seluruh pelayanan rumah sakit, dengan RME yang siap diklaim.',
+    stage: 'Tahap pengembangan',
+  },
+  {
+    name: 'MedPath',
+    solutionKey: 'DEMOFORMEDPATH',
+    category: 'Pelayanan dan mutu',
+    icon: 'lucide:activity',
+    tagline: 'Clinical pathway yang dijalankan, diukur, dan terus diperbaiki.',
+    stage: 'Tahap pengembangan',
+  },
+  {
+    name: 'MedClaim',
+    solutionKey: 'DEMOFORMEDCLAIM',
+    category: 'Klaim dan pendapatan',
+    icon: 'lucide:chart-line',
+    tagline: 'Temukan klaim berisiko rugi sebelum diajukan ke BPJS.',
+    stage: 'Tahap pengembangan',
+  },
+  {
+    name: 'MedPay',
+    solutionKey: 'DEMOFORMEDPAY',
+    category: 'Klaim dan pendapatan',
+    icon: 'lucide:wallet',
+    tagline: 'Selisih tarif ke asuransi kedua tertagih, bukan terlewat.',
+    stage: 'Tahap pengembangan',
+  },
+  {
+    name: 'MedCredix',
+    solutionKey: 'DEMOFORMEDCREDIX',
+    category: 'Kredensial',
+    icon: 'lucide:shield-check',
+    tagline: 'Ketahui kesiapan kredensial rumah sakit sebelum dinilai.',
+    stage: 'Tahap pengembangan',
+  },
+]
+
+export const productPath = (solutionKey: string) =>
+  `/produk/${solutions.find((s) => s.solutionKey === solutionKey)?.slug ?? ''}`
+
+export const productPathByName = (name: string) => {
+  const product = products.find((p) => p.name === name)
+  return product ? productPath(product.solutionKey) : '/produk'
+}

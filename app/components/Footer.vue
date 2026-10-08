@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { productPath, products } from '~/data/solusi'
+
 const columns = [
   {
     heading: 'Perusahaan',
@@ -11,10 +13,7 @@ const columns = [
   },
   {
     heading: 'Produk',
-    links: ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay'].map((label) => ({
-      label,
-      to: '/solusi',
-    })),
+    links: products.map((p) => ({ label: p.name, to: productPath(p.solutionKey) })),
   },
 ]
 

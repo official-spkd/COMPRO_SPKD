@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { productPathByName } from '~/data/solusi'
+
 const workflow = [
   'Mencatat · SIMRS',
   'Menjaga mutu · MedPath',
@@ -88,7 +90,7 @@ const products = [
       <ul class="grid w-full gap-x-5 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
         <li v-for="(p, i) in products" :key="p.name" v-reveal="i % 3">
           <NuxtLink
-            to="/solusi"
+            :to="productPathByName(p.name)"
             class="group flex h-full flex-col items-start gap-6 rounded-3xl border border-white/13 bg-white/5 p-8 transition hover:-translate-y-1 hover:border-accent-glow/50 hover:bg-white/8"
           >
             <img :src="p.icon" alt="" aria-hidden="true" width="24" height="24" />
@@ -109,7 +111,7 @@ const products = [
       </ul>
 
       <NuxtLink
-        to="/solusi"
+        to="/produk"
         class="inline-flex items-center rounded-xl border border-white/25 bg-white/3 px-[22px] py-[17px] text-[15px] font-semibold text-white transition hover:bg-white/10"
       >
         Lihat semua produk&nbsp;&nbsp;&nbsp;↗

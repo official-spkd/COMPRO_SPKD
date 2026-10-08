@@ -17,6 +17,11 @@ export default defineNuxtConfig({
       { name: 'Plus Jakarta Sans', provider: 'google', weights: [700] },
      ],
    },
+  // Halaman produk dipindah dari /solusi ke /produk; tautan lama tetap diarahkan
+  routeRules: {
+    '/solusi': { redirect: { to: '/produk', statusCode: 301 } },
+    '/solusi/**': { redirect: { to: '/produk/**', statusCode: 301 } },
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   modules: ['@nuxt/fonts','@nuxt/icon'],

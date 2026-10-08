@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { solutions } from '~/data/solusi'
+import { productPath, products } from '~/data/solusi'
 
 type NavLink = {
   label: string
@@ -13,26 +13,14 @@ const open = ref(false)
 const submenu = ref<string | null>(null)
 const route = useRoute()
 
-// Nama singkat produk di dropdown "Produk"
-const productLabels: Record<string, string> = {
-  'DEMOFORSIMRS-ERP': 'SIMRS',
-  DEMOFORMEDCLAIM: 'MedClaim',
-  DEMOFORMEDCREDIX: 'MedCredix',
-  DEMOFORMEDPATH: 'MedPath',
-  DEMOFORMEDPAY: 'MedPay',
-}
-
 const links: NavLink[] = [
   { label: 'Beranda', to: '/' },
   { label: 'Tentang kami', to: '/tentang-kami' },
   {
     label: 'Produk',
-    to: '/solusi',
-    children: solutions.map((s) => ({
-      label: productLabels[s.solutionKey] ?? s.name,
-      to: `/solusi/${s.slug}`,
-    })),
-    allLink: { label: 'Lihat semua produk', to: '/solusi' },
+    to: '/produk',
+    children: products.map((p) => ({ label: p.name, to: productPath(p.solutionKey) })),
+    allLink: { label: 'Lihat semua produk', to: '/produk' },
   },
   {
     label: 'Kerja sama',

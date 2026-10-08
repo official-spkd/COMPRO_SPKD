@@ -42,7 +42,7 @@ const CYCLE = STEP * flow.length
             Jadwalkan demo gratis ↗
           </NuxtLink>
           <NuxtLink
-            to="/solusi"
+            to="/produk"
             class="inline-flex items-center rounded-full border border-white/31 bg-white/5 px-6 py-4 text-[15px] font-semibold text-white transition hover:bg-white/10"
           >
             Lihat produk kami ↗

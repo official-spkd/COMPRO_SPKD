@@ -23,7 +23,7 @@
             <Icon name="lucide:arrow-left" class="size-4" aria-hidden="true" />
             Kembali ke Beranda
           </NuxtLink>
-          <NuxtLink to="/solusi" class="contact-thank-you-solutions">
+          <NuxtLink to="/produk" class="contact-thank-you-solutions">
             Lihat Solusi
             <Icon name="lucide:arrow-up-right" class="size-4" aria-hidden="true" />
           </NuxtLink>
