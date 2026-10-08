@@ -22,7 +22,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <div v-if="solution">
+  <SolusiSimrsErp v-if="solution?.slug === 'simrs-erp'" :solution-key="solution.solutionKey" />
+  <SolusiMedclaim v-else-if="solution?.solutionKey === 'DEMOFORMEDCLAIM'" :solution-key="solution.solutionKey" />
+  <SolusiMedcredix v-else-if="solution?.solutionKey === 'DEMOFORMEDCREDIX'" :solution-key="solution.solutionKey" />
+  <div v-else-if="solution">
     <SolusiHero :data="solution.hero" :solution-key="solution.solutionKey" />
     <SolusiIntro :data="solution.intro" />
     <SolusiFeature :data="solution.features" />

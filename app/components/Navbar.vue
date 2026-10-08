@@ -11,16 +11,25 @@ const open = ref(false)
 const submenu = ref<string | null>(null)
 const route = useRoute()
 
+// Nama singkat produk di dropdown "Produk"
+const productLabels: Record<string, string> = {
+  'DEMOFORSIMRS-ERP': 'SIMRS',
+  DEMOFORMEDCLAIM: 'MedClaim',
+  DEMOFORMEDCREDIX: 'MedCredix',
+  DEMOFORMEDPATH: 'MedPath',
+  DEMOFORMEDPAY: 'MedPay',
+}
+
 const links: NavLink[] = [
   { label: 'Beranda', to: '/' },
   { label: 'Tentang kami', to: '/tentang-kami' },
   {
     label: 'Produk',
     to: '/solusi',
-    children: [
-      ...solutions.map((s) => ({ label: s.name, to: `/solusi/${s.slug}` })),
-      { label: 'Lihat semua produk', to: '/solusi' },
-    ],
+    children: solutions.map((s) => ({
+      label: productLabels[s.solutionKey] ?? s.name,
+      to: `/solusi/${s.slug}`,
+    })),
   },
   {
     label: 'Kerja sama',
