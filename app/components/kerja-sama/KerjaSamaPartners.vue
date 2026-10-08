@@ -90,7 +90,7 @@ const onKeydown = (e: KeyboardEvent) => {
 <template>
   <section class="bg-white">
     <div class="mx-auto flex max-w-[1440px] flex-col gap-4 px-5 py-14 sm:px-8 lg:px-40 lg:py-[68px]">
-      <h2 v-reveal class="text-3xl font-bold leading-[1.25] text-[#0b1f3a] md:text-[39px]">
+      <h2 v-reveal class="text-3xl font-bold leading-[1.25] text-heading-dark md:text-[39px]">
         Siapa yang bisa bermitra
       </h2>
 
@@ -114,7 +114,7 @@ const onKeydown = (e: KeyboardEvent) => {
           :class="
             i === activeIndex
               ? 'bg-gradient-ocean border border-transparent text-white'
-              : 'border border-[#dce6ee] bg-white text-[#0b1f3a] hover:border-[#2196a4]'
+              : 'border border-line bg-white text-heading-dark hover:border-accent'
           "
           @click="activeIndex = i"
         >
@@ -126,7 +126,7 @@ const onKeydown = (e: KeyboardEvent) => {
         id="mitra-panel"
         role="tabpanel"
         :aria-labelledby="`mitra-tab-${active.key}`"
-        class="w-full max-w-[744px] rounded-[39px] rounded-bl-xl rounded-tr-xl border border-[#dce6ee] bg-white p-7 text-[15.9px] leading-[24.5px] text-[#0b1f3a] md:p-[39px]"
+        class="w-full max-w-[744px] rounded-[39px] rounded-bl-xl rounded-tr-xl border border-line bg-white p-7 text-[15.9px] leading-[24.5px] text-heading-dark md:p-[39px]"
       >
         <Transition
           mode="out-in"

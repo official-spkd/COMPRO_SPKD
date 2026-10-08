@@ -35,7 +35,7 @@ defineProps<{ article: Article }>()
       </p>
       <NuxtLink
         :to="`/berita/${article.slug}`"
-        class="mt-7 inline-flex items-center gap-2 rounded-full border border-brand px-5 py-3 text-sm font-medium text-[#08756f] transition hover:bg-brand hover:text-white"
+        class="mt-7 inline-flex items-center gap-2 rounded-full border border-brand px-5 py-3 text-sm font-medium text-brand-dark transition hover:bg-brand hover:text-white"
       >
         Baca artikel
         <Icon name="lucide:arrow-up-right" class="size-4" />

@@ -5,7 +5,7 @@ defineProps<{ items: Article[] }>()
 </script>
 
 <template>
-  <section class="bg-[#f1f7f7] py-12 md:py-16 lg:py-20">
+  <section class="bg-surface-teal py-12 md:py-16 lg:py-20">
     <div class="container-x">
       <div v-reveal>
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">Baca selanjutnya</p>

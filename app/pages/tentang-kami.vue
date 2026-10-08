@@ -1,18 +1,18 @@
 <template>
-  <div class="w-full bg-[#f8fafc] font-sans text-[#0b1f3a]">
+  <div class="w-full min-h-screen bg-surface font-sans text-heading-dark">
     <!-- Hero -->
-    <section class="bg-[#f8fafc]">
+    <section class="flex min-h-screen flex-col justify-center bg-surface">
       <div
-        class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:items-start lg:gap-[30px] lg:px-[88px] lg:py-[88px]"
+        class="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:items-start lg:gap-[30px] lg:px-[88px] lg:py-[88px]"
       >
         <div class="hero-enter flex w-full flex-col items-start gap-6 lg:w-[670px] lg:shrink-0">
-          <p class="text-[14px] font-bold text-[#2198a5]">Tentang SPKD</p>
+          <p class="text-[14px] font-bold text-accent">Tentang SPKD</p>
           <!-- Gradasi dipasang di h1 agar mengikuti lebar seluruh judul seperti di Figma -->
           <h1 class="text-gradient w-full pb-[0.12em] text-[40px] font-bold leading-[0.97] sm:text-[52px] lg:text-[64px]">
-            <span class="text-[#0b1f3a]">Kami membangun teknologi agar data rumah sakit</span>
+            <span class="text-heading-dark">Kami membangun teknologi agar data rumah sakit</span>
             bekerja untuk pelayanan
           </h1>
-          <p class="text-[17px] leading-[1.65] text-[#566b7a] md:text-[20px]">
+          <p class="text-[17px] leading-[1.65] text-body-alt md:text-[20px]">
             PT Sistem Pelayanan Kesehatan dan Data (SPKD) membantu rumah sakit dan fasilitas kesehatan
             mengubah data pelayanan menjadi keputusan, klaim, dan pendapatan yang tepat.
           </p>
@@ -42,13 +42,13 @@
     <section class="bg-white">
       <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
         <div v-reveal class="flex max-w-[1000px] flex-col gap-[18px] font-bold">
-          <p class="text-[14px] text-[#2198a5]">Cerita kami</p>
+          <p class="text-[14px] text-accent">Cerita kami</p>
           <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
             Ada celah antara data yang dicatat dan pendapatan yang diterima.
           </h2>
         </div>
 
-        <div class="flex flex-col gap-6 font-inter text-[16px] leading-[1.75] text-[#425c69] md:flex-row md:gap-[34px]">
+        <div class="flex flex-col gap-6 font-inter text-[16px] leading-[1.75] text-ink-cool md:flex-row md:gap-[34px]">
           <p v-for="(paragraph, i) in story" :key="i" v-reveal="i" class="flex-1">
             {{ paragraph }}
           </p>
@@ -57,7 +57,7 @@
     </section>
 
     <!-- Visi -->
-    <section class="relative overflow-hidden bg-[#14285c]">
+    <section class="relative overflow-hidden bg-night">
       <img
         src="/images/beranda/produk-mesh-1.svg"
         alt=""
@@ -68,7 +68,7 @@
       />
       <div class="relative mx-auto max-w-[1440px] px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
         <div v-reveal class="flex max-w-[1227px] flex-col gap-[18px] font-bold">
-          <p class="text-[20px] text-[#34d8eb]">Visi</p>
+          <p class="text-[20px] text-accent-glow">Visi</p>
           <h2 class="text-[28px] leading-[1.18] text-white sm:text-[36px] lg:text-[42px]">
             Menjadi mitra teknologi kesehatan yang memastikan setiap data pelayanan di Indonesia tercatat
             lengkap, aman, dan bermanfaat.
@@ -94,7 +94,7 @@
             v-for="(item, i) in missions"
             :key="item"
             v-reveal="i"
-            class="border-b border-[#dae5e9] py-[22px] text-[19px] font-bold leading-[1.65] md:text-[23px]"
+            class="border-b border-line-soft py-[22px] text-[19px] font-bold leading-[1.65] md:text-[23px]"
           >
             {{ item }}
           </li>
@@ -103,10 +103,10 @@
     </section>
 
     <!-- Prinsip kerja -->
-    <section class="bg-[#f8fafc]">
+    <section class="bg-surface">
       <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:gap-14 lg:px-[88px] lg:py-[88px]">
         <div v-reveal class="flex flex-col gap-[18px] font-bold">
-          <p class="text-[14px] text-[#078b80]">Prinsip kerja</p>
+          <p class="text-[14px] text-brand-strong">Prinsip kerja</p>
           <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
             Empat hal yang kami pegang di setiap pekerjaan
           </h2>
@@ -117,11 +117,11 @@
             v-for="(principle, i) in principles"
             :key="principle.title"
             v-reveal="i % 2"
-            class="hover-lift rounded-[28px] border border-[#dae5e9] p-7"
-            :class="principle.highlight ? 'bg-[#e8f7f4]' : 'bg-[#f8fafc]'"
+            class="hover-lift rounded-[28px] border border-line-soft p-7"
+            :class="principle.highlight ? 'bg-tint-aqua' : 'bg-surface'"
           >
             <h3 class="text-[20px] font-bold leading-[1.65] md:text-[24px]">{{ principle.title }}</h3>
-            <p class="text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">{{ principle.desc }}</p>
+            <p class="text-[16px] leading-[1.65] text-body-alt md:text-[18px]">{{ principle.desc }}</p>
           </div>
         </div>
       </div>
@@ -133,12 +133,12 @@
         class="mx-auto flex max-w-[1440px] flex-col gap-6 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:gap-14 lg:px-[88px] lg:py-[88px]"
       >
         <div v-reveal class="flex flex-col gap-[18px] font-bold lg:w-[580px] lg:shrink-0">
-          <p class="text-[14px] text-[#078b80]">Tim kami</p>
+          <p class="text-[14px] text-brand-strong">Tim kami</p>
           <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
             Gabungan pemahaman klinis, casemix, dan teknologi
           </h2>
         </div>
-        <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">
+        <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-body-alt md:text-[18px]">
           Tim SPKD terdiri dari [praktisi casemix, tenaga medis, pengembang perangkat lunak, dan analis data]
           dengan pengalaman [x] tahun di lingkungan rumah sakit dan program JKN.
         </p>
@@ -150,12 +150,12 @@
       <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-[88px]">
         <div class="flex flex-col gap-6 lg:flex-row lg:gap-14">
           <div v-reveal class="flex flex-col gap-[18px] font-bold lg:w-[580px] lg:shrink-0">
-            <p class="text-[14px] text-[#078b80]">Peta produk</p>
+            <p class="text-[14px] text-brand-strong">Peta produk</p>
             <h2 class="text-[30px] leading-[1.18] sm:text-[36px] lg:text-[42px]">
               Lima produk, dibangun bertahap bersama rumah sakit
             </h2>
           </div>
-          <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-[#566b7a] md:text-[18px]">
+          <p v-reveal="1" class="min-w-0 flex-1 text-[16px] leading-[1.65] text-body-alt md:text-[18px]">
             Kami mengembangkan produk secara bertahap dan menguji setiap tahap bersama rumah sakit mitra. Rumah
             sakit yang ikut uji coba awal ikut menentukan arah produk.
           </p>
@@ -166,10 +166,10 @@
             v-for="(product, i) in products"
             :key="product.name"
             v-reveal="i"
-            class="hover-lift flex flex-col items-start gap-[18px] rounded-[24px] border border-[#dae5e9] bg-[#f8fafc] p-5"
+            class="hover-lift flex flex-col items-start gap-[18px] rounded-[24px] border border-line-soft bg-surface p-5"
           >
             <h3 class="text-[23px] font-bold leading-[1.65]">{{ product.name }}</h3>
-            <span class="rounded-full bg-[#e8f7f4] px-3.5 py-[7px] text-[13px] font-semibold text-[#0e3b5c]">
+            <span class="rounded-full bg-tint-aqua px-3.5 py-[7px] text-[13px] font-semibold text-night-to">
               ({{ product.category }})
             </span>
           </div>
@@ -192,11 +192,11 @@
         class="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:gap-14 lg:px-[88px] lg:py-[88px]"
       >
         <div v-reveal class="flex flex-col gap-[18px] lg:w-[400px] lg:shrink-0">
-          <p class="text-[14px] font-bold text-[#34d8eb]">Keamanan data</p>
+          <p class="text-[14px] font-bold text-accent-glow">Keamanan data</p>
           <h2 class="text-[30px] font-bold leading-[1.18] text-white sm:text-[36px] lg:text-[42px]">
             Data pasien adalah amanah.
           </h2>
-          <p class="text-[16px] leading-[1.65] text-[#b7cdd7] md:text-[18px]">
+          <p class="text-[16px] leading-[1.65] text-mist md:text-[18px]">
             Prinsip yang kami terapkan di setiap produk:
           </p>
         </div>
@@ -225,7 +225,7 @@
           >
             Mari berkenalan lebih dekat
           </h2>
-          <p class="text-[17px] leading-[1.65] text-[#1c6d89] md:text-[20px]">
+          <p class="text-[17px] leading-[1.65] text-sea md:text-[20px]">
             Ceritakan tantangan rumah sakit Anda. Kami akan tunjukkan bagaimana SPKD bisa membantu.
           </p>
         </div>
@@ -239,7 +239,7 @@
           </NuxtLink>
           <NuxtLink
             to="/kerja-sama"
-            class="inline-flex h-[54px] items-center rounded-full border border-[#1c6d89] px-6 text-[15px] font-bold text-[#1a5c7e] transition hover:bg-[#1c6d89]/5"
+            class="inline-flex h-[54px] items-center rounded-full border border-sea px-6 text-[15px] font-bold text-sea-dark transition hover:bg-sea/5"
           >
             Lihat peluang kerja sama
           </NuxtLink>

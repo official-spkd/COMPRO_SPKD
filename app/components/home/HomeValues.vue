@@ -19,7 +19,7 @@ const values = [
 </script>
 
 <template>
-  <section class="bg-[#f8fafc] font-inter">
+  <section class="bg-surface font-inter">
     <ul
       class="mx-auto grid max-w-[1440px] gap-6 px-5 py-14 sm:px-8 md:grid-cols-3 lg:px-20 lg:py-[88px]"
     >
@@ -27,12 +27,12 @@ const values = [
         v-for="(v, i) in values"
         :key="v.title"
         v-reveal="i"
-        class="hover-lift flex flex-col items-start gap-6 rounded-3xl border border-[#dce7ed] bg-white p-8 shadow-[0_10px_32px_rgba(11,31,58,0.04)]"
+        class="hover-lift flex flex-col items-start gap-6 rounded-3xl border border-line bg-white p-8 shadow-card"
       >
         <img :src="v.icon" alt="" aria-hidden="true" width="24" height="24" />
         <div>
-          <h2 class="text-[23px] font-semibold leading-[1.3] text-[#102b46]">{{ v.title }}</h2>
-          <p class="mt-[1.6em] text-lg leading-[1.6] text-[#53677b]">{{ v.desc }}</p>
+          <h2 class="text-[23px] font-semibold leading-[1.3] text-heading">{{ v.title }}</h2>
+          <p class="mt-[1.6em] text-lg leading-[1.6] text-body">{{ v.desc }}</p>
         </div>
       </li>
     </ul>

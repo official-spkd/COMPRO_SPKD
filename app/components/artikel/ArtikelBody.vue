@@ -18,7 +18,7 @@ defineProps<{ article: Article }>()
 
       <!-- Isi artikel -->
       <div class="mx-auto w-full max-w-[720px] min-w-0">
-        <div class="rounded-xl bg-[#e4f6f3] p-5">
+        <div class="rounded-xl bg-tint-green p-5">
           <p class="text-[10px] font-bold uppercase tracking-wider text-brand">Ringkasan</p>
           <p class="mt-2 text-sm font-semibold leading-relaxed text-navy md:text-[15px]">
             {{ article.summary }}

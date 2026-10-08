@@ -3,12 +3,12 @@
     <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:p-[88px]">
       <div class="flex flex-col gap-6 lg:flex-row lg:gap-14">
         <div v-reveal class="flex flex-col gap-[18px] font-bold lg:w-[580px] lg:shrink-0">
-          <p class="text-sm text-[#078b80]">Pendampingan di lokasi</p>
-          <h2 class="text-3xl leading-[1.18] text-[#0b1f3a] md:text-[42px]">
+          <p class="text-sm text-brand-strong">Pendampingan di lokasi</p>
+          <h2 class="text-3xl leading-[1.18] text-heading-dark md:text-[42px]">
             Transformasi tidak berhenti saat sistem go-live.
           </h2>
         </div>
-        <p v-reveal="1" class="flex-1 text-lg leading-[1.65] text-[#566b7a]">
+        <p v-reveal="1" class="flex-1 text-lg leading-[1.65] text-body-alt">
           Tim kami hadir bersama pengguna untuk membantu adaptasi alur kerja, mengukur penggunaan,
           dan menutup kendala operasional sampai sistem benar-benar menjadi kebiasaan baru.
         </p>

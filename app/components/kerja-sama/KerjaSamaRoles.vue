@@ -12,7 +12,7 @@ const roles = [
 
 <template>
   <section
-    class="relative overflow-hidden bg-gradient-to-r from-[#101f47] via-[#14285c] via-[18.27%] to-[#0e3b5c]"
+    class="relative overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
   >
     <img
       src="/images/kerja-sama/cahaya-teal.svg"
@@ -30,7 +30,7 @@ const roles = [
         <h2 class="text-3xl font-bold leading-[1.15] text-white md:text-[40px]">
           Risiko dibagi. Hasil ditumbuhkan bersama.
         </h2>
-        <p class="text-lg leading-[30px] text-[#b7cdd7]">
+        <p class="text-lg leading-[30px] text-mist">
           Setiap pihak membawa perannya masing-masing. SPKD menyediakan teknologi, implementasi,
           tenaga ahli, dan pendampingan. Fasilitas kesehatan menetapkan prioritas dan komitmen
           perubahan. Mitra perbankan mendukung struktur pembiayaan.
@@ -41,7 +41,7 @@ const roles = [
       <div v-reveal="1" class="relative lg:w-[500px]">
         <span
           aria-hidden="true"
-          class="absolute bottom-0 left-[7px] top-2 w-px bg-[#8cb8cf]/35"
+          class="absolute bottom-0 left-[7px] top-2 w-px bg-haze-dark/35"
         />
         <ul>
           <li
@@ -58,7 +58,7 @@ const roles = [
               class="absolute left-px top-2"
             />
             <p class="font-bold text-white">{{ r.title }}</p>
-            <p class="text-[#b7cdd7]">{{ r.desc }}</p>
+            <p class="text-mist">{{ r.desc }}</p>
           </li>
         </ul>
       </div>

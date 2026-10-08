@@ -35,7 +35,7 @@ const legal = [
 </script>
 
 <template>
-  <footer class="w-full bg-[#11214b] font-inter">
+  <footer class="w-full bg-midnight font-inter">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 pb-[34px] pt-12 sm:px-8 md:gap-[54px] lg:px-[72px] lg:pt-[72px]"
     >
@@ -56,8 +56,8 @@ const legal = [
               </span>
             </span>
           </NuxtLink>
-          <p class="text-xl font-medium leading-[1.65] text-[#2dd4bf] md:text-[22px]">No ERM, No Claim.</p>
-          <p class="text-sm leading-[1.65] text-[#ddf5f1] md:text-[15px]">
+          <p class="text-xl font-medium leading-[1.65] text-turquoise md:text-[22px]">No ERM, No Claim.</p>
+          <p class="text-sm leading-[1.65] text-mint-pale md:text-[15px]">
             Kami membangun sistem dan analitik data agar rumah sakit dan fasilitas kesehatan di
             Indonesia bisa mencatat dengan rapi, mengklaim dengan tepat, dan melayani lebih baik.
           </p>
@@ -70,14 +70,14 @@ const legal = [
               v-for="link in col.links"
               :key="link.label"
               :to="link.to"
-              class="block text-[#bdd1df] transition-colors hover:text-white"
+              class="block text-fog transition-colors hover:text-white"
             >
               {{ link.label }}
             </NuxtLink>
           </nav>
 
           <div class="col-span-2 flex flex-col gap-4 sm:col-span-1 lg:w-[303px]">
-            <address class="text-sm not-italic leading-[2.1] text-[#bdd1df]">
+            <address class="text-sm not-italic leading-[2.1] text-fog">
               <p class="font-semibold text-white">Hubungi kami</p>
               <a href="mailto:officialspkd@gmail.com" class="block transition-colors hover:text-white"> officialspkd@gmail.com </a>
               <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-white">+62 812-3456-7890</a>
@@ -106,9 +106,9 @@ const legal = [
         </div>
       </div>
 
-      <div class="h-px w-full bg-[#315167]" />
+      <div class="h-px w-full bg-navy-line" />
 
-      <div class="flex flex-col justify-between gap-3 text-xs text-[#738893] sm:flex-row">
+      <div class="flex flex-col justify-between gap-3 text-xs text-steel sm:flex-row">
         <p>© 2026 PT Sistem Pelayanan Kesehatan dan Data. Seluruh hak dilindungi.</p>
         <p class="flex flex-wrap items-center gap-x-2">
           <template v-for="(l, i) in legal" :key="l.to">

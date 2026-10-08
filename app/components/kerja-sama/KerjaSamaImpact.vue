@@ -5,7 +5,7 @@
     >
       <div v-reveal class="flex flex-col gap-4 lg:w-[360px] lg:shrink-0">
         <p
-          class="bg-gradient-to-r from-white to-[#2dd4bf] bg-clip-text text-[120px] font-extrabold leading-none text-transparent md:text-[180px]"
+          class="bg-gradient-to-r from-white to-turquoise bg-clip-text text-[120px] font-extrabold leading-none text-transparent md:text-[180px]"
         >
           37
         </p>
@@ -15,15 +15,15 @@
       </div>
 
       <div v-reveal="1" class="flex flex-1 flex-col gap-5">
-        <p class="text-sm leading-[1.65] text-[#2dd4bf]">Skala dampak</p>
+        <p class="text-sm leading-[1.65] text-turquoise">Skala dampak</p>
         <h2 class="text-3xl font-bold leading-[1.18] text-white md:text-[42px]">
           Satu kerangka kerja sama, disesuaikan dengan karakter tiap rumah sakit.
         </h2>
-        <p class="text-lg leading-[1.65] text-[#b7cdd7]">
+        <p class="text-lg leading-[1.65] text-mist">
           Fondasi yang sama tidak berarti pelayanan yang seragam. Kebutuhan lokal, kelas rumah
           sakit, kesiapan SDM, dan prioritas klinis tetap menjadi dasar penerapan.
         </p>
-        <p class="text-sm leading-[1.65] text-[#2dd4bf]">
+        <p class="text-sm leading-[1.65] text-turquoise">
           RS umum · RS khusus · RS pendidikan · RS rujukan nasional
         </p>
       </div>

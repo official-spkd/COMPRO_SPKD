@@ -35,7 +35,7 @@ const list = computed(() =>
 
 <template>
   <div>
-    <section class="bg-[#f3f8f8]">
+    <section class="bg-surface-teal">
       <div class="container-x py-12 md:py-16 lg:py-[72px]">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div class="hero-enter">
@@ -73,7 +73,7 @@ const list = computed(() =>
               :class="
                 active === t.value
                   ? 'bg-navy text-white'
-                  : 'bg-[#eef5f5] text-navy hover:bg-[#dff0ee]'
+                  : 'bg-surface-gray text-navy hover:bg-surface-gray-strong'
               "
               @click="active = t.value"
             >

@@ -61,7 +61,7 @@ const governanceControls = [
 </script>
 
 <template>
-  <div class="compliance-page w-full overflow-hidden bg-[#f7faf9] text-navy">
+  <div class="compliance-page w-full overflow-hidden bg-surface-mint text-navy">
       <section id="hero" class="bg-white">
         <div class="container-x compliance-hero-grid grid items-center">
           <div class="max-w-[690px]">
@@ -80,10 +80,10 @@ const governanceControls = [
             role="img"
             aria-label="Ilustrasi keamanan data"
           >
-            <div class="absolute size-[min(78vw,340px)] rounded-full border border-[#7ff0d6]/25" />
-            <div class="absolute size-[min(53vw,230px)] rounded-full border border-[#7ff0d6]/40" />
-            <div class="absolute size-[min(34vw,145px)] rounded-full border border-[#7ff0d6]/20" />
-            <div class="compliance-security-core relative grid size-[126px] place-items-center rounded-full bg-brand shadow-[0_0_70px_rgba(127,240,214,0.18)]">
+            <div class="absolute size-[min(78vw,340px)] rounded-full border border-mint/25" />
+            <div class="absolute size-[min(53vw,230px)] rounded-full border border-mint/40" />
+            <div class="absolute size-[min(34vw,145px)] rounded-full border border-mint/20" />
+            <div class="compliance-security-core relative grid size-[126px] place-items-center rounded-full bg-brand shadow-glow-mint">
               <Icon name="lucide:shield-check" class="size-12 text-white" />
             </div>
             <p class="absolute bottom-8 m-0 text-[10px] font-bold uppercase tracking-[0.14em] text-mint sm:bottom-12 sm:text-xs">
@@ -113,7 +113,7 @@ const governanceControls = [
             <article
               v-for="item in regulations"
               :key="item.title"
-              class="grid grid-cols-[54px_minmax(0,1fr)_20px] items-start gap-3 border-b border-[#d9e7e6] py-5 first:pt-7 sm:grid-cols-[70px_minmax(0,1fr)_22px] sm:gap-6 sm:py-6 sm:first:pt-0"
+              class="grid grid-cols-[54px_minmax(0,1fr)_20px] items-start gap-3 border-b border-line-mint py-5 first:pt-7 sm:grid-cols-[70px_minmax(0,1fr)_22px] sm:gap-6 sm:py-6 sm:first:pt-0"
             >
               <p class="m-0 pt-0.5 text-sm font-bold text-brand sm:text-base">{{ item.year }}</p>
               <div class="grid min-w-0 gap-2">
@@ -148,7 +148,7 @@ const governanceControls = [
             <article
               v-for="(standard, index) in standards"
               :key="standard[0]"
-              class="grid grid-cols-[32px_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b border-[#315167] py-5 sm:grid-cols-[44px_260px_minmax(0,1fr)] sm:gap-x-[22px]"
+              class="grid grid-cols-[32px_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b border-navy-line py-5 sm:grid-cols-[44px_260px_minmax(0,1fr)] sm:gap-x-[22px]"
             >
               <p class="m-0 text-[11px] font-bold text-brand">{{ String(index + 1).padStart(2, '0') }}</p>
                 <h3 class="compliance-display-font m-0 text-xl font-normal text-white sm:text-[25px]">{{ standard[0] }}</h3>
@@ -160,7 +160,7 @@ const governanceControls = [
         </div>
       </section>
 
-      <section id="assurance" class="compliance-assurance scroll-mt-20 bg-[#effaf7]">
+      <section id="assurance" class="compliance-assurance scroll-mt-20 bg-tint-mint">
         <div class="container-x compliance-assurance-grid grid items-start">
           <img
             class="h-[min(78vw,460px)] w-full rounded-[28px] object-cover lg:h-[460px] lg:rounded-[40px]"
@@ -182,13 +182,13 @@ const governanceControls = [
             </div>
 
             <ul aria-label="Institusi terkait" class="flex flex-wrap gap-2.5">
-              <li class="rounded-full border border-[#d9e7e6] bg-white px-3.5 py-2 text-xs font-semibold text-[#08756f]">
+              <li class="rounded-full border border-line-mint bg-white px-3.5 py-2 text-xs font-semibold text-brand-dark">
                 Terdaftar Kominfo
               </li>
-              <li class="rounded-full border border-[#d9e7e6] bg-white px-3.5 py-2 text-xs font-semibold text-[#08756f]">
+              <li class="rounded-full border border-line-mint bg-white px-3.5 py-2 text-xs font-semibold text-brand-dark">
                 Administrasi Kemenkumham
               </li>
-              <li class="rounded-full border border-[#d9e7e6] bg-white px-3.5 py-2 text-xs font-semibold text-[#08756f]">
+              <li class="rounded-full border border-line-mint bg-white px-3.5 py-2 text-xs font-semibold text-brand-dark">
                 Koordinasi BSSN
               </li>
             </ul>

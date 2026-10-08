@@ -80,7 +80,7 @@ onBeforeUnmount(() => clearInterval(timer))
 </script>
 
 <template>
-  <section class="overflow-hidden bg-gradient-to-br from-[#e9f5f4] via-[#f3f9f9] to-white">
+  <section class="overflow-hidden bg-gradient-to-br from-tint-sea via-surface-teal to-white">
     <div class="grid items-center gap-10 py-12 md:py-16 lg:grid-cols-2 lg:gap-0 lg:py-[72px]">
       <div
         class="hero-enter px-5 sm:px-8 lg:pl-[72px] lg:pr-12"

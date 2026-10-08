@@ -13,7 +13,7 @@ const rows = [
         title: 'Undercoding dan episode merugi',
         desc: 'Biaya pelayanan lebih besar dari tarif INA-CBG, tetapi penyebabnya baru diketahui setelah klaim dibayar.',
         product: 'MedClaim',
-        class: 'bg-[#d8ecef] rounded-tr-[34px] lg:h-[176px]',
+        class: 'bg-tint-blue rounded-tr-[34px] lg:h-[176px]',
       },
     ],
   },
@@ -24,7 +24,7 @@ const rows = [
         title: 'Selisih tarif yang terlewat',
         desc: 'Pasien dengan asuransi kedua punya hak tagih selisih, tetapi prosesnya manual dan mudah melewati batas waktu.',
         product: 'MedPay',
-        class: 'bg-[#d8ecef] rounded-bl-[34px] lg:h-[212px]',
+        class: 'bg-tint-blue rounded-bl-[34px] lg:h-[212px]',
       },
       {
         title: 'Mutu dan kredensial sulit dibuktikan',
@@ -38,16 +38,16 @@ const rows = [
 </script>
 
 <template>
-  <section class="bg-[#f8fafc] font-inter">
+  <section class="bg-surface font-inter">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-5 px-5 pb-14 pt-2 sm:px-8 lg:px-[170px] lg:pb-[88px] lg:pt-[30px]"
     >
       <div v-reveal class="flex flex-col gap-3">
-        <p class="text-[13px] font-semibold leading-[1.6] text-[#2198a5]">Tantangan rumah sakit</p>
-        <h2 class="text-[28px] font-bold leading-[1.1] tracking-[-0.8px] text-[#102b46] md:text-4xl">
+        <p class="text-[13px] font-semibold leading-[1.6] text-accent">Tantangan rumah sakit</p>
+        <h2 class="text-[28px] font-bold leading-[1.1] tracking-[-0.8px] text-heading md:text-4xl">
           Klaim tertunda sering berawal dari data yang belum lengkap.
         </h2>
-        <p class="mt-1 text-sm leading-[22px] text-[#53677b]">
+        <p class="mt-1 text-sm leading-[22px] text-body">
           Kami membangun SPKD dari masalah yang dihadapi rumah sakit setiap hari.
         </p>
       </div>
@@ -58,14 +58,14 @@ const rows = [
             v-for="(card, i) in row.cards"
             :key="card.title"
             v-reveal="i"
-            class="flex flex-col gap-3.5 rounded-[10px] border border-[#d2dfec] p-6"
+            class="flex flex-col gap-3.5 rounded-[10px] border border-line-blue p-6"
             :class="card.class"
           >
             <div class="flex flex-col gap-1.5">
-              <h3 class="text-base font-bold leading-[21px] text-[#0b213b]">{{ card.title }}</h3>
-              <p class="text-sm leading-[22px] text-[#365575]">{{ card.desc }}</p>
+              <h3 class="text-base font-bold leading-[21px] text-heading-dark">{{ card.title }}</h3>
+              <p class="text-sm leading-[22px] text-body-blue">{{ card.desc }}</p>
             </div>
-            <p class="text-[13px] font-semibold text-[#2198a5]">Dijawab oleh {{ card.product }}</p>
+            <p class="text-[13px] font-semibold text-accent">Dijawab oleh {{ card.product }}</p>
           </article>
         </div>
       </div>

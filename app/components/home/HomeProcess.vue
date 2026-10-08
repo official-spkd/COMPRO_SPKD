@@ -12,15 +12,15 @@ const steps = [
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:px-20 lg:py-[88px]"
     >
-      <p class="text-[13px] font-semibold leading-[1.6] text-[#087f79]">Cara kerja</p>
+      <p class="text-[13px] font-semibold leading-[1.6] text-brand-deep">Cara kerja</p>
 
       <div class="flex flex-col gap-12 lg:flex-row lg:gap-20">
         <div v-reveal class="flex flex-col items-start gap-10 lg:w-[596px] lg:shrink-0 lg:gap-20">
           <div class="flex flex-col gap-6">
-            <h2 class="text-3xl font-semibold leading-[1.2] text-[#102b46] md:text-[40px]">
+            <h2 class="text-3xl font-semibold leading-[1.2] text-heading md:text-[40px]">
               Mulai kecil, buktikan hasilnya, lalu kembangkan.
             </h2>
-            <p class="text-lg leading-[1.65] text-[#53677b]">
+            <p class="text-lg leading-[1.65] text-body">
               Kami tahu memilih mitra teknologi baru butuh keyakinan. Karena itu, setiap kerja sama
               dimulai dengan langkah yang terukur.
             </p>
@@ -35,10 +35,10 @@ const steps = [
 
         <ol class="flex flex-1 flex-col gap-10">
           <li v-for="(step, i) in steps" :key="step.title" v-reveal="i">
-            <h3 class="text-[23px] font-semibold leading-[1.6] text-[#102b46]">
-              <span class="mr-4 text-[#087f79]">{{ String(i + 1).padStart(2, '0') }}</span>{{ step.title }}
+            <h3 class="text-[23px] font-semibold leading-[1.6] text-heading">
+              <span class="mr-4 text-brand-deep">{{ String(i + 1).padStart(2, '0') }}</span>{{ step.title }}
             </h3>
-            <p class="text-lg leading-[1.6] text-[#53677b]">{{ step.desc }}</p>
+            <p class="text-lg leading-[1.6] text-body">{{ step.desc }}</p>
           </li>
         </ol>
       </div>

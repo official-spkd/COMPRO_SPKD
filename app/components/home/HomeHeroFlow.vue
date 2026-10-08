@@ -7,7 +7,7 @@ const CYCLE = STEP * flow.length
 
 <template>
   <section
-    class="relative min-h-screen overflow-hidden bg-gradient-to-r from-[#101f47] via-[#14285c] via-[18.27%] to-[#0e3b5c]"
+    class="relative min-h-screen overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
   >
     <img
       src="/images/beranda/hero-mesh.svg"
@@ -23,14 +23,14 @@ const CYCLE = STEP * flow.length
     >
       <div class="hero-enter flex w-full max-w-[580px] flex-col items-start gap-7 font-inter">
         <p
-          class="rounded-full border border-[#34d8eb]/25 bg-[#34d8eb]/9 px-3.5 py-[7px] text-[13px] font-medium text-[#34d8eb]"
+          class="rounded-full border border-accent-glow/25 bg-accent-glow/9 px-3.5 py-[7px] text-[13px] font-medium text-accent-glow"
         >
           Teknologi data untuk rumah sakit Indonesia
         </p>
         <h1 class="text-5xl font-bold leading-[1.05] text-white sm:text-6xl lg:text-[80px]">
           No ERM, No Claim.
         </h1>
-        <p class="text-base leading-[1.7] text-[#bdd1df] md:text-[17px]">
+        <p class="text-base leading-[1.7] text-fog md:text-[17px]">
           Rekam medis elektronik yang lengkap adalah syarat klaim. SPKD membantu rumah sakit
           mencatat dengan rapi, mengklaim dengan tepat, dan menagih tanpa ada yang terlewat.
         </p>

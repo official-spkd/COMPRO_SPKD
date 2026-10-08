@@ -81,8 +81,8 @@ onMounted(() => {
 // Gelap (navy) di posisi atas, putih semi-transparan setelah di-scroll
 const linkClass = (active: boolean) =>
   scrolled.value
-    ? active ? 'font-semibold text-[#2198a5]' : 'text-[#102b46] hover:text-[#2198a5]'
-    : active ? 'font-semibold text-[#34d8eb]' : 'text-white hover:text-[#34d8eb]'
+    ? active ? 'font-semibold text-accent' : 'text-heading hover:text-accent'
+    : active ? 'font-semibold text-accent-glow' : 'text-white hover:text-accent-glow'
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
@@ -96,8 +96,8 @@ onBeforeUnmount(() => {
     class="sticky top-0 z-50 border-b font-inter transition-[background-color,border-color,box-shadow] duration-300"
     :class="
       scrolled
-        ? 'border-[#dce7ed]/70 bg-white/80 shadow-[0_8px_30px_rgba(10,41,66,0.08)] backdrop-blur-md'
-        : 'border-white/7 bg-[#11214b]'
+        ? 'border-line/70 bg-white/80 shadow-nav backdrop-blur-md'
+        : 'border-white/7 bg-midnight'
     "
   >
     <nav
@@ -116,13 +116,13 @@ onBeforeUnmount(() => {
         <span class="flex flex-col whitespace-nowrap transition-colors">
           <span
             class="font-dm-sans text-2xl"
-            :class="scrolled ? 'font-extrabold text-[#0a2942]' : 'font-black text-white'"
+            :class="scrolled ? 'font-extrabold text-navy-dark' : 'font-black text-white'"
           >
             SPKD
           </span>
           <span
             class="text-[9px] font-semibold"
-            :class="scrolled ? 'text-[#738893]' : 'uppercase text-white'"
+            :class="scrolled ? 'text-steel' : 'uppercase text-white'"
           >
             Sistem Pelayanan Kesehatan &amp; Data
           </span>
@@ -173,8 +173,8 @@ onBeforeUnmount(() => {
                   class="min-w-[260px] overflow-hidden rounded-2xl border p-2"
                   :class="
                     scrolled
-                      ? 'border-[#dce7ed] bg-white shadow-[0_24px_60px_rgba(10,41,66,0.12)]'
-                      : 'border-white/13 bg-[#14285c] shadow-[0_24px_60px_rgba(0,18,37,0.35)]'
+                      ? 'border-line bg-white shadow-dropdown'
+                      : 'border-white/13 bg-night shadow-[0_24px_60px_rgba(0,18,37,0.35)]'
                   "
                 >
                   <li v-for="child in link.children" :key="child.label">
@@ -183,8 +183,8 @@ onBeforeUnmount(() => {
                       class="block rounded-xl px-4 py-2.5 text-sm transition-colors"
                       :class="
                         scrolled
-                          ? 'text-[#53677b] hover:bg-[#e9faf6] hover:text-[#102b46]'
-                          : 'text-[#bdd1df] hover:bg-white/6 hover:text-white'
+                          ? 'text-body hover:bg-tint-aqua hover:text-heading'
+                          : 'text-fog hover:bg-white/6 hover:text-white'
                       "
                     >
                       {{ child.label }}
@@ -207,7 +207,7 @@ onBeforeUnmount(() => {
       <!-- Hamburger (mobile & tablet) -->
       <button
         class="rounded-md p-2 transition-colors lg:hidden"
-        :class="scrolled ? 'text-[#102b46] hover:bg-[#e9faf6]' : 'text-white hover:bg-white/10'"
+        :class="scrolled ? 'text-heading hover:bg-tint-aqua' : 'text-white hover:bg-white/10'"
         aria-label="Toggle menu"
         :aria-expanded="open"
         @click="open = !open"
@@ -231,7 +231,7 @@ onBeforeUnmount(() => {
       <div
         v-if="open"
         class="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t px-4 pb-5 pt-2 lg:hidden"
-        :class="scrolled ? 'border-[#dce7ed]' : 'border-white/7 bg-[#11214b]'"
+        :class="scrolled ? 'border-line' : 'border-white/7 bg-midnight'"
       >
         <ul>
           <li v-for="link in links" :key="link.label">
@@ -261,7 +261,7 @@ onBeforeUnmount(() => {
               <ul
                 v-if="submenu === link.label"
                 class="mb-1 ml-3 border-l pl-2"
-                :class="scrolled ? 'border-[#dce7ed]' : 'border-white/13'"
+                :class="scrolled ? 'border-line' : 'border-white/13'"
               >
                 <li v-for="child in link.children" :key="child.label">
                   <NuxtLink
@@ -269,8 +269,8 @@ onBeforeUnmount(() => {
                     class="block rounded-md px-3 py-2 text-sm transition-colors"
                     :class="
                       scrolled
-                        ? 'text-[#53677b] hover:bg-[#e9faf6] hover:text-[#102b46]'
-                        : 'text-[#bdd1df] hover:bg-white/6 hover:text-white'
+                        ? 'text-body hover:bg-tint-aqua hover:text-heading'
+                        : 'text-fog hover:bg-white/6 hover:text-white'
                     "
                   >
                     {{ child.label }}

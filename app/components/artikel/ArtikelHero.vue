@@ -9,7 +9,7 @@ defineProps<{ article: Article }>()
   <header class="bg-white">
     <div class="hero-enter container-x pb-10 pt-12 text-center md:pb-12 md:pt-16">
       <span
-        class="inline-block rounded-full bg-[#dff5f0] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand"
+        class="inline-block rounded-full bg-tint-teal px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand"
       >
         {{ article.category }}
       </span>

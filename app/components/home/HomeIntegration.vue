@@ -19,7 +19,7 @@ const integrations = [
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-[#14285c] font-inter">
+  <section class="relative overflow-hidden bg-night font-inter">
     <img
       src="/images/beranda/cahaya-teal.svg"
       alt=""
@@ -33,13 +33,13 @@ const integrations = [
       class="relative mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-14 sm:px-8 lg:flex-row lg:gap-[60px] lg:py-16 lg:pl-40 lg:pr-[84px]"
     >
       <div v-reveal class="flex flex-col gap-[17px] lg:w-[578px] lg:shrink-0">
-        <p class="text-[13.6px] font-bold leading-[20.4px] text-[#00e1d0]">Terintegrasi &amp; terdaftar</p>
+        <p class="text-[13.6px] font-bold leading-[20.4px] text-aqua">Terintegrasi &amp; terdaftar</p>
         <h2
-          class="max-w-[460px] text-[30px] font-semibold leading-[1.24] tracking-[-1.13px] text-[#eaf3fa] md:text-[36.25px]"
+          class="max-w-[460px] text-[30px] font-semibold leading-[1.24] tracking-[-1.13px] text-frost md:text-[36.25px]"
         >
           Dibangun untuk terhubung dengan sistem kesehatan nasional.
         </h2>
-        <p class="max-w-[560px] text-[14.7px] leading-[24.9px] text-[#bbd4e8]">
+        <p class="max-w-[560px] text-[14.7px] leading-[24.9px] text-haze">
           Kami mengikuti standar data dan jalur integrasi resmi agar data rumah sakit Anda bisa
           dipakai di mana pun dibutuhkan.
         </p>
@@ -57,20 +57,20 @@ const integrations = [
           />
           <ul class="flex flex-col gap-[21px]">
             <li v-for="item in integrations" :key="item.name" class="flex flex-col gap-1">
-              <h3 class="text-[14.7px] font-bold leading-[22.7px] text-[#ecf3fa]">{{ item.name }}</h3>
+              <h3 class="text-[14.7px] font-bold leading-[22.7px] text-frost">{{ item.name }}</h3>
               <span
-                class="w-fit rounded-[11.3px] bg-[#2198a5]/30 px-[9px] py-[3.4px] text-[11.3px] font-medium leading-[15.9px] text-[#bbd4e8]"
+                class="w-fit rounded-[11.3px] bg-accent/30 px-[9px] py-[3.4px] text-[11.3px] font-medium leading-[15.9px] text-haze"
               >
                 {{ item.status }}
               </span>
-              <p class="max-w-[370px] text-[14.7px] leading-[24.9px] text-[#bbd4e8]">{{ item.desc }}</p>
+              <p class="max-w-[370px] text-[14.7px] leading-[24.9px] text-haze">{{ item.desc }}</p>
             </li>
           </ul>
         </div>
 
         <div class="flex flex-col gap-1 pl-[28.6px] text-[14.7px]">
-          <h3 class="font-bold leading-[22.7px] text-[#ecf3fa]">Standar data yang kami pakai</h3>
-          <p class="leading-[24.9px] text-[#bbd4e8]">HL7 FHIR R4 · ICD-10 · ICD-9-CM · INA-CBG</p>
+          <h3 class="font-bold leading-[22.7px] text-frost">Standar data yang kami pakai</h3>
+          <p class="leading-[24.9px] text-haze">HL7 FHIR R4 · ICD-10 · ICD-9-CM · INA-CBG</p>
         </div>
       </div>
     </div>

@@ -61,24 +61,24 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <section class="bg-[#faf8ff] font-inter">
+  <section class="bg-lavender-pale font-inter">
     <div class="mx-auto flex max-w-[1440px] flex-col gap-[54px] px-5 py-14 sm:px-8 lg:px-[45px] lg:py-[90px]">
       <div v-reveal class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div class="flex max-w-[756px] flex-col gap-[9px]">
-          <p class="text-[12.375px] font-bold uppercase leading-[15.75px] tracking-[1.24px] text-[#006a61]">
+          <p class="text-[12.375px] font-bold uppercase leading-[15.75px] tracking-[1.24px] text-brand-darker">
             Wawasan &amp; Regulasi
           </p>
-          <h2 class="font-jakarta text-[28px] font-bold leading-[1.25] tracking-[-0.9px] text-[#00355f] md:text-4xl">
+          <h2 class="font-jakarta text-[28px] font-bold leading-[1.25] tracking-[-0.9px] text-heading-blue md:text-4xl">
             Berita &amp; Wawasan Kebijakan Kesehatan
           </h2>
-          <p class="text-base leading-[1.625] text-[#42474f] md:text-lg">
+          <p class="text-base leading-[1.625] text-graphite md:text-lg">
             Pembaruan regulasi, studi kasus implementasi, dan perkembangan teknologi kesehatan
             digital di Indonesia.
           </p>
         </div>
         <NuxtLink
           to="/berita"
-          class="inline-flex w-fit shrink-0 items-center gap-[9px] rounded-[13.5px] bg-[#eaedff] px-[22.5px] py-[11.25px] text-[15.75px] font-semibold leading-[22.5px] tracking-[0.16px] text-[#00355f] drop-shadow-[0_1.125px_1.125px_rgba(0,0,0,0.05)] transition hover:bg-[#dcdff8]"
+          class="inline-flex w-fit shrink-0 items-center gap-[9px] rounded-[13.5px] bg-lavender px-[22.5px] py-[11.25px] text-[15.75px] font-semibold leading-[22.5px] tracking-[0.16px] text-heading-blue drop-shadow-[0_1.125px_1.125px_rgba(0,0,0,0.05)] transition hover:bg-lavender-dark"
         >
           Lihat Semua Artikel
           <img src="/images/beranda/news-arrow.svg" alt="" aria-hidden="true" width="13.5" height="13.5" />
@@ -91,7 +91,7 @@ const posts = computed(() => {
             :to="`/berita/${p.slug}`"
             class="hover-lift group flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_1.125px_2.25px_rgba(0,0,0,0.05)]"
           >
-            <div class="relative h-[252px] overflow-hidden bg-[#eaedff]">
+            <div class="relative h-[252px] overflow-hidden bg-lavender">
               <img
                 :src="p.image.src"
                 :alt="p.image.alt"
@@ -103,7 +103,7 @@ const posts = computed(() => {
               <span
                 v-if="p.category"
                 class="absolute left-[18px] top-[19px] rounded-full px-[13.5px] py-[4.5px] text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-white backdrop-blur-[2.25px]"
-                :class="i % 2 ? 'bg-[#006a61]/90' : 'bg-[#00355f]/90'"
+                :class="i % 2 ? 'bg-brand-darker/90' : 'bg-heading-blue/90'"
               >
                 {{ p.category }}
               </span>
@@ -112,17 +112,17 @@ const posts = computed(() => {
               <div class="flex flex-col gap-[13.5px]">
                 <time
                   :datetime="p.date"
-                  class="text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-[#727780]"
+                  class="text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-ash"
                 >
                   {{ formatDate(p.date) }}
                 </time>
-                <h3 class="line-clamp-2 font-jakarta text-lg font-bold leading-[24.75px] text-[#00355f]">
+                <h3 class="line-clamp-2 font-jakarta text-lg font-bold leading-[24.75px] text-heading-blue">
                   {{ p.title }}
                 </h3>
-                <p class="line-clamp-3 text-[13.5px] leading-[21.94px] text-[#42474f]">{{ p.excerpt }}</p>
+                <p class="line-clamp-3 text-[13.5px] leading-[21.94px] text-graphite">{{ p.excerpt }}</p>
               </div>
               <div
-                class="mt-auto flex items-center justify-between gap-4 border-t-[1.125px] border-[#eaedff] pt-[19px] text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-[#42474f]"
+                class="mt-auto flex items-center justify-between gap-4 border-t-[1.125px] border-lavender pt-[19px] text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-graphite"
               >
                 <span>{{ p.source }} • {{ p.readMinutes }} min read</span>
                 <img

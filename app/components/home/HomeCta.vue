@@ -7,7 +7,7 @@ const perks = [
 </script>
 
 <template>
-  <section class="bg-[#eaedff] font-inter">
+  <section class="bg-lavender font-inter">
     <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-[45px] lg:py-[90px]">
       <div
         v-reveal
@@ -15,11 +15,11 @@ const perks = [
       >
         <div
           aria-hidden="true"
-          class="pointer-events-none absolute -right-[90px] -top-[90px] size-[432px] rounded-full bg-[#86f2e4]/20 blur-[36px]"
+          class="pointer-events-none absolute -right-[90px] -top-[90px] size-[432px] rounded-full bg-mint-light/20 blur-[36px]"
         />
         <div
           aria-hidden="true"
-          class="pointer-events-none absolute bottom-0 left-1/3 right-[40%] h-[360px] rounded-full bg-[#006a61]/15 blur-[22.5px]"
+          class="pointer-events-none absolute bottom-0 left-1/3 right-[40%] h-[360px] rounded-full bg-brand-darker/15 blur-[22.5px]"
         />
 
         <div class="relative mx-auto flex max-w-[864px] flex-col items-center gap-9 text-center">
@@ -29,7 +29,7 @@ const perks = [
             >
               Siap Bertransformasi Digital?
             </h2>
-            <p class="max-w-[758px] text-lg leading-[1.65] text-[#bdd1df] md:text-2xl">
+            <p class="max-w-[758px] text-lg leading-[1.65] text-fog md:text-2xl">
               Tim kami akan memperagakan alur produk dengan contoh data, lalu berdiskusi soal
               kebutuhan rumah sakit Anda.
             </p>
@@ -37,7 +37,7 @@ const perks = [
 
           <NuxtLink
             to="/kontak"
-            class="inline-flex items-center gap-[11.25px] rounded-[13.5px] bg-[#32dff2] px-6 py-[18px] text-[15.75px] font-bold leading-[22.5px] tracking-[0.16px] text-[#006f66] drop-shadow-[0_0_13.5px_rgba(134,242,228,0.4)] transition hover:-translate-y-0.5 hover:brightness-105 md:px-9"
+            class="inline-flex items-center gap-[11.25px] rounded-[13.5px] bg-accent-bright px-6 py-[18px] text-[15.75px] font-bold leading-[22.5px] tracking-[0.16px] text-brand-ink drop-shadow-glow-mint transition hover:-translate-y-0.5 hover:brightness-105 md:px-9"
           >
             <img
               src="/images/beranda/cta-icon.svg"
@@ -56,7 +56,7 @@ const perks = [
             <li
               v-for="perk in perks"
               :key="perk"
-              class="inline-flex items-center gap-[9px] text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-[#8ebdf9]"
+              class="inline-flex items-center gap-[9px] text-[12.375px] font-semibold leading-[15.75px] tracking-[0.5px] text-periwinkle"
             >
               <img
                 src="/images/beranda/cta-check.svg"

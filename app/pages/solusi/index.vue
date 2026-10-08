@@ -7,5 +7,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="w-full bg-[#f7faf9] text-navy" />
+  <div class="w-full bg-surface-mint text-navy" />
 </template>

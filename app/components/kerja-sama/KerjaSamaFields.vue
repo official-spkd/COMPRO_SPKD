@@ -34,8 +34,8 @@ const tinted = (i: number) => (Math.floor(i / 2) + i) % 2 === 0
   <section id="bidang" class="scroll-mt-24 bg-white">
     <div class="mx-auto flex max-w-[1440px] flex-col gap-14 px-5 py-14 sm:px-8 lg:px-40 lg:py-[88px]">
       <div v-reveal class="flex flex-col gap-[18px] font-bold">
-        <p class="text-sm text-[#078b80]">Bidang kerja sama</p>
-        <h2 class="text-3xl leading-[1.18] text-[#0b1f3a] md:text-[42px]">
+        <p class="text-sm text-brand-strong">Bidang kerja sama</p>
+        <h2 class="text-3xl leading-[1.18] text-heading-dark md:text-[42px]">
           Apa yang bisa kita kerjakan bersama
         </h2>
       </div>
@@ -45,10 +45,10 @@ const tinted = (i: number) => (Math.floor(i / 2) + i) % 2 === 0
           v-for="(f, i) in fields"
           :key="f.title"
           v-reveal="i % 2"
-          class="rounded-[28px] border border-[#dae5e9] p-7 text-lg leading-[1.65] text-[#566b7a]"
-          :class="tinted(i) ? 'bg-[#d8ecef]/65' : 'bg-[#f8fafc]'"
+          class="rounded-[28px] border border-line-soft p-7 text-lg leading-[1.65] text-body-alt"
+          :class="tinted(i) ? 'bg-tint-blue/65' : 'bg-surface'"
         >
-          <strong class="text-xl font-bold text-[#0b1f3a] md:text-2xl">{{ f.title }}</strong>
+          <strong class="text-xl font-bold text-heading-dark md:text-2xl">{{ f.title }}</strong>
           · {{ f.desc }}
         </li>
       </ul>

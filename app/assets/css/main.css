@@ -14,6 +14,90 @@
   /* Warna gradasi branding SPKD (navy → teal) */
   --color-gradient-from: #174670;
   --color-gradient-to: #2196a4;
+
+  /* Brand teal — dari terang ke gelap */
+  --color-brand-alt: #0d9b91;
+  --color-brand-strong: #078b80;
+  --color-brand-deep: #087f79;
+  --color-brand-dark: #08756f;
+  --color-brand-darker: #006a61;
+  --color-brand-ink: #006f66;
+
+  /* Aksen */
+  --color-accent: #2198a5; /* aksen di latar terang: eyebrow, link aktif */
+  --color-accent-glow: #34d8eb; /* aksen di latar gelap */
+  --color-accent-bright: #32dff2;
+  --color-aqua: #00e1d0;
+  --color-turquoise: #2dd4bf;
+  --color-mint-light: #86f2e4;
+  --color-mint-pale: #ddf5f1;
+  --color-periwinkle: #8ebdf9;
+  --color-sea: #1c6d89;
+  --color-sea-dark: #1a5c7e;
+
+  /* Status */
+  --color-success: #207a5b;
+  --color-danger: #b74e3c;
+
+  /* Latar gelap (hero, footer, navbar, section gelap) */
+  --color-midnight: #11214b;
+  --color-night: #14285c;
+  --color-night-from: #101f47;
+  --color-night-to: #0e3b5c;
+  --color-navy-dark: #0a2942;
+  --color-navy-line: #315167;
+
+  /* Teks judul */
+  --color-heading: #102b46;
+  --color-heading-dark: #0b1f3a;
+  --color-heading-blue: #00355f;
+
+  /* Teks isi */
+  --color-body: #53677b;
+  --color-body-alt: #566b7a;
+  --color-body-blue: #365575;
+  --color-ink-cool: #425c69;
+  --color-graphite: #42474f;
+  --color-ash: #727780;
+  --color-steel: #738893;
+
+  /* Teks terang di atas latar gelap */
+  --color-fog: #bdd1df;
+  --color-mist: #b7cdd7;
+  --color-haze: #bbd4e8;
+  --color-haze-dark: #8cb8cf;
+  --color-frost: #ecf3fa;
+
+  /* Garis / border */
+  --color-line: #dce7ed;
+  --color-line-soft: #dae5e9;
+  --color-line-mint: #d9e7e6;
+  --color-line-blue: #d2dfec;
+  --color-line-teal: #cbede5;
+  --color-line-success: #c2e9df;
+
+  /* Latar terang */
+  --color-surface: #f8fafc;
+  --color-surface-mint: #f7faf9;
+  --color-surface-teal: #f3f9f9;
+  --color-surface-gray: #eef5f5;
+  --color-surface-gray-strong: #dff0ee;
+  --color-tint-mint: #effaf7;
+  --color-tint-aqua: #e9faf6;
+  --color-tint-sea: #e9f5f4;
+  --color-tint-green: #e4f6f3;
+  --color-tint-teal: #dff5f0;
+  --color-tint-blue: #d8ecef;
+  --color-lavender-pale: #faf8ff;
+  --color-lavender: #eaedff;
+  --color-lavender-dark: #dcdff8;
+
+  /* Bayangan berwarna brand */
+  --shadow-card: 0 10px 32px color-mix(in srgb, var(--color-heading-dark) 4%, transparent);
+  --shadow-nav: 0 8px 30px color-mix(in srgb, var(--color-navy-dark) 8%, transparent);
+  --shadow-dropdown: 0 24px 60px color-mix(in srgb, var(--color-navy-dark) 12%, transparent);
+  --shadow-glow-mint: 0 0 70px color-mix(in srgb, var(--color-mint) 18%, transparent);
+  --drop-shadow-glow-mint: 0 0 13.5px color-mix(in srgb, var(--color-mint-light) 40%, transparent);
 }
 
 @utility container-x {
@@ -48,7 +132,7 @@
 
 /* Gradasi biru laut → teal (desain kerja sama: tombol, tab aktif, blok dampak) */
 @utility bg-gradient-ocean {
-  background-image: linear-gradient(72deg, #174670 4.57%, #2196a4 95.43%);
+  background-image: linear-gradient(72deg, var(--color-gradient-from) 4.57%, var(--color-gradient-to) 95.43%);
 }
 
 @utility container-wide {
@@ -67,7 +151,7 @@ html {
 }
 
 ::selection {
-  background: rgb(27 155 141 / 22%);
+  background: color-mix(in srgb, var(--color-brand) 22%, transparent);
   color: var(--color-navy);
 }
 
@@ -176,7 +260,7 @@ html {
 .hover-lift:hover {
   transform: translateY(-4px);
   border-color: var(--color-brand);
-  box-shadow: 0 16px 40px rgb(10 41 66 / 10%);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--color-navy-dark) 10%, transparent);
 }
 
 /* Gambar dalam kartu sedikit membesar saat kartu di-hover */
@@ -234,11 +318,11 @@ html {
 }
 
 .compliance-page {
-  --color-brand: #0d9b91;
-  --color-navy: #0a2942;
-  --color-ink: #425c69;
-  --color-muted: #738893;
-  --color-mint: #ddf5f1;
+  --color-brand: var(--color-brand-alt);
+  --color-navy: var(--color-navy-dark);
+  --color-ink: var(--color-ink-cool);
+  --color-muted: var(--color-steel);
+  --color-mint: var(--color-mint-pale);
   font-family: var(--font-inter);
 }
 
@@ -289,18 +373,18 @@ html {
 }
 
 .contact-page {
-  --color-brand: #0d9b91;
-  --color-navy: #0a2942;
-  --color-ink: #425c69;
-  --color-muted: #738893;
-  --color-mint: #ddf5f1;
-  background: #f7faf9;
+  --color-brand: var(--color-brand-alt);
+  --color-navy: var(--color-navy-dark);
+  --color-ink: var(--color-ink-cool);
+  --color-muted: var(--color-steel);
+  --color-mint: var(--color-mint-pale);
+  background: var(--color-surface-mint);
   color: var(--color-navy);
   font-family: var(--font-inter);
 }
 
 .contact-hero {
-  background: #fff;
+  background: var(--color-white);
 }
 
 .contact-hero-grid {
@@ -319,7 +403,7 @@ html {
 
 .contact-eyebrow {
   margin: 0;
-  color: #08756f;
+  color: var(--color-brand-dark);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -359,7 +443,7 @@ html {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #207a5b;
+  color: var(--color-success);
   font-size: 13px;
 }
 
@@ -378,8 +462,8 @@ html {
   gap: 26px;
   padding: 40px;
   border-radius: 28px;
-  background: #fff;
-  box-shadow: 0 16px 40px rgb(10 41 66 / 8%);
+  background: var(--color-white);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--color-navy-dark) 8%, transparent);
 }
 
 .contact-form-heading {
@@ -416,7 +500,7 @@ html {
 }
 
 .contact-field b {
-  color: #b74e3c;
+  color: var(--color-danger);
   font-weight: 600;
 }
 
@@ -430,10 +514,10 @@ html {
 .contact-field input,
 .contact-field textarea {
   width: 100%;
-  border: 1px solid #d9e7e6;
+  border: 1px solid var(--color-line-mint);
   border-radius: 8px;
   outline: none;
-  background: #fff;
+  background: var(--color-white);
   color: var(--color-navy);
   font: inherit;
   font-size: 14px;
@@ -460,7 +544,7 @@ html {
 .contact-field input:focus,
 .contact-field textarea:focus {
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 3px rgb(13 155 145 / 12%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 12%, transparent);
 }
 
 .contact-form-action {
@@ -490,13 +574,13 @@ html {
   border: 1px solid var(--color-brand);
   border-radius: 999px;
   background: var(--color-brand);
-  color: #fff;
+  color: var(--color-white);
   font-size: 14px;
   transition: background 150ms, transform 150ms;
 }
 
 .contact-form-action button:hover {
-  background: #08756f;
+  background: var(--color-brand-dark);
 }
 
 .contact-form-action button:active {
@@ -505,7 +589,7 @@ html {
 
 .contact-success {
   margin: -8px 0 0;
-  color: #207a5b;
+  color: var(--color-success);
   font-size: 13px;
 }
 
@@ -522,7 +606,7 @@ html {
   padding: 30px;
   border-radius: 20px;
   background: var(--color-navy);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .contact-company-heading {
@@ -556,7 +640,7 @@ html {
   height: 1px;
   margin: 0;
   border: 0;
-  background: #315167;
+  background: var(--color-navy-line);
 }
 
 .contact-company-card dl {
@@ -594,7 +678,7 @@ html {
   gap: 16px;
   padding: 28px;
   border-radius: 20px;
-  background: #effaf7;
+  background: var(--color-tint-mint);
 }
 
 .contact-response-card h2 {
@@ -633,10 +717,10 @@ html {
   height: 76px;
   margin-bottom: 28px;
   place-items: center;
-  border: 1px solid #c2e9df;
+  border: 1px solid var(--color-line-success);
   border-radius: 50%;
-  background: #effaf7;
-  color: #08756f;
+  background: var(--color-tint-mint);
+  color: var(--color-brand-dark);
 }
 
 .contact-thank-you-content .contact-eyebrow {
@@ -666,9 +750,9 @@ html {
   gap: 12px;
   margin-top: 28px;
   padding: 15px 18px;
-  border: 1px solid #d9e7e6;
+  border: 1px solid var(--color-line-mint);
   border-radius: 8px;
-  background: #fff;
+  background: var(--color-white);
   text-align: left;
 }
 
@@ -702,26 +786,26 @@ html {
   padding: 0 20px;
   border-radius: 999px;
   background: var(--color-brand);
-  color: #fff;
+  color: var(--color-white);
   transition: background 150ms;
 }
 
 .contact-thank-you-solutions {
   padding: 0 20px;
-  border: 1px solid #d9e7e6;
+  border: 1px solid var(--color-line-mint);
   border-radius: 999px;
-  background: #fff;
+  background: var(--color-white);
   color: var(--color-navy);
   transition: border-color 150ms, color 150ms;
 }
 
 .contact-thank-you-home:hover {
-  background: #08756f;
+  background: var(--color-brand-dark);
 }
 
 .contact-thank-you-solutions:hover {
   border-color: var(--color-brand);
-  color: #08756f;
+  color: var(--color-brand-dark);
 }
 
 .contact-thank-you-email {
@@ -730,7 +814,7 @@ html {
   justify-content: center;
   gap: 9px;
   margin-top: 20px;
-  color: #08756f;
+  color: var(--color-brand-dark);
   font-size: 13px;
   font-weight: 600;
 }

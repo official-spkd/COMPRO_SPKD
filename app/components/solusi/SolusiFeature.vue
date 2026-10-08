@@ -5,7 +5,7 @@ defineProps<{ data: Solusi['features'] }>()
 </script>
 
 <template>
-  <section class="bg-[#f3f9f9] py-12 md:py-16 lg:py-20">
+  <section class="bg-surface-teal py-12 md:py-16 lg:py-20">
     <div class="container-x">
       <div v-reveal class="text-center">
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">

@@ -5,7 +5,7 @@ defineProps<{ data: Solusi['flow'] }>()
 </script>
 
 <template>
-  <section class="bg-[#eef8f6] py-12 md:py-16 lg:py-20">
+  <section class="bg-tint-mint py-12 md:py-16 lg:py-20">
     <div class="container-x">
       <div v-reveal class="text-center">
         <p class="text-[11px] font-bold uppercase tracking-wider text-brand">

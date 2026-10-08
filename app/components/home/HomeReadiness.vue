@@ -74,23 +74,23 @@ const restart = () => {
 </script>
 
 <template>
-  <section id="cek-kesiapan" class="scroll-mt-24 bg-[#e9faf6] font-inter">
+  <section id="cek-kesiapan" class="scroll-mt-24 bg-tint-aqua font-inter">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:px-40 lg:py-[88px]"
     >
       <div v-reveal class="max-w-[940px]">
-        <p class="text-[13px] font-semibold leading-[1.6] text-[#2198a5]">Cek kesiapan</p>
-        <h2 class="mt-[1.6em] text-3xl font-semibold leading-[1.2] text-[#102b46] md:text-[40px]">
+        <p class="text-[13px] font-semibold leading-[1.6] text-accent">Cek kesiapan</p>
+        <h2 class="mt-[1.6em] text-3xl font-semibold leading-[1.2] text-heading md:text-[40px]">
           Seberapa siap rumah sakit Anda untuk No ERM, No Claim?
         </h2>
-        <p class="mt-8 text-lg leading-[1.6] text-[#53677b] md:mt-16">
+        <p class="mt-8 text-lg leading-[1.6] text-body md:mt-16">
           Jawab 5 pertanyaan singkat. Kurang dari 1 menit.
         </p>
       </div>
 
       <div v-reveal class="flex flex-col gap-4">
         <div
-          class="rounded-3xl border border-[#cbede5] bg-white p-6 shadow-[0_10px_32px_rgba(11,31,58,0.04)] md:p-10"
+          class="rounded-3xl border border-line-teal bg-white p-6 shadow-card md:p-10"
         >
           <!-- Penanda langkah: satu chip per pertanyaan -->
           <ol class="flex flex-wrap gap-3" aria-label="Langkah cek kesiapan">
@@ -100,8 +100,8 @@ const restart = () => {
               class="inline-flex items-center gap-1.5 rounded-full border px-3 py-[7px] text-xs font-medium transition-colors"
               :class="
                 !finished && i === current
-                  ? 'border-[#087f79] bg-[#087f79] text-white'
-                  : 'border-[#cbede5] bg-[#e9faf6] text-[#087f79]'
+                  ? 'border-brand-deep bg-brand-deep text-white'
+                  : 'border-line-teal bg-tint-aqua text-brand-deep'
               "
               :aria-current="!finished && i === current ? 'step' : undefined"
             >
@@ -126,11 +126,11 @@ const restart = () => {
                   tabindex="-1"
                   class="outline-none"
                 >
-                  <span class="block text-[13px] font-semibold leading-[1.6] text-[#2198a5]">
+                  <span class="block text-[13px] font-semibold leading-[1.6] text-accent">
                     Pertanyaan {{ current + 1 }}
-                    <span class="font-normal text-[#53677b]">dari {{ questions.length }}</span>
+                    <span class="font-normal text-body">dari {{ questions.length }}</span>
                   </span>
-                  <span class="mt-2 block text-xl font-semibold leading-[1.4] text-[#102b46] md:text-[23px]">
+                  <span class="mt-2 block text-xl font-semibold leading-[1.4] text-heading md:text-[23px]">
                     {{ questions[current]!.text }}
                   </span>
                 </legend>
@@ -142,8 +142,8 @@ const restart = () => {
                     class="flex cursor-pointer items-center gap-3 rounded-xl border px-5 py-4 text-[15px] font-semibold transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand"
                     :class="
                       answers[current] === opt.score
-                        ? 'border-[#087f79] bg-[#e9faf6] text-[#087f79]'
-                        : 'border-[#dce7ed] text-[#102b46] hover:border-[#2198a5]'
+                        ? 'border-brand-deep bg-tint-aqua text-brand-deep'
+                        : 'border-line text-heading hover:border-accent'
                     "
                   >
                     <input
@@ -151,7 +151,7 @@ const restart = () => {
                       type="radio"
                       :name="`cek-${current}`"
                       :value="opt.score"
-                      class="size-4 accent-[#087f79]"
+                      class="size-4 accent-brand-deep"
                     />
                     {{ opt.label }}
                   </label>
@@ -160,7 +160,7 @@ const restart = () => {
                 <div class="mt-8 flex flex-wrap items-center justify-between gap-3">
                   <button
                     type="button"
-                    class="inline-flex items-center rounded-xl border border-[#dce7ed] px-[22px] py-[15px] text-[15px] font-semibold text-[#102b46] transition hover:border-[#2198a5] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[#dce7ed]"
+                    class="inline-flex items-center rounded-xl border border-line px-[22px] py-[15px] text-[15px] font-semibold text-heading transition hover:border-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-line"
                     :disabled="current === 0"
                     @click="prev"
                   >
@@ -179,15 +179,15 @@ const restart = () => {
 
               <!-- Hasil -->
               <div v-else key="hasil" class="mt-8">
-                <p class="text-[13px] font-semibold leading-[1.6] text-[#2198a5]">Hasil cek</p>
+                <p class="text-[13px] font-semibold leading-[1.6] text-accent">Hasil cek</p>
                 <h3
                   ref="focusTarget"
                   tabindex="-1"
-                  class="mt-2 text-2xl font-semibold leading-[1.3] text-[#102b46] outline-none md:text-[32px]"
+                  class="mt-2 text-2xl font-semibold leading-[1.3] text-heading outline-none md:text-[32px]"
                 >
                   {{ result.title }}
                 </h3>
-                <p class="mt-4 max-w-[720px] text-lg leading-[1.6] text-[#53677b]">{{ result.body }}</p>
+                <p class="mt-4 max-w-[720px] text-lg leading-[1.6] text-body">{{ result.body }}</p>
                 <div class="mt-8 flex flex-wrap items-center gap-3">
                   <NuxtLink
                     to="/kontak"
@@ -197,7 +197,7 @@ const restart = () => {
                   </NuxtLink>
                   <button
                     type="button"
-                    class="inline-flex items-center rounded-xl border border-[#dce7ed] px-[22px] py-4 text-[15px] font-semibold text-[#102b46] transition hover:border-[#2198a5]"
+                    class="inline-flex items-center rounded-xl border border-line px-[22px] py-4 text-[15px] font-semibold text-heading transition hover:border-accent"
                     @click="restart"
                   >
                     Ulangi cek
@@ -208,7 +208,7 @@ const restart = () => {
           </div>
         </div>
 
-        <p class="text-[13px] leading-[1.6] text-[#53677b]">
+        <p class="text-[13px] leading-[1.6] text-body">
           Hasil ini gambaran awal, bukan penilaian resmi. Jawaban Anda tidak kami simpan.
         </p>
       </div>

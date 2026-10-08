@@ -4,7 +4,7 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
 
 <template>
   <section
-    class="relative overflow-hidden bg-gradient-to-r from-[#101f47] via-[#14285c] via-[18.27%] to-[#0e3b5c]"
+    class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
   >
     <img
       src="/images/kerja-sama/hero-mesh.svg"
@@ -16,14 +16,14 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
     />
 
     <div
-      class="relative mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-14 sm:px-8 lg:flex-row lg:gap-5 lg:px-[150px] lg:py-[88px]"
+      class="relative mx-auto flex w-full max-w-[1440px] flex-col items-center gap-12 px-5 py-14 sm:px-8 lg:flex-row lg:gap-5 lg:px-[150px] lg:py-[88px]"
     >
       <div class="hero-enter flex w-full flex-col items-start gap-6 lg:w-[620px] lg:shrink-0">
-        <p class="text-sm font-bold text-[#2dd4bf]">Kerja sama</p>
+        <p class="text-sm font-bold text-turquoise">Kerja sama</p>
         <h1 class="text-4xl font-bold leading-[1.12] text-white md:text-5xl lg:text-[64px]">
           Bangun layanan kesehatan berbasis data bersama SPKD.
         </h1>
-        <p class="text-lg leading-[1.65] text-[#b7cdd7] md:text-xl">
+        <p class="text-lg leading-[1.65] text-mist md:text-xl">
           Kami terbuka bekerja sama dengan rumah sakit, puskesmas, klinik, pemerintah daerah,
           lembaga keuangan, dan mitra teknologi. Temukan bentuk kerja sama yang paling sesuai.
         </p>
@@ -36,7 +36,7 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
           </NuxtLink>
           <a
             href="#skema"
-            class="inline-flex h-[54px] items-center rounded-full border border-[#b7cdd7] px-6 text-[15px] font-bold text-white transition hover:bg-white/10"
+            class="inline-flex h-[54px] items-center rounded-full border border-mist px-6 text-[15px] font-bold text-white transition hover:bg-white/10"
           >
             Lihat skema kerja sama
           </a>
@@ -59,7 +59,7 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
           <li
             v-for="p in products"
             :key="p"
-            class="rounded-full border border-[#2dd4bf]/19 bg-[#2dd4bf]/9 px-3 py-[7px] text-xs font-medium text-[#2dd4bf]"
+            class="rounded-full border border-turquoise/19 bg-turquoise/9 px-3 py-[7px] text-xs font-medium text-turquoise"
           >
             {{ p }}
           </li>
