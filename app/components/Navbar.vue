@@ -62,7 +62,7 @@ const onClickOutside = (e: MouseEvent) => {
 
 // Halaman dengan hero berlatar terang: navbar langsung putih sejak awal.
 // '/berita/*' juga mencakup semua halaman detail artikel.
-const lightHeroPages = ['/tentang-kami', '/produk', '/berita', '/berita/*']
+const lightHeroPages = ['/tentang-kami', '/produk', '/berita', '/berita/*', '/kontak',]
 const isLightHeroPage = (path: string) =>
   lightHeroPages.some((p) => (p.endsWith('/*') ? path.startsWith(p.slice(0, -1)) : path === p))
 
