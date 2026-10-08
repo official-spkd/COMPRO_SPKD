@@ -5,6 +5,8 @@ type NavLink = {
   label: string
   to: string
   children?: { label: string; to: string }[]
+  // tautan ringkasan di bagian bawah dropdown, mis. "Lihat semua produk"
+  allLink?: { label: string; to: string }
 }
 
 const open = ref(false)
@@ -30,6 +32,7 @@ const links: NavLink[] = [
       label: productLabels[s.solutionKey] ?? s.name,
       to: `/solusi/${s.slug}`,
     })),
+    allLink: { label: 'Lihat semua produk', to: '/solusi' },
   },
   {
     label: 'Kerja sama',
@@ -190,6 +193,24 @@ onBeforeUnmount(() => {
                       {{ child.label }}
                     </NuxtLink>
                   </li>
+                  <li
+                    v-if="link.allLink"
+                    class="mt-2 border-t pt-2"
+                    :class="scrolled ? 'border-line' : 'border-white/13'"
+                  >
+                    <NuxtLink
+                      :to="link.allLink.to"
+                      class="flex items-center justify-between gap-3 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors"
+                      :class="
+                        scrolled
+                          ? 'text-accent hover:bg-tint-aqua hover:text-heading'
+                          : 'text-accent-glow hover:bg-white/6 hover:text-white'
+                      "
+                    >
+                      {{ link.allLink.label }}
+                      <Icon name="lucide:arrow-right" class="size-4" />
+                    </NuxtLink>
+                  </li>
                 </ul>
               </div>
             </Transition>
@@ -274,6 +295,16 @@ onBeforeUnmount(() => {
                     "
                   >
                     {{ child.label }}
+                  </NuxtLink>
+                </li>
+                <li v-if="link.allLink">
+                  <NuxtLink
+                    :to="link.allLink.to"
+                    class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors"
+                    :class="scrolled ? 'text-accent hover:bg-tint-aqua' : 'text-accent-glow hover:bg-white/6'"
+                  >
+                    {{ link.allLink.label }}
+                    <Icon name="lucide:arrow-right" class="size-4" />
                   </NuxtLink>
                 </li>
               </ul>
