@@ -34,7 +34,7 @@ const legal = [
 </script>
 
 <template>
-  <footer class="w-full bg-midnight font-inter">
+  <footer class="w-full bg-midnight">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 pb-[34px] pt-12 sm:px-8 md:gap-[54px] lg:px-[72px] lg:pt-[72px]"
     >
@@ -49,7 +49,7 @@ const legal = [
               class="h-[52px] w-auto shrink-0 md:h-[65px]"
             />
             <span class="flex flex-col whitespace-nowrap text-white">
-              <span class="font-dm-sans text-[28px] font-black md:text-[34.667px]">PT SPKD</span>
+              <span class="text-[28px] font-black md:text-[34.667px]">PT SPKD</span>
               <span class="text-[11px] font-semibold uppercase md:text-[13px]">
                 Sistem Pelayanan Kesehatan &amp; Data
               </span>

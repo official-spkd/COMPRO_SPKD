@@ -7,7 +7,7 @@ const CYCLE = STEP * flow.length
 
 <template>
   <section
-    class="relative min-h-screen overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
+    class="relative flex min-h-hero flex-col justify-center overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
   >
     <img
       src="/images/beranda/hero-mesh.svg"
@@ -19,9 +19,9 @@ const CYCLE = STEP * flow.length
     />
 
     <div
-      class="relative mx-auto flex max-w-[1440px] flex-col items-start gap-14 px-5 pb-16 pt-14 sm:px-8 lg:flex-row lg:items-center lg:justify-center lg:px-20 lg:pb-[88px] lg:pt-20"
+      class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-14 px-5 py-14 sm:px-8 lg:flex-row lg:items-center lg:justify-center lg:px-20 lg:py-20"
     >
-      <div class="hero-enter flex w-full max-w-[580px] flex-col items-start gap-7 font-inter">
+      <div class="hero-enter flex w-full max-w-[580px] flex-col items-start gap-7">
         <p
           class="rounded-full border border-accent-glow/25 bg-accent-glow/9 px-3.5 py-[7px] text-[13px] font-medium text-accent-glow"
         >
@@ -51,7 +51,7 @@ const CYCLE = STEP * flow.length
       </div>
 
       <ol
-        class="hero-media w-full overflow-hidden rounded-[20px] border border-white/13 bg-white/6 font-inter shadow-[0_24px_60px_rgba(0,18,37,0.25)] sm:w-[340px] lg:shrink-0"
+        class="hero-media w-full overflow-hidden rounded-[20px] border border-white/13 bg-white/6 shadow-[0_24px_60px_rgba(0,18,37,0.25)] sm:w-[340px] lg:shrink-0"
         aria-label="Alur dari pasien sampai dana masuk"
       >
         <li

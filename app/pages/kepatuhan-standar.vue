@@ -120,7 +120,7 @@ const governanceControls = [
                 <p class="m-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted sm:text-[11px]">
                   {{ item.category }}
                 </p>
-                <h3 class="compliance-display-font m-0 break-words text-lg font-normal leading-snug text-navy sm:text-[23px]">
+                <h3 class="m-0 break-words text-lg font-normal leading-snug text-navy sm:text-[23px]">
                   {{ item.title }}
                 </h3>
                 <p class="m-0 text-[13px] leading-[1.6] text-ink sm:text-sm">{{ item.description }}</p>
@@ -151,7 +151,7 @@ const governanceControls = [
               class="grid grid-cols-[32px_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b border-navy-line py-5 sm:grid-cols-[44px_260px_minmax(0,1fr)] sm:gap-x-[22px]"
             >
               <p class="m-0 text-[11px] font-bold text-brand">{{ String(index + 1).padStart(2, '0') }}</p>
-                <h3 class="compliance-display-font m-0 text-xl font-normal text-white sm:text-[25px]">{{ standard[0] }}</h3>
+                <h3 class="m-0 text-xl font-normal text-white sm:text-[25px]">{{ standard[0] }}</h3>
               <p class="col-start-2 m-0 text-[13px] leading-relaxed text-mint sm:col-start-auto sm:text-sm">
                 {{ standard[1] }}
               </p>

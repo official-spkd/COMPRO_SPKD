@@ -18,10 +18,10 @@ const visibleProducts = computed(() =>
 <template>
   <div class="w-full bg-white">
     <!-- Hero -->
-    <section class="overflow-hidden bg-surface">
-      <div class="mx-auto max-w-[1440px] px-5 pt-14 sm:px-8 md:pt-20 lg:px-[88px] lg:pt-24">
+    <section class="flex min-h-hero flex-col justify-center overflow-hidden bg-surface">
+      <div class="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 md:py-20 lg:px-[88px] lg:py-24">
         <div class="hero-enter flex max-w-[1080px] flex-col items-start gap-5 md:gap-6">
-          <p class="font-inter text-[13px] font-semibold text-accent">Produk SPKD</p>
+          <p class="text-[13px] font-semibold text-accent">Produk SPKD</p>
           <h1 class="text-[36px] font-bold leading-[1.12] text-heading-dark sm:text-5xl lg:text-[64px]">
             Lima produk untuk mencatat, mengklaim, dan menagih dengan tepat.
           </h1>
@@ -49,12 +49,11 @@ const visibleProducts = computed(() =>
             stroke-width="1.5"
           />
         </svg>
-        <div class="h-10 md:h-14" />
       </div>
     </section>
 
     <!-- Daftar produk -->
-    <section class="px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[100px]">
+    <section class="px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[100px]">
       <div class="mx-auto flex max-w-[1120px] flex-col gap-6">
         <div role="group" aria-label="Filter kategori produk" class="flex flex-wrap gap-3">
           <button

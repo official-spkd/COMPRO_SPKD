@@ -44,7 +44,7 @@ const products = [
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-night font-inter">
+  <section class="relative overflow-hidden bg-night">
     <img
       src="/images/beranda/produk-mesh-2.svg"
       alt=""

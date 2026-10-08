@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full min-h-screen bg-surface font-sans text-heading-dark">
+  <div class="w-full min-h-screen bg-surface text-heading-dark">
     <!-- Hero -->
-    <section class="flex min-h-screen flex-col justify-center bg-surface">
+    <section class="flex min-h-hero flex-col justify-center bg-surface">
       <div
-        class="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:items-start lg:gap-[30px] lg:px-[88px] lg:py-[88px]"
+        class="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 md:py-20 lg:flex-row lg:items-center lg:gap-[30px] lg:px-[88px] lg:py-[88px]"
       >
         <div class="hero-enter flex w-full flex-col items-start gap-6 lg:w-[670px] lg:shrink-0">
           <p class="text-[14px] font-bold text-accent">Tentang SPKD</p>
@@ -48,7 +48,7 @@
           </h2>
         </div>
 
-        <div class="flex flex-col gap-6 font-inter text-[16px] leading-[1.75] text-ink-cool md:flex-row md:gap-[34px]">
+        <div class="flex flex-col gap-6 text-[16px] leading-[1.75] text-ink-cool md:flex-row md:gap-[34px]">
           <p v-for="(paragraph, i) in story" :key="i" v-reveal="i" class="flex-1">
             {{ paragraph }}
           </p>

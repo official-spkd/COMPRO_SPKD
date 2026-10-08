@@ -35,22 +35,22 @@ const list = computed(() =>
 
 <template>
   <div>
-    <section class="bg-surface-teal">
-      <div class="container-x py-12 md:py-16 lg:py-[72px]">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+    <section class="bg-surface-mint">
+      <div class="container-x py-12 md:py-16 lg:pb-24 lg:pt-[72px]">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div class="hero-enter">
-            <p class="text-[11px] font-bold uppercase tracking-wider text-brand">
-              Berita &amp; wawasan
+            <p class="text-[11px] font-bold uppercase tracking-wide text-brand-deep md:text-xs">
+              Wawasan &amp; regulasi
             </p>
             <h1
-              class="mt-4 max-w-2xl text-4xl font-normal leading-[1.1] text-navy md:text-5xl lg:text-[56px]"
+              class="mt-5 max-w-[860px] text-4xl font-bold leading-[1.12] text-heading-dark md:text-5xl lg:text-[64px]"
             >
-              Pusat Informasi &amp; Publikasi Digital Kesehatan
+              Berita &amp; Wawasan Kebijakan Kesehatan
             </h1>
           </div>
-          <p class="hero-media max-w-xs text-sm leading-relaxed text-ink lg:pb-2">
-            Perspektif praktis mengenai teknologi, kebijakan, interoperabilitas, dan
-            perubahan layanan kesehatan Indonesia.
+          <p class="hero-media max-w-[330px] text-[15px] leading-[1.7] text-body lg:pb-2">
+            Pembaruan regulasi, studi kasus implementasi, dan perkembangan teknologi kesehatan digital
+            di Indonesia.
           </p>
         </div>
 
@@ -58,10 +58,12 @@ const list = computed(() =>
       </div>
     </section>
 
-    <section class="bg-white py-12 md:py-16 lg:py-20">
+    <section class="bg-white py-12 md:py-16 lg:py-[100px]">
       <div class="container-x">
         <div v-reveal class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <h2 class="text-2xl font-normal text-navy md:text-4xl">Terbaru dari lapangan</h2>
+          <h2 class="text-[28px] font-normal text-heading-dark md:text-[38px]">
+            Terbaru dari lapangan
+          </h2>
 
           <div role="group" aria-label="Filter topik" class="flex flex-wrap gap-2">
             <button
@@ -73,7 +75,7 @@ const list = computed(() =>
               :class="
                 active === t.value
                   ? 'bg-navy text-white'
-                  : 'bg-surface-gray text-navy hover:bg-surface-gray-strong'
+                  : 'bg-surface-gray text-heading-dark hover:bg-surface-gray-strong'
               "
               @click="active = t.value"
             >
@@ -82,7 +84,7 @@ const list = computed(() =>
           </div>
         </div>
 
-        <ul v-if="list.length" class="mt-8 grid gap-x-6 gap-y-10 md:mt-10 md:grid-cols-2">
+        <ul v-if="list.length" class="mt-8 grid gap-x-6 gap-y-12 md:mt-10 md:grid-cols-2">
           <li v-for="(a, i) in list" :key="a.slug" v-reveal="i % 2">
             <BeritaCard :article="a" />
           </li>

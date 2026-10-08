@@ -19,7 +19,7 @@ const integrations = [
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-night font-inter">
+  <section class="relative overflow-hidden bg-night">
     <img
       src="/images/beranda/cahaya-teal.svg"
       alt=""

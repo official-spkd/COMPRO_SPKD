@@ -11,25 +11,25 @@ defineProps<{ article: Article }>()
       <img
         :src="article.image.src"
         :alt="article.image.alt"
-        width="640"
-        height="400"
+        width="636"
+        height="330"
         loading="lazy"
-        class="img-zoom aspect-[16/10] w-full object-cover"
+        class="img-zoom aspect-[16/10] w-full object-cover md:aspect-[27/14]"
       />
     </div>
-    <div class="mt-5 flex items-center justify-between text-[11px]">
-      <span class="font-bold text-brand">{{ article.category }}</span>
+    <div class="mt-5 flex items-center justify-between gap-4 text-[11px] md:text-xs">
+      <span class="font-bold text-brand-deep">{{ article.category }}</span>
       <time :datetime="article.date" class="text-muted">{{ formatDate(article.date) }}</time>
     </div>
     <h3
-      class="mt-3 text-2xl font-normal leading-snug text-navy transition group-hover:text-brand md:text-[28px]"
+      class="mt-4 text-2xl font-normal leading-[1.3] text-heading-dark transition group-hover:text-brand-deep md:text-[28px]"
     >
       {{ article.title }}
     </h3>
-    <p class="mt-3 line-clamp-2 text-xs leading-relaxed text-ink md:text-[13px]">
+    <p class="mt-4 line-clamp-2 text-[13px] leading-[1.7] text-body">
       {{ article.excerpt }}
     </p>
-    <span class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-brand">
+    <span class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-brand-deep">
       Baca selengkapnya
       <Icon name="lucide:arrow-right" class="size-4 transition group-hover:translate-x-1" />
     </span>

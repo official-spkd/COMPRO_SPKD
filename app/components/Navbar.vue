@@ -60,16 +60,25 @@ const onClickOutside = (e: MouseEvent) => {
   if (navRef.value && !navRef.value.contains(e.target as Node)) submenu.value = null
 }
 
+// Halaman dengan hero berlatar terang: navbar langsung putih sejak awal.
+// '/berita/*' juga mencakup semua halaman detail artikel.
+const lightHeroPages = ['/tentang-kami', '/produk', '/berita', '/berita/*']
+const isLightHeroPage = (path: string) =>
+  lightHeroPages.some((p) => (p.endsWith('/*') ? path.startsWith(p.slice(0, -1)) : path === p))
+
 // bayangan tipis setelah halaman di-scroll
-const scrolled = ref(false)
-const onScroll = () => (scrolled.value = window.scrollY > 8)
+const scrolledPast = ref(false)
+const scrolled = computed(
+  () => scrolledPast.value || isLightHeroPage(route.path.replace(/\/$/, '')),
+)
+const onScroll = () => (scrolledPast.value = window.scrollY > 8)
 onMounted(() => {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
   document.addEventListener('click', onClickOutside)
   document.addEventListener('keydown', onKeydown)
 })
-// Gelap (navy) di posisi atas, putih semi-transparan setelah di-scroll
+// Gelap (navy) di posisi atas, putih semi-transparan setelah di-scroll (atau di halaman berhero terang)
 const linkClass = (active: boolean) =>
   scrolled.value
     ? active ? 'font-semibold text-accent' : 'text-heading hover:text-accent'
@@ -84,7 +93,7 @@ onBeforeUnmount(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 border-b font-inter transition-[background-color,border-color,box-shadow] duration-300"
+    class="sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300"
     :class="
       scrolled
         ? 'border-line/70 bg-white/80 shadow-nav backdrop-blur-md'
@@ -106,7 +115,7 @@ onBeforeUnmount(() => {
         />
         <span class="flex flex-col whitespace-nowrap transition-colors">
           <span
-            class="font-dm-sans text-2xl"
+            class="text-2xl"
             :class="scrolled ? 'font-extrabold text-navy-dark' : 'font-black text-white'"
           >
             SPKD

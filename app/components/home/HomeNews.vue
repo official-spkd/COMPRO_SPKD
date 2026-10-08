@@ -61,14 +61,14 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <section class="bg-lavender-pale font-inter">
+  <section class="bg-lavender-pale">
     <div class="mx-auto flex max-w-[1440px] flex-col gap-[54px] px-5 py-14 sm:px-8 lg:px-[45px] lg:py-[90px]">
       <div v-reveal class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div class="flex max-w-[756px] flex-col gap-[9px]">
           <p class="text-[12.375px] font-bold uppercase leading-[15.75px] tracking-[1.24px] text-brand-darker">
             Wawasan &amp; Regulasi
           </p>
-          <h2 class="font-jakarta text-[28px] font-bold leading-[1.25] tracking-[-0.9px] text-heading-blue md:text-4xl">
+          <h2 class="text-[28px] font-bold leading-[1.25] tracking-[-0.9px] text-heading-blue md:text-4xl">
             Berita &amp; Wawasan Kebijakan Kesehatan
           </h2>
           <p class="text-base leading-[1.625] text-graphite md:text-lg">
@@ -116,7 +116,7 @@ const posts = computed(() => {
                 >
                   {{ formatDate(p.date) }}
                 </time>
-                <h3 class="line-clamp-2 font-jakarta text-lg font-bold leading-[24.75px] text-heading-blue">
+                <h3 class="line-clamp-2 text-lg font-bold leading-[24.75px] text-heading-blue">
                   {{ p.title }}
                 </h3>
                 <p class="line-clamp-3 text-[13.5px] leading-[21.94px] text-graphite">{{ p.excerpt }}</p>

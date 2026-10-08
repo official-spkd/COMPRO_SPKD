@@ -18,12 +18,12 @@ const linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeUR
 const mail = `mailto:?subject=${encodeURIComponent(props.title)}&body=${encodeURIComponent(url)}`
 
 const btn =
-  'flex size-10 items-center justify-center rounded-full border border-gray-200 bg-white text-navy transition hover:border-brand hover:text-brand'
+  'flex size-9 items-center justify-center rounded-full bg-surface-gray text-brand-deep transition hover:bg-brand-deep hover:text-white'
 </script>
 
 <template>
   <div>
-    <p class="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted">Bagikan</p>
+    <p class="mb-3 text-[10px] font-medium uppercase tracking-wider text-muted">Bagikan</p>
     <div class="flex gap-3" :class="vertical ? 'flex-col' : 'flex-row'">
       <a :href="linkedin" target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke LinkedIn" :class="btn">
         <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -66,14 +66,14 @@ const faqs = [
   <div class="w-full bg-white">
     <!-- Hero -->
     <section
-      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 text-white sm:px-8 md:py-20 flex min-h-screen flex-col justify-center lg:px-[160px] lg:py-[88px]"
+      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 text-white sm:px-8 md:py-20 flex min-h-hero flex-col justify-center lg:px-[160px] lg:py-[88px]"
     >
       <div
         aria-hidden="true"
         class="pointer-events-none absolute -bottom-[90px] -right-[220px] h-[420px] w-[540px] bg-[radial-gradient(closest-side,var(--color-gradient-to),transparent)] opacity-60 lg:-bottom-[181px] lg:-right-[413px] lg:h-[839px] lg:w-[1082px]"
       />
       <div class="hero-enter relative mx-auto flex w-full max-w-[1120px] flex-col items-start gap-5 md:gap-6">
-        <p class="rounded-full border border-mint/25 bg-mint/10 px-3.5 py-[7px] font-inter text-[11px] font-bold leading-snug text-mint sm:text-[13px]">
+        <p class="rounded-full border border-mint/25 bg-mint/10 px-3.5 py-[7px] text-[11px] font-bold leading-snug text-mint sm:text-[13px]">
           MedCredix · Medical Credentialing Intelligence · Kredensial
         </p>
         <h1 class="text-[36px] font-bold leading-[1.12] sm:text-5xl lg:text-[64px]">
@@ -97,7 +97,7 @@ const faqs = [
     <section class="bg-white px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
       <div class="mx-auto flex max-w-[1120px] flex-col gap-4 md:gap-8 lg:flex-row lg:gap-14">
         <div v-reveal class="flex shrink-0 flex-col gap-[15px] lg:w-[400px]">
-          <p class="font-inter text-[13px] font-semibold leading-[1.6] text-gradient-to">Masalah</p>
+          <p class="text-[13px] font-semibold leading-[1.6] text-gradient-to">Masalah</p>
           <h2 class="text-[30px] font-bold leading-[1.18] text-navy md:text-[42px]">
             Status kredensial sering baru diketahui saat penilaian.
           </h2>
@@ -116,7 +116,7 @@ const faqs = [
 
     <!-- Cara kerja -->
     <section
-      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
+      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
     >
       <div
         aria-hidden="true"
@@ -179,7 +179,7 @@ const faqs = [
     </section>
 
     <!-- Fitur -->
-    <section class="bg-navy/3 px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
+    <section class="bg-navy/3 px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
       <div class="mx-auto flex max-w-[1120px] flex-col gap-10">
         <div v-reveal class="max-w-[940px]">
           <p class="text-[13px] font-semibold leading-[1.6] text-brand">Fitur</p>
@@ -204,7 +204,7 @@ const faqs = [
 
     <!-- Manfaat -->
     <section
-      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
+      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
     >
       <div
         aria-hidden="true"
@@ -266,7 +266,7 @@ const faqs = [
     <section class="bg-navy/3 px-5 py-14 sm:px-8 md:py-20 lg:p-20">
       <div
         v-reveal
-        class="mx-auto flex max-w-[1280px] flex-col items-start gap-7 rounded-[24px] bg-linear-to-r from-navy via-deep via-60% to-brand p-8 font-inter md:rounded-[32px] md:p-16"
+        class="mx-auto flex max-w-[1280px] flex-col items-start gap-7 rounded-[24px] bg-linear-to-r from-navy via-deep via-60% to-brand p-8 md:rounded-[32px] md:p-16"
       >
         <h2 class="text-[30px] font-semibold leading-[1.2] text-white md:text-[44px]">
           Jangan menunggu hasil penilaian untuk tahu posisi Anda.

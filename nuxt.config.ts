@@ -10,11 +10,9 @@ export default defineNuxtConfig({
     },
   },
   fonts: {
+   // Seluruh situs memakai Inter (lihat --font-sans di main.css)
    families: [
-      { name: 'Open Sans', provider: 'google', weights: [400, 500, 600, 700, 800] },
-      { name: 'DM Sans', provider: 'google', weights: [400, 700, 800, 900] },
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Plus Jakarta Sans', provider: 'google', weights: [700] },
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700, 800, 900] },
      ],
    },
   // Halaman produk dipindah dari /solusi ke /produk; tautan lama tetap diarahkan

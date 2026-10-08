@@ -7,7 +7,7 @@ const perks = [
 </script>
 
 <template>
-  <section class="bg-lavender font-inter">
+  <section class="bg-lavender">
     <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-[45px] lg:py-[90px]">
       <div
         v-reveal
@@ -25,7 +25,7 @@ const perks = [
         <div class="relative mx-auto flex max-w-[864px] flex-col items-center gap-9 text-center">
           <div class="flex flex-col items-center gap-[18px]">
             <h2
-              class="font-jakarta text-3xl font-bold leading-[1.2] tracking-[-1.125px] text-white md:text-[45px]"
+              class="text-3xl font-bold leading-[1.2] tracking-[-1.125px] text-white md:text-[45px]"
             >
               Siap Bertransformasi Digital?
             </h2>

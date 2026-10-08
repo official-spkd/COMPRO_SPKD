@@ -20,7 +20,7 @@ const schemes = [
 </script>
 
 <template>
-  <section id="skema" class="scroll-mt-24 bg-surface font-inter">
+  <section id="skema" class="scroll-mt-24 bg-surface">
     <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:px-40 lg:py-[88px]">
       <div v-reveal class="max-w-[940px]">
         <p class="text-[13px] font-semibold leading-[1.6] text-brand-deep">Skema kerja sama</p>

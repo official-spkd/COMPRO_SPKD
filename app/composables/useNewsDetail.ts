@@ -112,7 +112,6 @@ export const useNewsDetail = async (slug: string) => {
     blocks,
     related: [],
   }
-  console.log('IMAGE SRC FINAL:', imageSrc)
 
   // Terkait: kategori sama dulu, lalu yang terbaru, maksimal 3
   const others = articles.value.filter((a) => a.slug !== slug)

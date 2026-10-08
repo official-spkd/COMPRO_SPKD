@@ -38,7 +38,7 @@ const rows = [
 </script>
 
 <template>
-  <section class="bg-surface font-inter">
+  <section class="bg-surface">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-5 px-5 pb-14 pt-2 sm:px-8 lg:px-[170px] lg:pb-[88px] lg:pt-[30px]"
     >

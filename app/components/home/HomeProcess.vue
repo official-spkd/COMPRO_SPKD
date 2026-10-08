@@ -8,7 +8,7 @@ const steps = [
 </script>
 
 <template>
-  <section class="bg-white font-inter">
+  <section class="bg-white">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:px-20 lg:py-[88px]"
     >

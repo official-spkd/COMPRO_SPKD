@@ -4,7 +4,7 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
 
 <template>
   <section
-    class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
+    class="relative flex min-h-hero flex-col justify-center overflow-hidden bg-gradient-to-r from-night-from via-night via-[18.27%] to-night-to"
   >
     <img
       src="/images/kerja-sama/hero-mesh.svg"
@@ -44,7 +44,7 @@ const products = ['SIMRS', 'MedClaim', 'MedCredix', 'MedPath', 'MedPay']
       </div>
 
       <div
-        class="hero-media flex w-full flex-1 flex-col items-center justify-center gap-7 overflow-hidden rounded-[32px] border border-white/13 bg-white/5 px-6 py-10 font-inter lg:h-[420px] lg:p-9"
+        class="hero-media flex w-full flex-1 flex-col items-center justify-center gap-7 overflow-hidden rounded-[32px] border border-white/13 bg-white/5 px-6 py-10 lg:h-[420px] lg:p-9"
       >
         <img
           src="/images/kerja-sama/care-pulse.svg"

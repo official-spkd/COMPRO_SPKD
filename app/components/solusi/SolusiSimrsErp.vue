@@ -42,7 +42,7 @@ const faqs = [
   <div class="w-full bg-white">
     <!-- Hero -->
     <section
-      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 text-white sm:px-8 md:py-20 flex min-h-screen flex-col justify-center lg:px-[160px] lg:py-[88px]"
+      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 text-white sm:px-8 md:py-20 flex min-h-hero flex-col justify-center lg:px-[160px] lg:py-[88px]"
     >
       <div
         aria-hidden="true"
@@ -50,7 +50,7 @@ const faqs = [
       />
       <div class="relative mx-auto flex w-full max-w-[1120px] flex-col gap-10 md:gap-12">
         <div class="hero-enter flex flex-col items-start gap-6">
-          <p class="rounded-full border border-mint/25 bg-mint/10 px-3.5 py-[7px] font-inter text-[13px] font-bold text-mint">
+          <p class="rounded-full border border-mint/25 bg-mint/10 px-3.5 py-[7px] text-[13px] font-bold text-mint">
             SIMRS · Pelayanan dan Mutu
           </p>
           <h1 class="text-[36px] font-bold leading-[1.12] sm:text-5xl lg:text-[64px]">
@@ -87,7 +87,7 @@ const faqs = [
     <section class="bg-white px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
       <div class="mx-auto flex max-w-[1120px] flex-col gap-4 md:gap-8 lg:flex-row lg:gap-[70px]">
         <div v-reveal class="flex shrink-0 flex-col gap-[15px] lg:w-[349px]">
-          <p class="font-inter text-[13px] font-semibold leading-[1.6] text-gradient-to">Masalah</p>
+          <p class="text-[13px] font-semibold leading-[1.6] text-gradient-to">Masalah</p>
           <h2 class="text-[30px] font-bold leading-[1.18] text-navy md:text-[42px]">
             Pencatatan ganda membuat data tidak pernah benar-benar lengkap.
           </h2>
@@ -105,7 +105,7 @@ const faqs = [
     </section>
 
     <!-- Modul -->
-    <section class="bg-navy/3 px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
+    <section class="bg-navy/3 px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]">
       <div class="mx-auto flex max-w-[1120px] flex-col gap-10">
         <div v-reveal class="max-w-[940px]">
           <p class="text-[13px] font-semibold leading-[1.6] text-gradient-to">Modul</p>
@@ -135,7 +135,7 @@ const faqs = [
 
     <!-- Manfaat -->
     <section
-      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 font-inter sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
+      class="relative overflow-hidden bg-linear-to-r from-navy to-deep px-5 py-14 sm:px-8 md:py-20 lg:px-[160px] lg:py-[88px]"
     >
       <div
         aria-hidden="true"
@@ -197,7 +197,7 @@ const faqs = [
     <section class="bg-white px-5 pb-14 sm:px-8 md:pb-20 lg:p-20">
       <div
         v-reveal
-        class="mx-auto flex max-w-[1280px] flex-col items-start gap-7 rounded-[24px] bg-linear-to-r from-navy via-deep via-60% to-gradient-to p-8 font-inter md:rounded-[32px] md:p-16"
+        class="mx-auto flex max-w-[1280px] flex-col items-start gap-7 rounded-[24px] bg-linear-to-r from-navy via-deep via-60% to-gradient-to p-8 md:rounded-[32px] md:p-16"
       >
         <h2 class="text-[30px] font-semibold leading-[1.2] text-white md:text-[44px]">
           Siapkan fondasi RME rumah sakit Anda.

@@ -5,10 +5,6 @@ const { article, related } = await useNewsDetail(
   route.params.slug as string
 )
 
-console.log('ARTICLE:', article)
-console.log('IMAGE:', article?.image)
-console.log('IMAGE SRC:', article?.image?.src)
-
 if (!article) {
   throw createError({
     statusCode: 404,
@@ -53,7 +49,7 @@ useHead({
 </script>
 
 <template>
-  <article v-if="article">
+  <article v-if="article" >
     <ArtikelHero :article="article" />
     <ArtikelBody :article="article" />
     <ArtikelRelated

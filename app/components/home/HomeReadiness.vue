@@ -74,7 +74,7 @@ const restart = () => {
 </script>
 
 <template>
-  <section id="cek-kesiapan" class="scroll-mt-24 bg-tint-aqua font-inter">
+  <section id="cek-kesiapan" class="scroll-mt-24 bg-tint-aqua">
     <div
       class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 py-14 sm:px-8 lg:px-40 lg:py-[88px]"
     >

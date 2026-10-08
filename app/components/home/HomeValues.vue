@@ -19,7 +19,7 @@ const values = [
 </script>
 
 <template>
-  <section class="bg-surface font-inter">
+  <section class="bg-surface">
     <ul
       class="mx-auto grid max-w-[1440px] gap-6 px-5 py-14 sm:px-8 md:grid-cols-3 lg:px-20 lg:py-[88px]"
     >
