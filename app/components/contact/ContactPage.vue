@@ -18,17 +18,17 @@ const turnstileEl = ref<HTMLElement | null>(null)
 let turnstileWidgetId: string | undefined
 let turnstileTimer: ReturnType<typeof setInterval> | undefined
 
-useHead({
-  script: [
-    {
-      src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
-      async: true,
-      defer: true,
-    },
-  ],
-})
+const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
 
 onMounted(() => {
+  // Script dimuat sekali saja; useHead memasangnya ulang tiap kali halaman dibuka lagi
+  if (!(window as any).turnstile && !document.querySelector(`script[src="${TURNSTILE_SRC}"]`)) {
+    const script = document.createElement('script')
+    script.src = TURNSTILE_SRC
+    script.async = true
+    document.head.appendChild(script)
+  }
+
   turnstileTimer = setInterval(() => {
     const turnstile = (window as any).turnstile
     if (!turnstile || !turnstileEl.value) return
@@ -44,6 +44,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   if (turnstileTimer) clearInterval(turnstileTimer)
+  // Lepas widget agar tidak tertinggal saat pindah halaman
+  if (turnstileWidgetId) (window as any).turnstile?.remove(turnstileWidgetId)
 })
 
 async function handleSubmit(event: Event) {
