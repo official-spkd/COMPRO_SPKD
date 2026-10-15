@@ -11,6 +11,33 @@ const selectedSolutionKey = computed(() => {
   return solutionKeys.includes(key) ? key : ''
 })
 
+type CompanyProfile = {
+  name: string | null
+  email: string | null
+  phone: string | null
+  address: string | null
+  work_hour: string | null
+}
+
+// Info kontak dari API; kalau gagal/kosong, tampilkan nilai bawaan
+const { data: profileRes } = await useFetch<{ data: CompanyProfile }>(
+  `${config.public.apiBase}/company-profile`,
+  { key: 'company-profile' },
+)
+
+const contact = computed(() => {
+  const p = profileRes.value?.data
+  const phone = p?.phone || '+62 21 5088 2026'
+  return {
+    name: p?.name || 'PT Sistem Pelayanan Kesehatan dan Data',
+    email: p?.email || 'officialspkd@gmail.com',
+    phone,
+    phoneHref: phone.replace(/[^\d+]/g, ''),
+    workHour: p?.work_hour || 'Senin–Jumat, 08.30–17.30 WIB',
+    address: p?.address || 'Jakarta, Indonesia',
+  }
+})
+
 const isSubmitting = ref(false)
 const errorMessage = ref('')
 const turnstileToken = ref('')
@@ -259,29 +286,29 @@ function validatePhone(event: Event) {
         >
           <div class="flex flex-col gap-2">
             <p class="text-[11px] font-bold uppercase text-brand-alt">PT SPKD</p>
-            <h2 class="text-[26px] leading-[1.3] text-white">PT Sistem Pelayanan Kesehatan dan Data</h2>
+            <h2 class="text-[26px] leading-[1.3] text-white">{{ contact.name }}</h2>
           </div>
           <hr class="border-0 border-t border-navy-line" />
           <dl class="flex flex-col gap-[18px] text-white">
             <div class="flex flex-col gap-[5px]">
               <dt class="text-[11px] font-bold text-brand-alt">Email</dt>
               <dd class="text-sm leading-[1.5]">
-                <a href="mailto:halo@spkd.co.id" class="transition-colors hover:text-mint-pale">halo@spkd.co.id</a>
+                <a :href="`mailto:${contact.email}`" class="transition-colors hover:text-mint-pale">{{ contact.email }}</a>
               </dd>
             </div>
             <div class="flex flex-col gap-[5px]">
               <dt class="text-[11px] font-bold text-brand-alt">Telepon</dt>
               <dd class="text-sm leading-[1.5]">
-                <a href="tel:+622150882026" class="transition-colors hover:text-mint-pale">+62 21 5088 2026</a>
+                <a :href="`tel:${contact.phoneHref}`" class="transition-colors hover:text-mint-pale">{{ contact.phone }}</a>
               </dd>
             </div>
             <div class="flex flex-col gap-[5px]">
               <dt class="text-[11px] font-bold text-brand-alt">Jam kerja</dt>
-              <dd class="text-sm leading-[1.5]">Senin–Jumat, 08.30–17.30 WIB</dd>
+              <dd class="text-sm leading-[1.5]">{{ contact.workHour }}</dd>
             </div>
             <div class="flex flex-col gap-[5px]">
               <dt class="text-[11px] font-bold text-brand-alt">Lokasi</dt>
-              <dd class="text-sm leading-[1.5]">Jakarta, Indonesia</dd>
+              <dd class="text-sm leading-[1.5]">{{ contact.address }}</dd>
             </div>
           </dl>
         </section>
