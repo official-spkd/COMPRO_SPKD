@@ -47,13 +47,13 @@ export interface Solusi {
 export const solutions: Solusi[] = [
   // 01 SIMRS-ERP
   {
-    slug: 'simrs-erp',
+    slug: 'simrs',
     solutionKey: 'DEMOFORSIMRS-ERP',
-    name: 'SIMRS-ERP Terpadu',
+    name: 'SIMRS',
     hero: {
-      eyebrow: 'Solusi SIMRS-ERP Terpadu',
-      title: 'Pengelolaan Rumah Sakit Terpadu dari Operasional hingga Keuangan',
-      desc: 'Satu ekosistem ERP medis modular yang merasionalisasi alur klinis, logistik, dan akuntansi real-time guna mendongkrak efisiensi faskes.',
+      eyebrow: 'SIMRS SPKD',
+      title: 'Satu sistem untuk seluruh pelayanan rumah sakit, dengan RME yang siap diklaim.',
+      desc: 'SIMRS SPKD mencatat pelayanan dari pendaftaran sampai pasien pulang dalam satu rekam medis elektronik. Datanya siap dikirim ke SATUSEHAT dan menjadi dasar klaim BPJS.',
       button: 'Diskusikan Kebutuhan SIMRS-ERP',
       image: {
         src: '/images/beranda-berita.svg',
@@ -134,13 +134,13 @@ export const solutions: Solusi[] = [
 
   // 02 Interoperabilitas RME
   {
-    slug: 'interoperabilitas-rme',
+    slug: 'medclaim',
     solutionKey: 'DEMOFORMEDCLAIM',
-    name: 'Interoperabilitas Rekam Medis Elektronik',
+    name: 'MedClaim',
     hero: {
-      eyebrow: 'Solusi Interoperabilitas RME',
-      title: 'Rekam Medis Elektronik Standar Internasional Terhubung Tanpa Hambatan',
-      desc: 'Menyelaraskan data klinis menggunakan format standar HL7 FHIR dan SNOMED CT demi integrasi tanpa cela dengan Kementerian Kesehatan SATUSEHAT.',
+      eyebrow: 'MedClaim',
+      title: 'Temukan klaim berisiko rugi sebelum diajukan ke BPJS.',
+      desc: 'MedClaim menganalisis file e-Klaim INA-CBG secara otomatis. Hasilnya: daftar episode yang merugi, indikasi undercoding dan overcoding, serta rekomendasi perbaikan sebelum klaim dikirim.',
       button: 'Diskusikan Kebutuhan EMR',
       image: {
         src: '/images/beranda-berita.svg',
@@ -217,12 +217,12 @@ export const solutions: Solusi[] = [
   // 03 Tele-Health & Smart Emergency
   {
     solutionKey: 'DEMOFORMEDCREDIX',
-    slug: 'tele-health-smart-emergency',
-    name: 'Tele-Health & Smart Emergency',
+    slug: 'medcredix',
+    name: 'MedCredix',
     hero: {
-      eyebrow: 'Solusi Tele-Health & Emergency',
-      title: 'Pelayanan Kesehatan Jarak Jauh Terpadu Tanpa Batas Ruang & Waktu',
-      desc: 'Menyatukan telemedicine, pemantauan EKG & ICU jarak jauh, hingga IoT ambulans canggih dalam satu orkestrasi koordinasi tanggap darurat yang cepat.',
+      eyebrow: 'MedCredix',
+      title: 'Ketahui kesiapan kredensial rumah sakit Anda sebelum dinilai.',
+      desc: 'MedCredix membaca data operasional SIMRS melalui API FHIR, menghitung skor kredensial dari empat kelompok penilaian, lalu memberi status dan rekomendasi perbaikan, tanpa input manual.',
       button: 'Diskusikan Kebutuhan Tele-Health',
       image: {
         src: '/images/beranda-berita.svg',
@@ -304,12 +304,12 @@ export const solutions: Solusi[] = [
   // 04 SATUSEHAT & BPJS
   {
     solutionKey: 'DEMOFORMEDPATH',
-    slug: 'satusehat-bpjs',
-    name: 'Integrasi SATUSEHAT & BPJS',
+    slug: 'medpath',
+    name: 'MedPath',
     hero: {
-      eyebrow: 'Integrasi & Kepatuhan Regulasi',
-      title: 'Otomatisasi Klaim JKN & Kepatuhan Regulasi Kesehatan Nasional',
-      desc: 'Menjembatani sistem internal rumah sakit Anda dengan Platform SATUSEHAT Kemenkes serta sistem vClaim BPJS Kesehatan secara real-time guna mempercepat administrasi dan audit klaim.',
+      eyebrow: 'MedPath',
+      title: 'Clinical pathway yang dijalankan, diukur, dan terus diperbaiki.',
+      desc: 'MedPath mengubah clinical pathway dari dokumen menjadi checklist harian di samping pasien. Kepatuhan, varians, lama rawat, dan biaya dihitung otomatis untuk komite medik dan komite mutu.',
       button: 'Diskusikan Kebutuhan Integrasi',
       image: {
         src: '/images/beranda-berita.svg',
@@ -386,12 +386,12 @@ export const solutions: Solusi[] = [
   // 05 Cash & Supply Chain
   {
     solutionKey: 'DEMOFORMEDPAY',
-    slug: 'cash-supply-chain',
-    name: 'Cash & Supply Chain',
+    slug: 'medpay',
+    name: 'MedPay',
     hero: {
-      eyebrow: 'Logistik & Solusi Finansial',
-      title: 'Efisiensi Pengadaan Obat & Penjaminan Arus Kas Rumah Sakit',
-      desc: 'Solusi cerdas tata kelola rantai pasok medis (MedLog) yang terhubung langsung dengan distributor farmasi terpercaya dan program pendanaan talangan arus kas faskes.',
+      eyebrow: 'MedPay',
+      title: 'Selisih tarif tertagih, bukan terlewat.',
+      desc: 'Untuk pasien JKN yang juga punya asuransi kedua, MedPay menghitung selisih tarif rumah sakit dengan tarif INA-CBG, menyiapkan dokumen, mengajukan tagihan, dan memantau pembayarannya.',
       button: 'Diskusikan Kebutuhan Supply Chain',
       image: {
         src: '/images/beranda-berita.svg',
