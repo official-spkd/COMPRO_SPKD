@@ -87,7 +87,8 @@ async function handleSubmit(event: Event) {
   const field = (key: string) => String(formData.get(key) ?? '').trim()
 
   const payload = {
-    solution_key: selectedSolutionKey.value,
+    // Tanpa produk terpilih, pakai template umum (DEMOGENERAL)
+    solution_key: selectedSolutionKey.value || 'DEMOGENERAL',
     name: field('name'),
     email: field('email'),
     phone: field('phone'),

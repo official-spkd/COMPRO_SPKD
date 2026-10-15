@@ -48,7 +48,7 @@ export const solutions: Solusi[] = [
   // 01 SIMRS-ERP
   {
     slug: 'simrs',
-    solutionKey: 'DEMOFORSIMRS-ERP',
+    solutionKey: 'DEMOFORSIMRS',
     name: 'SIMRS',
     hero: {
       eyebrow: 'SIMRS SPKD',
@@ -477,6 +477,7 @@ export interface Product {
   solutionKey: string
   category: ProductCategory
   icon: string
+  logo: string
   tagline: string
   stage: string
 }
@@ -484,9 +485,10 @@ export interface Product {
 export const products: Product[] = [
   {
     name: 'SIMRS',
-    solutionKey: 'DEMOFORSIMRS-ERP',
+    solutionKey: 'DEMOFORSIMRS',
     category: 'Pelayanan dan mutu',
     icon: 'lucide:hospital',
+    logo: '/images/logo-product/logo-simrs.svg',
     tagline: 'Satu sistem untuk seluruh pelayanan rumah sakit, dengan RME yang siap diklaim.',
     stage: 'Tahap pengembangan',
   },
@@ -495,6 +497,7 @@ export const products: Product[] = [
     solutionKey: 'DEMOFORMEDPATH',
     category: 'Pelayanan dan mutu',
     icon: 'lucide:activity',
+    logo: '/images/logo-product/logo-medpath.svg',
     tagline: 'Clinical pathway yang dijalankan, diukur, dan terus diperbaiki.',
     stage: 'Tahap pengembangan',
   },
@@ -503,6 +506,7 @@ export const products: Product[] = [
     solutionKey: 'DEMOFORMEDCLAIM',
     category: 'Klaim dan pendapatan',
     icon: 'lucide:chart-line',
+    logo: '/images/logo-product/logo-medclaim.svg',
     tagline: 'Temukan klaim berisiko rugi sebelum diajukan ke BPJS.',
     stage: 'Tahap pengembangan',
   },
@@ -511,6 +515,7 @@ export const products: Product[] = [
     solutionKey: 'DEMOFORMEDPAY',
     category: 'Klaim dan pendapatan',
     icon: 'lucide:wallet',
+    logo: '/images/logo-product/logo-medpay.svg',
     tagline: 'Selisih tarif ke asuransi kedua tertagih, bukan terlewat.',
     stage: 'Tahap pengembangan',
   },
@@ -519,6 +524,7 @@ export const products: Product[] = [
     solutionKey: 'DEMOFORMEDCREDIX',
     category: 'Kredensial',
     icon: 'lucide:shield-check',
+    logo: '/images/logo-product/logo-medcredix.svg',
     tagline: 'Ketahui kesiapan kredensial rumah sakit sebelum dinilai.',
     stage: 'Tahap pengembangan',
   },

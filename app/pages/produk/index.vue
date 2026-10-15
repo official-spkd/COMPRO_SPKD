@@ -84,7 +84,7 @@ const visibleProducts = computed(() =>
               :to="productPath(p.solutionKey)"
               class="hover-lift group flex h-full flex-col items-start gap-6 rounded-3xl border border-line bg-white p-6 shadow-card md:p-8"
             >
-              <Icon :name="p.icon" class="size-6 text-accent" />
+              <img :src="p.logo" :alt="`Logo ${p.name}`" class="h-16 w-auto max-w-full object-contain object-left" />
               <span class="rounded-full border border-line-teal bg-tint-aqua px-2.5 py-1 text-xs text-brand-deep">
                 {{ p.stage }}
               </span>

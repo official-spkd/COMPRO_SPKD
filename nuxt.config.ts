@@ -40,8 +40,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: 'http://127.0.0.1:8000/api',
-      turnstileSiteKey: '0x4AAAAAAFO4sn1YbJKX4rHf',
+      apiBase: 'http://127.0.0.1:8000/api',      
+      turnstileSiteKey: '0x4AAAAAAFO4sn1YbJKX4rHf',  
     },
   },
 })

@@ -12,31 +12,31 @@ const workflow = [
 const products = [
   {
     name: 'SIMRS',
-    icon: '/images/beranda/hospital.svg',
+    logo: '/images/logo-product/logo-simrs-darkbg.svg',
     tag: 'Pelayanan dan Mutu',
     desc: 'Sistem informasi rumah sakit dengan RME yang siap terhubung ke SATUSEHAT dan BPJS.',
   },
   {
     name: 'MedPath',
-    icon: '/images/beranda/activity.svg',
+    logo: '/images/logo-product/logo-medpath-darkbg.svg',
     tag: 'Pelayanan dan Mutu',
     desc: 'Clinical pathway digital untuk mengukur kepatuhan, varians, lama rawat, dan biaya.',
   },
   {
     name: 'MedClaim',
-    icon: '/images/beranda/chart-line.svg',
+    logo: '/images/logo-product/logo-medclaim-darkbg.svg',
     tag: 'Klaim dan Pendapatan',
     desc: 'Temukan episode rugi dan salah koding sebelum klaim diajukan ke BPJS.',
   },
   {
     name: 'MedCredix',
-    icon: '/images/beranda/shield-check-cyan.svg',
+    logo: '/images/logo-product/logo-medcredix-darkbg.svg',
     tag: 'Kredensial',
     desc: 'Pantau kesiapan kredensial rumah sakit secara otomatis dari data SIMRS.',
   },
   {
     name: 'MedPay',
-    icon: '/images/beranda/wallet.svg',
+    logo: '/images/logo-product/logo-medpay-darkbg.svg',
     tag: 'Klaim dan Pendapatan',
     desc: 'Hitung dan tagih selisih tarif ke asuransi kedua, lalu pantau sampai dana masuk.',
   },
@@ -93,7 +93,7 @@ const products = [
             :to="productPathByName(p.name)"
             class="group flex h-full flex-col items-start gap-6 rounded-3xl border border-white/13 bg-white/5 p-8 transition hover:-translate-y-1 hover:border-accent-glow/50 hover:bg-white/8"
           >
-            <img :src="p.icon" alt="" aria-hidden="true" width="24" height="24" />
+            <img :src="p.logo" :alt="`Logo ${p.name}`" class="h-16 w-auto max-w-full object-contain object-left" />
             <span
               class="rounded-full border border-accent-glow/19 bg-accent-glow/9 px-3 py-[7px] text-xs font-medium text-accent-glow"
             >

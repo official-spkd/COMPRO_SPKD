@@ -168,6 +168,7 @@
             v-reveal="i"
             class="hover-lift flex flex-col items-start gap-[18px] rounded-[24px] border border-line-soft bg-surface p-5"
           >
+            <img :src="product.logo" :alt="`Logo ${product.name}`" class="h-16 w-auto max-w-full object-contain object-left" />
             <h3 class="text-[23px] font-bold leading-[1.65]">{{ product.name }}</h3>
             <span class="rounded-full bg-tint-aqua px-3.5 py-[7px] text-[13px] font-semibold text-night-to">
               ({{ product.category }})
@@ -278,11 +279,11 @@ const principles = [
 ]
 
 const products = [
-  { name: 'SIMRS', category: 'Pelayanan dan Mutu' },
-  { name: 'MedClaim', category: 'Klaim dan Pendapatan' },
-  { name: 'MedCredix', category: 'Kredensial' },
-  { name: 'MedPath', category: 'Pelayanan dan Mutu' },
-  { name: 'MedPay', category: 'Klaim dan Pendapatan' },
+  { name: 'SIMRS', logo: '/images/logo-product/logo-simrs.svg', category: 'Pelayanan dan Mutu' },
+  { name: 'MedClaim', logo: '/images/logo-product/logo-medclaim.svg', category: 'Klaim dan Pendapatan' },
+  { name: 'MedCredix', logo: '/images/logo-product/logo-medcredix.svg', category: 'Kredensial' },
+  { name: 'MedPath', logo: '/images/logo-product/logo-medpath.svg', category: 'Pelayanan dan Mutu' },
+  { name: 'MedPay', logo: '/images/logo-product/logo-medpay.svg', category: 'Klaim dan Pendapatan' },
 ]
 
 const securityPoints = [
