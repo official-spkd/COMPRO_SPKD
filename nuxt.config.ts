@@ -6,7 +6,12 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'id' },
       titleTemplate: '%s | SPKD',
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: 'any' },
+        // Google menampilkan ikon situs di hasil pencarian dengan kelipatan 48 px
+        { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/favicon-48x48.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      ],
     },
   },
   fonts: {
