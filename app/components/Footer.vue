@@ -32,14 +32,11 @@ const profile = await useCompanyProfile()
 const contact = computed(() => {
   const p = profile.value
   const phone = p?.phone || '+62 812-3456-7890'
-  const digits = phone.replace(/\D/g, '')
-  // nomor lokal 08xx -> format internasional 628xx untuk tautan WhatsApp
-  const wa = digits.startsWith('0') ? `62${digits.slice(1)}` : digits
   return {
     name: p?.name || 'PT Sistem Pelayanan Kesehatan dan Data',
     email: p?.email || 'officialspkd@gmail.com',
     phone,
-    whatsappHref: `https://wa.me/${wa}`,
+    phoneHref: `tel:${phone.replace(/[^\d+]/g, '')}`,
     address:
       p?.address ||
       'Jl. Prof. DR. Soepomo No.323, RT.13/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810',
@@ -100,7 +97,7 @@ const legal = [
             <address class="text-sm not-italic leading-[2.1] text-fog">
               <p class="font-semibold text-white">Hubungi kami</p>
               <a :href="`mailto:${contact.email}`" class="block transition-colors hover:text-white">{{ contact.email }}</a>
-              <a :href="contact.whatsappHref" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-white">{{ contact.phone }}</a>
+              <a :href="contact.phoneHref" class="block transition-colors hover:text-white">{{ contact.phone }}</a>
               <p>{{ contact.address }}</p>
               <p>{{ contact.workHour }}</p>
               <!-- <p class="mt-[2.1em] text-xs">Instagram · LinkedIn · Threads · X · TikTok</p> -->
