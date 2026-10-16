@@ -26,6 +26,27 @@ const socials = [
   { label: 'TikTok', icon: '/images/beranda/social-tiktok.svg', href: 'https://www.tiktok.com/@official.spkd' },
 ]
 
+// Profil perusahaan dari API; kalau gagal/kosong, tampilkan nilai bawaan
+const profile = await useCompanyProfile()
+
+const contact = computed(() => {
+  const p = profile.value
+  const phone = p?.phone || '+62 812-3456-7890'
+  const digits = phone.replace(/\D/g, '')
+  // nomor lokal 08xx -> format internasional 628xx untuk tautan WhatsApp
+  const wa = digits.startsWith('0') ? `62${digits.slice(1)}` : digits
+  return {
+    name: p?.name || 'PT Sistem Pelayanan Kesehatan dan Data',
+    email: p?.email || 'officialspkd@gmail.com',
+    phone,
+    whatsappHref: `https://wa.me/${wa}`,
+    address:
+      p?.address ||
+      'Jl. Prof. DR. Soepomo No.323, RT.13/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810',
+    workHour: p?.work_hour || 'Senin – Jumat, 08.00–17.00 WIB',
+  }
+})
+
 const legal = [
   { label: 'Privasi', to: '/privasi' },
   { label: 'Ketentuan', to: '/ketentuan' },
@@ -78,13 +99,10 @@ const legal = [
           <div class="col-span-2 flex flex-col gap-4 sm:col-span-1 lg:w-[303px]">
             <address class="text-sm not-italic leading-[2.1] text-fog">
               <p class="font-semibold text-white">Hubungi kami</p>
-              <a href="mailto:officialspkd@gmail.com" class="block transition-colors hover:text-white"> officialspkd@gmail.com </a>
-              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-white">+62 812-3456-7890</a>
-              <p>
-                Jl. Prof. DR. Soepomo No.323, RT.13/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta
-                Selatan, Daerah Khusus Ibukota Jakarta 12810
-              </p>
-              <p>Senin – Jumat, 08.00–17.00 WIB</p>
+              <a :href="`mailto:${contact.email}`" class="block transition-colors hover:text-white">{{ contact.email }}</a>
+              <a :href="contact.whatsappHref" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-white">{{ contact.phone }}</a>
+              <p>{{ contact.address }}</p>
+              <p>{{ contact.workHour }}</p>
               <!-- <p class="mt-[2.1em] text-xs">Instagram · LinkedIn · Threads · X · TikTok</p> -->
             </address>
             <ul class="flex gap-5">
@@ -108,7 +126,7 @@ const legal = [
       <div class="h-px w-full bg-navy-line" />
 
       <div class="flex flex-col justify-between gap-3 text-xs text-steel sm:flex-row">
-        <p>© 2026 PT Sistem Pelayanan Kesehatan dan Data. Seluruh hak dilindungi.</p>
+        <p>© 2026 {{ contact.name }}. Seluruh hak dilindungi.</p>
         <p class="flex flex-wrap items-center gap-x-2">
           <template v-for="(l, i) in legal" :key="l.to">
             <span v-if="i" aria-hidden="true">·</span>
